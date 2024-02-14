@@ -1,75 +1,71 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "custom_hero_banner_PYrY9r": {
+      "type": "custom-hero-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "slide_content_8Np6Be": {
+          "type": "slide-content",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "mobile_image": "shopify:\/\/shop_images\/1.webp",
+            "desktop_image": "shopify:\/\/shop_images\/1.webp",
+            "sub_text": "Women's Apparel",
+            "title": "<p>Elevate your wardrobe with our <a href=\"\/collections\" title=\"All collections\">limited-time<\/a> fashion offer!<\/p>",
+            "content_alignment": "justify-center align-center",
+            "text_alignment": "text-center",
+            "button_text": "Explore More",
+            "text_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button_url": "shopify:\/\/collections"
           }
         },
-        "button": {
-          "type": "buttons",
+        "slide_content_DWjMfk": {
+          "type": "slide-content",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "mobile_image": "shopify:\/\/shop_images\/4.webp",
+            "desktop_image": "shopify:\/\/shop_images\/4.webp",
+            "sub_text": "Trendy Classics",
+            "title": "<p>Discover Signature Look: Fashion Forward and Fabulous!<\/p>",
+            "content_alignment": "justify-center align-start",
+            "text_alignment": "text-left",
+            "button_text": "Shop Now",
+            "text_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button_url": "shopify:\/\/collections"
+          }
+        },
+        "slide_content_gF6HJL": {
+          "type": "slide-content",
+          "settings": {
+            "mobile_image": "shopify:\/\/shop_images\/3.webp",
+            "desktop_image": "shopify:\/\/shop_images\/3.webp",
+            "sub_text": "Modern Elegance",
+            "title": "<p>Step into the World of Style with the Latest Fashion Trends Unveiled!<\/p>",
+            "content_alignment": "justify-center align-start",
+            "text_alignment": "text-center",
+            "button_text": "Explore Now",
+            "text_color": "#ffffff",
+            "button_text_color": "#000000",
+            "button_url": "shopify:\/\/collections"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "slide_content_8Np6Be",
+        "slide_content_DWjMfk",
+        "slide_content_gF6HJL"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "enable_autoplay": true,
+        "enable_dots": true,
+        "rewind_slides": true,
+        "enable_arrows": true,
+        "slide_animation": "fade",
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "custom_hero_banner_PYrY9r"
   ]
 }
