@@ -1,0 +1,143 @@
+.splide__image-container {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.splide__image-container img {
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+}
+
+.splide__content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container__content {
+  margin: 20px;
+  padding: 20px 35px;
+  min-width: 450px;
+  max-width: 545px;
+}
+
+.content-container__list {
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 0 13px 0 30px;
+  list-style-type: disc;
+  display: inline-block;
+  backdrop-filter: blur(5px);
+}
+
+.content-container__list-item {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+.content-container__title {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 34px;
+}
+
+.content-container__title a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.content-container__title a:hover {
+  color: #d03c3f;
+  transition: 0.2s ease-in;
+  text-decoration: underline;
+}
+
+.content-container__button {
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+button.splide__arrow.splide__arrow--prev {
+  top: unset;
+  bottom: 1%;
+  transform: unset;
+  background: none;
+  cursor: pointer;
+  left: 30%;
+}
+
+button.splide__arrow.splide__arrow--prev svg {
+  fill: #fff;
+  height: 14px;
+  width: 14px;
+  margin-bottom: 20px;
+}
+
+button.splide__arrow.splide__arrow--next {
+  top: unset;
+  bottom: 1%;
+  transform: unset;
+  background: none;
+  cursor: pointer;
+  right: 30%;
+}
+button.splide__arrow.splide__arrow--next svg {
+  fill: #fff;
+  height: 14px;
+  width: 14px;
+  margin-bottom: 20px;
+}
+button.splide__pagination__page {
+  width: 8px;
+  height: 8px;
+  margin: 0px 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  border: 1px solid white;
+  margin-bottom: 15px;
+}
+button.splide__pagination__page.is-active {
+  width: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 750px) {
+  .content-container__list-item {
+    font-size: 14px;
+  }
+
+  .content-container__title {
+    line-height: 52px;
+  }
+
+  button.splide__arrow.splide__arrow--prev {
+    left: 40%;
+  }
+
+  button.splide__arrow.splide__arrow--next {
+    right: 40%;
+  }
+
+  button.splide__pagination__page {
+    margin: 15px;
+  }
+
+  .splide__image-container {
+    padding-bottom: 50%;
+  }
+}
