@@ -1,44 +1,52 @@
-.grid__item--container {
+.grid-item--container {
   border-radius: 16px;
+  position: relative;
 }
 
-.grid__image-container {
+.grid-item__grid-image-container {
   position: relative;
   padding-bottom: 60%;
 }
 
-.grid__image-container img {
-  border-radius: 16px;
+.grid-item__grid-image-container img {
   position: absolute;
   top: 0;
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 16px;
 }
 
-.grid__content-container {
-  position: absolute;
-}
-
-.grid__item--container:hover {
+.grid-item--container:hover {
   overflow: hidden;
-  .grid__image-container img {
-    transform: scale(1.05);
-    transition: 0.4s ease-in-out;
+  .grid-item__grid-image-container img {
+    transform: scale(1.03);
+    transition: 0.4s ease;
   }
 }
 
-.grid__content-container {
+.grid-item--container:not(hover) {
+  overflow: hidden;
+
+  .grid-item__grid-image-container img {
+    overflow: hidden;
+    transform: scale(1);
+    transition: 0.4s ease;
+  }
+}
+
+.grid-item__grid-content-container {
   position: absolute;
   top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.grid__content-container {
-  margin: 20px;
-  padding: 20px 35px;
-}
-
-.grid__pre-text-list {
+.grid-item__grid-pre-text-list {
   color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 30px;
@@ -48,13 +56,13 @@
   backdrop-filter: blur(5px);
 }
 
-.grid__pre-text-item {
+.grid-item__grid-pre-text {
   font-size: 12px;
   letter-spacing: 0.3px;
   text-transform: capitalize;
 }
 
-.grid__heading {
+.grid-item__grid-heading {
   color: rgb(255, 255, 255);
   font-weight: 600;
   letter-spacing: 0.3px;
@@ -62,7 +70,7 @@
   text-transform: capitalize;
 }
 
-.grid__button {
+.grid-item__button {
   color: #000000;
   background-color: rgb(255, 255, 255);
   border: none;

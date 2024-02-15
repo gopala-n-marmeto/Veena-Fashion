@@ -13,9 +13,17 @@
             left: {{block.settings.top_hotspot_left_position}}%;
         }
 
+        .dot-1-{{ block.id }}:hover .product-1-{{ block.id }} {
+            display: flex;
+        }
+
         .dot-2-{{ block.id }} {
             top: {{block.settings.bottom_hotspot_top_position}}%;
             left: {{block.settings.bottom_hotspot_left_position}}%;
+        }
+
+        .dot-2-{{ block.id }}:hover .product-2-{{ block.id }} {
+            display: flex;
         }
     {% endfor %}
 
@@ -40,7 +48,7 @@
                                 desktopImage: block.settings.desktop_image
                             %}
                             <div class="grid__look-book-dot dot-1-{{ block.id }}">
-                                <div class="grid__look-book-product">
+                                <div class="grid__look-book-product product-1-{{ block.id }}">
                                     {% if block.settings.top_hotspot_product.featured_image %}
                                         <img src={{block.settings.top_hotspot_product.featured_image | image_url}} alt={{block.settings.top_hotspot_product.handle}}>
                                     {% endif %}
@@ -58,8 +66,21 @@
                                 </div>
                             </div>
                             <div class="grid__look-book-dot dot-2-{{ block.id }}">
-                                <div class="grid__look-book-product">
-                                    product 1 details
+                                <div class="grid__look-book-product product-2-{{ block.id }}">
+                                    {% if block.settings.bottom_hotspot_product.featured_image %}
+                                        <img src={{block.settings.bottom_hotspot_product.featured_image | image_url}} alt={{block.settings.top_hotspot_product.handle}}>
+                                    {% endif %}
+                                    <div class="look-book-product__content">
+                                        {% if block.settings.bottom_hotspot_product.title %}
+                                            <div class="look-book-product__title">{{block.settings.bottom_hotspot_product.title}}</div>
+                                        {% endif %}
+                                        {% if block.settings.bottom_hotspot_product.price %}
+                                            <div class="look-book-product_price">{{block.settings.bottom_hotspot_product.price |  money_with_currency}}</div>
+                                        {% endif %}
+                                        {% if block.settings.bottom_hotspot_product.price %}
+                                            <s class="look-book-product_compare-at-price">{{block.settings.bottom_hotspot_product.compare_at_price |  money_with_currency}}</s>
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>    
                         {% else %}
