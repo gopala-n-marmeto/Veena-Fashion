@@ -23,9 +23,6 @@
 
 .content-container__content {
   margin: 20px;
-  padding: 20px 35px;
-  min-width: 450px;
-  max-width: 545px;
 }
 
 .content-container__list {
@@ -53,12 +50,35 @@
 .content-container__title a {
   color: rgb(255, 255, 255);
   text-decoration: none;
+  position: relative;
 }
 
 .content-container__title a:hover {
   color: #d03c3f;
-  transition: 0.2s ease-in;
-  text-decoration: underline;
+  transition: 0.1s ease-in;
+}
+
+.content-container__title a::before {
+  content: "";
+  position: absolute;
+  background-color: #d03c3f;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: width 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.content-container__title a:hover::before {
+  width: 100%;
+}
+
+.content-container__title a:not(:hover)::before {
+  width: 0;
+  right: 0;
+  left: auto;
+  background-color: #ffffff;
 }
 
 .content-container__button {
@@ -117,6 +137,12 @@ button.splide__pagination__page.is-active {
 }
 
 @media screen and (min-width: 750px) {
+  .content-container__content {
+    padding: 20px 35px;
+    min-width: 450px;
+    max-width: 545px;
+  }
+
   .content-container__list-item {
     font-size: 14px;
   }

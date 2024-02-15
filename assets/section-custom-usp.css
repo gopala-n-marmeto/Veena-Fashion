@@ -1,0 +1,39 @@
+.custom-usp__wrapper {
+  padding: 40px;
+}
+
+.grid__item--content-container {
+  text-align: center;
+}
+
+.grid__item--content-container:hover svg {
+  transition: transform 0.5s ease;
+  transform: scaleX(-1);
+}
+
+.grid__item--content-container:not(hover) svg {
+  transition: transform 0.5s ease;
+  transform: scaleX(1);
+}
+
+.grid__item--image-container {
+  padding-bottom: 20px;
+}
+
+.grid__usp-heading {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.grid__usp-description {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: normal;
+}
+
+@media screen and (min-width: 750px) {
+  .grid__usp-description {
+    font-size: 14px;
+  }
+}

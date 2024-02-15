@@ -1,0 +1,117 @@
+
+{{'section-custom-usp.css' |  asset_url |  stylesheet_tag}}
+
+{%  style  %} 
+    .padding-{{section.id}} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .custom-usp__wrapper-{{section.id}} {
+        background-color: {{section.settings.section_background_color}};
+
+    }
+{% endstyle %}
+
+<div class="custom-usp padding-{{section.id}}">
+    <div class="custom-usp__wrapper custom-usp__wrapper-{{section.id}}">
+        <div class="page-width">
+            <div class="grid grid--1-col grid--2-col-tablet grid--4-col-desktop">
+                {% for block in section.blocks %}
+                    <div class="grid__item grid__item--content-container">
+                        {% if block.settings.usp_icon != blank %}
+                            <div class="grid__item--image-container">
+                                {{block.settings.usp_icon}}
+                            </div>
+                        {% else %}
+                            <div>
+                                {{'product-1' |  placeholder_svg_tag}}
+                            </div>
+                        {% endif %}
+                        {% if block.settings.usp_heading != blank %}
+                            <h2 class="grid__usp-heading h3">{{block.settings.usp_heading}}</h2>
+                        {% else %}
+                            <h2 class="grid__usp-heading h3">Your USP Heading</h2>
+                        {% endif %}
+                        {% if block.settings.usp_description != blank %}
+                            <div class="grid__usp-description">{{block.settings.usp_description}}</div>
+                        {% else %}
+                            <div class="grid__usp-description">Write about your selling proposal</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Custom usp",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "color",
+            "id": "section_background_color",
+            "label": "Section background color",
+            "default": "rgb(245, 245, 245)"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Usp block",
+            "type": "usp-block",
+            "settings": [
+                {
+                    "type": "html",
+                    "id": "usp_icon",
+                    "label": "Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "usp_heading",
+                    "label": "Heading",
+                    "default": "Heading"
+                },
+                {
+                    "type": "richtext",
+                    "id": "usp_description",
+                    "label": "Description",
+                    "default": "<p>Description</p>"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom usp"
+        }
+    ]
+}
+{% endschema %}
