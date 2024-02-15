@@ -109,7 +109,7 @@
             "desktop_image": "shopify:\/\/shop_images\/Rectangle_4264.webp",
             "pre_text": "women's",
             "title": "<p>women's clothing collection<\/p>",
-            "text_alignment": "text-left",
+            "text_alignment": "text-center",
             "button_text": "explore",
             "button_url": "shopify:\/\/collections"
           }
@@ -121,7 +121,7 @@
             "desktop_image": "shopify:\/\/shop_images\/Rectangle_4265.webp",
             "pre_text": "fashion",
             "title": "<p>women's sustainable style hub<\/p>",
-            "text_alignment": "text-left",
+            "text_alignment": "text-center",
             "button_text": "explore",
             "button_url": "shopify:\/\/collections"
           }
