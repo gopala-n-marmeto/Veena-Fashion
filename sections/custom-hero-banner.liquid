@@ -48,10 +48,16 @@
                                             <ul class="content-container__list">
                                                 <li class="content-container__list-item">{{block.settings.sub_text}}</li>
                                             </ul>
-                                            <h2 class="content-container__title h1">{{block.settings.title}}</h2>
-                                            <a class="content-container__button button" href={{block.settings.button_url}}>
-                                                {{block.settings.button_text}}
-                                            </a>
+                                            <h2 class="content-container__title custom-hover-text h1">{{block.settings.title}}</h2>
+                                            {% render 'custom-color-hovering-button',
+                                                sectionId:{{section.id}},
+                                                textColor: "#000000",
+                                                hoverTextColor: "#d03c3f",
+                                                backgroundColor: "#ffffff",
+                                                hoverColor: "#f5f5f5", 
+                                                buttonLink: {{block.settings.button_url}},
+                                                buttonText: {{block.settings.button_text}}
+                                            %}
                                         </div>
                                     </div>
                                 </li>

@@ -2,9 +2,9 @@
 {{ 'section-custom-look-book.css' |  asset_url |  stylesheet_tag }}
 
 {%  style  %} 
-    padding-{{section.id}} {
-        padding-top: calc({{ section.settings.padding_top | devided_by: 2 }} );
-        padding-bottom: calc({{ section.settings.padding_bottom | devided_by: 2 }});
+    .padding-{{section.id}} {
+        padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
     }
 
     {%  for block in section.blocks %} 
@@ -14,7 +14,10 @@
         }
 
         .dot-1-{{ block.id }}:hover .product-1-{{ block.id }} {
+            opacity: 1;
+            left: 40px;
             display: flex;
+            transition: all 1s ease
         }
 
         .dot-2-{{ block.id }} {
@@ -23,7 +26,10 @@
         }
 
         .dot-2-{{ block.id }}:hover .product-2-{{ block.id }} {
+            opacity: 1;
+            left: 40px;
             display: flex;
+            transition: all 1s ease
         }
     {% endfor %}
 
@@ -89,14 +95,22 @@
                     </div>
                     <div class="grid__look-item-content-container">
                         {% if block.settings.heading %}
-                            <h2 class="grid__look-item-heading h3">{{block.settings.heading}}</h2>
+                            <h3 class="grid__look-item-heading h3">{{block.settings.heading}}</h2>
                         {% endif %}
                         {% if block.settings.description %}
                             <div class="grid__look-item-description">{{block.settings.description}}</div>
                         {% endif %}
                         {% if block.settings.button_text %}
                             {% if block.settings.button_link %}
-                                <a class="grid__look-item-button button" href={{block.settings.button_link}}>{{block.settings.button_text}}</a>
+                                {% render 'custom-color-hovering-button',
+                                sectionId:{{section.id}},
+                                textColor: "#ffffff",
+                                hoverTextColor: "#ffffff",
+                                backgroundColor: "#000000",
+                                hoverColor: "#d03c3f", 
+                                buttonLink: {{block.settings.button_url}},
+                                buttonText: {{block.settings.button_text}}
+                            %}
                             {% else %}
                                 <a class="grid__look-item-button button" role="link" aria-disabled="true">{{block.settings.button_text}}</a>
                             {% endif %}

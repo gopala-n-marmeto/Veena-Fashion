@@ -1,0 +1,141 @@
+
+{%  style  %} 
+    .padding-{{section.id}} {
+        padding-top: calc({{ section.settings.padding_top | devided_by: 2 }} );
+        padding-bottom: calc({{ section.settings.padding_bottom | devided_by: 2 }});
+    }
+
+    @media screen and (min-width: 750px) {
+        .padding-{{section.id}} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+
+<div class="side-banner-with-collection padding-{{section.id}}">
+    <div class="page-width">
+        <div class="grid grid--1-col grid--3-col-tablet grid--4-col-desktop">
+            <div class="side-banner-with-collection__side-banner-container grid__item">
+                here side banner details will go
+            </div>
+            <div class="grid__item">
+                here carousel details will go
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "sidebanner collections",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "<p>Section heading</p>"
+        },
+        {
+            "type": "text",
+            "id": "all_products_button_label",
+            "label": "All products button label",
+            "default": "Button label text"
+        },
+        {
+            "type": "url",
+            "id": "all_products_button_link",
+            "label": "Button link"
+        },
+
+        {
+            "type": "product_list",
+            "id": "featured_products_list",
+            "label": "Featured products"
+        },
+        {
+            "type": "checkbox",
+            "id": "display_as_carousel",
+            "label": "Display as carousel",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "display_sidebar_banner",
+            "label": "Display sidebar banner",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Sidebar banner details"
+        },
+        {
+            "type": "image_picker",
+            "id": "sidebar_banner_mobile_image",
+            "label": "Image (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "sidebar_banner_desktop_image",
+            "label": "Image (Desktop)"
+        },
+        {
+            "type": "text",
+            "id": "sidebar_banner_pre_text",
+            "label": "Pretext label",
+            "default": "Banner pretext"
+        },
+        {
+            "type": "richtext",
+            "id": "sidebar_banner_title",
+            "label": "Title label",
+            "default": "<p>Banner title</p>"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label",
+            "default": "Button label text"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+    ],
+    "presets": [
+        {
+            "name": "sidebanner collections"
+        }
+    ]
+}
+{% endschema %}

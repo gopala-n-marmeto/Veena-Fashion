@@ -1,0 +1,118 @@
+
+{{'section-custom-featured-collections.css' |  asset_url |  stylesheet_tag}}
+
+{%  style  %} 
+    .padding-{{section.id}} {
+        padding-top: calc({{ section.settings.padding_top | devided_by: 2 }} );
+        padding-bottom: calc({{ section.settings.padding_bottom | devided_by: 2 }});
+    }
+
+    @media screen and (min-width: 750px) {
+        .padding-{{section.id}} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+{%- liquid
+    assign section_heading = section.settings.section_heading
+    assign all_products_button_label = section.settings.all_products_button_label
+    assign all_products_button_link = section.settings.all_products_button_link
+    assign products_list = section.settings.featured_products_list
+-%}
+
+
+<div class="featured-collections padding-{{section.id}}">
+    <div class="page-width">
+        <div class="featured-collections__heading-button-wrapper">
+            {% if section_heading %}
+                <h2 class="h1">{{section_heading}}</h2>
+            {% endif %}
+            {% if all_products_button_label %}
+                {% if all_products_button_link %}
+                    <a class="featured-collections__all-products-button-label button" href={{all_products_button_link}}><span>{{all_products_button_label}}</span></a>
+                {% else %}
+                    <a class="featured-collections__all-products-button-label button" role="link" aria-disabled="true">{{all_products_button_label}}</a>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="grid grid--2-col grid--3-col-tablet grid--4-col-desktop">
+            {% for product in products_list %}
+                <div class="grid__item">
+                    {% render 'custom-product-card', product: product, section_id: section.id %}
+                </div>
+            {% else %}
+                {% for i in (1..4) %}
+                    <div class="grid__item featured-collections__placeholder">
+                        {{'product-' | append: i | placeholder_svg_tag}}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Custom feature collection",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "<p>Section heading</p>"
+        },
+        {
+            "type": "text",
+            "id": "all_products_button_label",
+            "label": "All products button label",
+            "default": "Button label text"
+        },
+        {
+            "type": "url",
+            "id": "all_products_button_link",
+            "label": "Button link"
+        },
+
+        {
+            "type": "product_list",
+            "id": "featured_products_list",
+            "label": "Featured products"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom feature collection"
+        }
+    ]
+}
+{% endschema %}

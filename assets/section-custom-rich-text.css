@@ -7,23 +7,21 @@
   text-align: center;
 }
 
+.rich-text-wrapper__container a {
+  margin: 20px 0 0;
+}
+
 .rich-text-wrapper__pre-text {
   color: rgba(0, 0, 0, 0.8);
   font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.8px;
-  line-height: 29px;
   text-transform: capitalize;
   margin: 0;
 }
 
 .rich-text-wrapper__heading {
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  line-height: 39px;
   text-transform: capitalize;
   color: rgb(0, 0, 0);
-  margin-bottom: 5px;
+  margin: 10px 0 0;
 }
 
 .rich-text-wrapper__heading a {
@@ -38,67 +36,10 @@
 
 @media screen and (min-width: 750px) {
   .rich-text-wrapper__container {
-    max-width: 586px;
+    max-width: 587px;
   }
 
   .rich-text-wrapper__heading {
-    line-height: 67px;
     position: relative;
-  }
-
-  .rich-text-wrapper__heading a {
-    position: relative;
-  }
-
-  .rich-text-wrapper__heading a::before {
-    content: "";
-    position: absolute;
-    background-color: #d03c3f;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: width 0.4s ease-in-out;
-    z-index: -1;
-  }
-
-  .rich-text-wrapper__heading a:hover::before {
-    width: 100%;
-  }
-
-  .rich-text-wrapper__heading a:not(:hover)::before {
-    width: 0;
-    right: 0;
-    left: auto;
-  }
-
-  .rich-text-wrapper__button {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .rich-text-wrapper__button span {
-    z-index: 2;
-  }
-
-  .rich-text-wrapper__button::before {
-    content: "";
-    position: absolute;
-    background-color: #000000;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    transition: width 0.4s ease-in-out;
-    z-index: 1;
-  }
-
-  .rich-text-wrapper__button:hover::before {
-    width: 100%;
-  }
-
-  .rich-text-wrapper__button:not(:hover)::before {
-    width: 0;
-    right: 0;
   }
 }

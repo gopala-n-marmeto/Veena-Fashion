@@ -1,0 +1,10 @@
+.featured-collections__heading-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featured-collections__placeholder {
+  border: 1px solid #dcd9d9;
+  border-radius: 12px;
+}

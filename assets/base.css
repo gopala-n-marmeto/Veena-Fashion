@@ -113,8 +113,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .utility-bar__grid.page-width {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -256,8 +256,8 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .text-body {
-  font-size: 1.5rem;
-  letter-spacing: 0.06rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.03rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
@@ -278,7 +278,7 @@ h1 .h3,
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  /* letter-spacing: calc(var(--font-heading-scale) * 0.06rem); */
+  letter-spacing: calc(var(--font-heading-scale) * 0.03rem);
   color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
@@ -290,29 +290,29 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .hxl {
-  font-size: calc(var(--font-heading-scale) * 5rem);
+  font-size: calc(var(--font-heading-scale) * 3rem);
 }
 
 @media only screen and (min-width: 768px) {
   .hxl {
-    font-size: calc(var(--font-heading-scale) * 6.2rem);
+    font-size: calc(var(--font-heading-scale) * 5.2rem);
   }
 }
 
 .h0 {
-  font-size: calc(var(--font-heading-scale) * 4rem);
+  font-size: calc(var(--font-heading-scale) * 2.4rem);
 }
 @media only screen and (min-width: 768px) {
   .h0 {
-    font-size: calc(var(--font-heading-scale) * 5.2rem);
+    font-size: calc(var(--font-heading-scale) * 3.4rem);
   }
 }
 h1,
 .h1 {
-  font-size: calc(var(--font-heading-scale) * 3rem);
+  font-size: calc(var(--font-heading-scale) * 2.6rem);
 }
 @media only screen and (min-width: 768px) {
   h1,
@@ -322,22 +322,22 @@ h1,
 }
 h2,
 .h2 {
-  font-size: calc(var(--font-heading-scale) * 2rem);
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
 }
 @media only screen and (min-width: 768px) {
   h2,
   .h2 {
-    font-size: calc(var(--font-heading-scale) * 2.4rem);
+    font-size: calc(var(--font-heading-scale) * 2.2rem);
   }
 }
 h3,
 .h3 {
-  font-size: calc(var(--font-heading-scale) * 1.7rem);
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
 }
 @media only screen and (min-width: 768px) {
   h3,
   .h3 {
-    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    font-size: calc(var(--font-heading-scale) * 2rem);
   }
 }
 h4,
@@ -1225,8 +1225,8 @@ button.shopify-payment-button__button--unbranded,
 .shopify-challenge__button,
 .customer button,
 button.shopify-payment-button__button--unbranded {
-  min-width: calc(12rem + var(--buttons-border-width) * 2);
-  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  min-width: calc(12rem + var(--buttons-border-width) * 1.5);
+  min-height: calc(4.5rem + var(--buttons-border-width) * 1.5);
 }
 
 .shopify-payment-button__button--branded {
@@ -1245,10 +1245,10 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 0 3rem;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
   font: inherit;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-decoration: none;
   color: rgb(var(--color-button-text));
   transition: box-shadow var(--duration-short) ease;
@@ -1341,9 +1341,15 @@ button.shopify-payment-button__button--unbranded {
 .button-label,
 .shopify-challenge__button,
 .customer button {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
+}
+
+@media screen and (min-width: 750px) {
+  .button {
+    font-size: 1.6rem;
+  }
 }
 
 .button--tertiary {
@@ -3630,4 +3636,38 @@ details-disclosure > details {
 
 .text-end {
   text-align: end;
+}
+
+/* text underline hover effect */
+
+.custom-hover-text a {
+  text-decoration: none;
+  position: relative;
+}
+
+.custom-hover-text a:hover {
+  color: #d03c3f;
+  transition: 0.1s ease-in;
+}
+
+.custom-hover-text a::before {
+  content: "";
+  position: absolute;
+  background-color: #d03c3f;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: width 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.custom-hover-text a:hover::before {
+  width: 100%;
+}
+
+.custom-hover-text a:not(:hover)::before {
+  width: 0;
+  right: 0;
+  left: auto;
 }

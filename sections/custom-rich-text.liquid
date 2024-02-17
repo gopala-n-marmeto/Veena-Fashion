@@ -3,8 +3,8 @@
 
 {%- style -%}
     .padding-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      padding-top: {{ section.settings.padding_top | divided_by:2 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by:2 }}px;
     }
   
     @media screen and (min-width: 750px) {
@@ -23,10 +23,18 @@
                     {% if block.type == "text" and block.settings.pre_text != blank %}
                         <p class="rich-text-wrapper__pre-text">{{block.settings.pre_text}}</p>
                     {% elsif block.type == "heading" and block.settings.heading != blank %}
-                        <h2 class="rich-text-wrapper__heading rich-text-wrapper__heading-{{block.id}} h1">{{block.settings.heading}}</h2>
+                        <h2 class="rich-text-wrapper__heading custom-hover-text hxl">{{block.settings.heading}}</h2>
                     {% elsif block.type == "button" and block.settings.button_text != blank%}
                         {% if block.settings.button_link != blank %}
-                            <a href={{block.settings.button_link}} class="rich-text-wrapper__button button"><span>{{block.settings.button_text}}</span></a>
+                            {% render 'custom-color-hovering-button', s
+                                sectionId:{{section.id}},
+                                textColor: "#ffffff",
+                                hoverTextColor: "#ffffff",
+                                backgroundColor: "#d03c3f",
+                                hoverColor: "#000000", 
+                                buttonLink: {{block.settings.button_url}},
+                                buttonText: {{block.settings.button_text}}
+                            %}
                         {% else %}
                             <a href="#" class="rich-text-wrapper__button button" role="link" aria-disabled="true">{{block.settings.button_text}}</a>
                         {% endif %}

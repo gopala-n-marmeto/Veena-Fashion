@@ -24,10 +24,16 @@
                             <ul class="grid-item__grid-pre-text-list">
                                 <li class="grid-item__grid-pre-text">{{block.settings.pre_text}}</li>
                             </ul>
-                            <h2 class="grid-item__grid-heading h1">{{block.settings.title}}</h2>
-                            <a class="grid-item__button button" href={{block.settings.button_url}}>
-                                {{block.settings.button_text}}
-                            </a>
+                            <h3 class="grid-item__grid-heading h1">{{block.settings.title}}</h3>
+                            {% render 'custom-color-hovering-button',
+                                sectionId:{{section.id}},
+                                textColor: "#000000",
+                                hoverTextColor: "#d03c3f",
+                                backgroundColor: "#ffffff",
+                                hoverColor: "#f5f5f5", 
+                                buttonLink: {{block.settings.button_url}},
+                                buttonText: {{block.settings.button_text}}
+                            %}
                         </div>
                     </div>
                 </div>
