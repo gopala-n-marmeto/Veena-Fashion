@@ -61,7 +61,7 @@
         "enable_arrows": true,
         "slide_animation": "fade",
         "padding_top": 16,
-        "padding_bottom": 16
+        "padding_bottom": 0
       }
     },
     "custom_rich_text_RytDGt": {
@@ -76,7 +76,7 @@
         "heading_FM6Utt": {
           "type": "heading",
           "settings": {
-            "heading": "fashion emerges as a universal <a href=\"\/collections\" title=\"All collections\">language<\/a>"
+            "heading": "fashion emerges<\/br> as a universal <a href=\"\/collections\" title=\"All collections\">language<\/a>"
           }
         },
         "button_YEpCB8": {
@@ -95,8 +95,8 @@
       "settings": {
         "content_position": "left",
         "content_alignment": "left",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 60,
+        "padding_bottom": 40
       }
     },
     "custom_grid_images_eB6aJP": {
@@ -132,8 +132,8 @@
         "image_grid_DLhJ7w"
       ],
       "settings": {
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_usp_8hxkWr": {
@@ -180,8 +180,8 @@
       ],
       "settings": {
         "section_background_color": "#f5f5f5",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_look_book_cfGUec": {
@@ -231,11 +231,11 @@
             "mobile_image": "shopify:\/\/shop_images\/3_e98fbf29-76ef-498a-837a-517c37dafb8d.webp",
             "desktop_image": "shopify:\/\/shop_images\/3_e98fbf29-76ef-498a-837a-517c37dafb8d.webp",
             "top_hotspot_product": "highland-tee-worn-black",
-            "top_hotspot_top_position": 30,
+            "top_hotspot_top_position": 13,
             "top_hotspot_left_position": 35,
             "bottom_hotspot_product": "90s-fit-denim",
-            "bottom_hotspot_top_position": 50,
-            "bottom_hotspot_left_position": 47,
+            "bottom_hotspot_top_position": 80,
+            "bottom_hotspot_left_position": 40,
             "heading": "Women's Outdoor Clothes Collection",
             "description": "<p>Embrace the beauty of nature with gear that complements your adventurous spirit.<\/p>",
             "button_text": "discover more",
@@ -251,6 +251,93 @@
         "look_book_xHzFtD"
       ],
       "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "custom_featured_collections_rn8cXx": {
+      "type": "custom-featured-collections",
+      "settings": {
+        "section_heading": "<p>Section heading<\/p>",
+        "all_products_button_label": "Button label text",
+        "all_products_button_link": "",
+        "featured_products_list": [
+          "90s-fit-denim",
+          "august-rib-wool-oak",
+          "custom-hoodie",
+          "full-sleeve-high-neck-t-shirt",
+          "full-sleeve-high-neck-t-shirt-1",
+          "mens-half-sleeve-t-shirt",
+          "mens-winter-hooded-jacket",
+          "womens-casual-sweaters"
+        ],
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "custom_featured_brands_FwxyDV": {
+      "type": "custom-featured-brands",
+      "blocks": {
+        "featured_brands_WcqKfY": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_cd395017-1471-444b-a792-aee354390d67.png"
+          }
+        },
+        "featured_brands_GfTXEM": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_26caca81-ef1b-413a-b2e8-dacb4042a47f.png"
+          }
+        },
+        "featured_brands_HFJFAX": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5.png"
+          }
+        },
+        "featured_brands_XCFBQQ": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_cd395017-1471-444b-a792-aee354390d67.png"
+          }
+        },
+        "featured_brands_4xD8wj": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6.png"
+          }
+        },
+        "featured_brands_xbGmjw": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_526ac6af-9bcf-4f5a-a1f0-3b004c6d93b3.png"
+          }
+        },
+        "featured_brands_TQjKzF": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8.png"
+          }
+        },
+        "featured_brands_hiHHNA": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_97056f97-b5a0-46f5-aa2e-d315f39f0bde.png"
+          }
+        }
+      },
+      "block_order": [
+        "featured_brands_WcqKfY",
+        "featured_brands_GfTXEM",
+        "featured_brands_HFJFAX",
+        "featured_brands_XCFBQQ",
+        "featured_brands_4xD8wj",
+        "featured_brands_xbGmjw",
+        "featured_brands_TQjKzF",
+        "featured_brands_hiHHNA"
+      ],
+      "settings": {
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -261,6 +348,8 @@
     "custom_rich_text_RytDGt",
     "custom_grid_images_eB6aJP",
     "custom_usp_8hxkWr",
-    "custom_look_book_cfGUec"
+    "custom_look_book_cfGUec",
+    "custom_featured_collections_rn8cXx",
+    "custom_featured_brands_FwxyDV"
   ]
 }
