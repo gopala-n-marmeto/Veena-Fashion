@@ -1,0 +1,215 @@
+
+{{ "section-custom-image-with-text.css" | asset_url | stylesheet_tag }}
+
+
+{% style %}
+    .padding-{{section.id}} {
+        padding-top: {{section.settings.padding_top | divided_by: 2}}px;
+        padding-bottom: {{section.settings.padding_bottom | divided_by: 2}}px;
+    }
+
+    @media screen and (min-width:750px){
+        .padding-{{section.id}} {
+            padding-top: {{section.settings.padding_top}}px;
+            padding-bottom: {{section.settings.padding_bottom}}px;
+        }
+    }
+{% endstyle %}
+
+
+
+<div class="image-with-text padding-{{section.id}}">
+    <div class="page-width">
+        <div class="image-with-text__wrapper">
+            {% if section.settings.desktop_image != blank %}
+                <div class="image-with-text__image-container">
+                    {%  render 'responsive-picture',
+                        mobileImage: section.settings.mobile_image,
+                        desktopImage: section.settings.desktop_image
+                    %}
+                </div>
+            {% else %}
+                <div>
+                    {{'hero-apparel-1' |  placeholder_svg_tag}}
+                </div>
+            {% endif %}
+            <div class="image-with-text__content-container {{ section.settings.content_alignment }}">
+                <div class="image-with-text__content {{ section.settings.text_alignment }}">
+                    <p class="image-with-text__pre-text">{{ section.settings.sub_text }}</p>
+                    <h2 class="image-with-text__title custom-hover-text h1">{{ section.settings.title }}</h2>
+                    {% render 'custom-color-hovering-button',
+                        sectionId:{{section.id}},
+                        textColor: "#ffffff",
+                        hoverTextColor: "#d03c3f",
+                        backgroundColor: "transparent",
+                        hoverColor: "#ffffff", 
+                        buttonLink: {{section.settings.button_url}},
+                        buttonText: {{section.settings.button_text}}
+                    %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Custom image with text",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section padding details"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "header",
+            "content": "Slide image details"
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Image (Mobile)"
+        },
+        {
+            "type": "image_picker",
+            "id": "desktop_image",
+            "label": "Image (Desktop)"
+        },
+        {
+            "type": "header",
+            "content": "Slide content details"
+        },
+        {
+            "type": "text",
+            "id": "sub_text",
+            "label": "Sub text",
+            "default": "Sub text"
+        },
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title",
+            "default": "<p>Title</p>"
+        },
+        {
+            "type": "select",
+            "id": "content_alignment",
+            "label": "Content alignment",
+            "default": "justify-center align-center",
+            "options": [
+                {
+                    "label": "Top left",
+                    "value": "justify-start align-start"
+                },
+                {
+                    "label": "Top center",
+                    "value": "justify-start align-center"
+                },
+                {
+                    "label": "Top right",
+                    "value": "justify-start align-end"
+                },
+                {
+                    "label": "Middle left",
+                    "value": "justify-center align-start"
+                },
+                {
+                    "label": "Middle center",
+                    "value": "justify-center align-center"
+                },
+                {
+                    "label": "Middle right",
+                    "value": "justify-center align-end"
+                },
+                {
+                    "label": "Bottom left",
+                    "value": "justify-end align-start"
+                },
+                {
+                    "label": "Bottom center",
+                    "value": "justify-end align-center"
+                },
+                {
+                    "label": "Bottom right",
+                    "value": "justify-end align-end"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "text_alignment",
+            "label": "Text alignment",
+            "default": "text-left",
+            "options": [
+                {
+                    "label": "Left",
+                    "value": "text-left"
+                },
+                {
+                    "label": "Center",
+                    "value": "text-center"
+                },
+                {
+                    "label": "Right",
+                    "value": "text-end"
+                }
+                
+            ]
+        },
+        {
+            "type": "header",
+            "content": "Slide button details"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Button text"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Button color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "button_text_color",
+            "label": "Button background color",
+            "default": "#000000"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button link",
+            "default": "/collections"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom image with text"
+        }
+    ]
+}
+{% endschema %}

@@ -51,7 +51,7 @@
   background-color: #ffffff;
   border-radius: 12px;
   padding: 3px;
-  max-width: 100px;
+  max-width: 98px;
   text-align: center;
   display: none;
   opacity: 0;
@@ -59,18 +59,24 @@
 
 .look-book-product__title {
   font-size: 13px;
+  color: #000000;
+  line-height: normal;
+  font-weight: 600;
+  margin: 0 0 5px;
 }
 
 .look-book-product_price {
+  color: #000000;
   font-size: 14px;
+  line-height: normal;
   font-weight: 700;
-  color: rgb(0, 0, 0);
 }
 
 .look-book-product__compare-at-price {
   font-size: 12px;
   font-weight: 600;
-  color: rgb(0, 0, 0, 0.5);
+  line-height: normal;
+  color: #00000080;
 }
 
 .grid__look-book-product img {
