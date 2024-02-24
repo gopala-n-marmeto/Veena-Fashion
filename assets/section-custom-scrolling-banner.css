@@ -1,8 +1,5 @@
 .scrolling-banner__scrolling-wrapper {
   overflow: hidden;
-}
-
-.scrolling-banner__scrolling-wrapper {
   padding: 20px 0;
   background-image: linear-gradient(
     to right,
@@ -15,8 +12,14 @@
 
 .scrolling-banner__scrolling-items-wrapper {
   display: flex;
+  flex-wrap: nowrap;
   white-space: nowrap;
   animation: scroll-left 16s linear infinite;
+}
+
+.scrolling-banner__scrolling-wrapper:hover
+  .scrolling-banner__scrolling-items-wrapper {
+  animation-play-state: paused;
 }
 
 .scrolling-banner__scrolling-item {
@@ -28,7 +31,7 @@
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-10%);
   }
   100% {
     transform: translateX(-100%);

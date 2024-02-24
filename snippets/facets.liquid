@@ -198,6 +198,7 @@
                           {%- for value in sorted_values -%}
                             {% liquid
                               assign is_disabled = false
+                              assign colorName = filter.label | handleize
                               if value.count == 0 and value.active == false
                                 assign is_disabled = true
                               endif
@@ -206,13 +207,13 @@
                             <li class="list-menu__item facets__item{% if forloop.index > show_more_number and filter_type == 'vertical' %} show-more-item hidden{% endif %}">
                               <label
                                 for="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}"
-                                class="facets__label facet-checkbox{% if is_disabled %} facet-checkbox--disabled disabled{% endif %}{% if has_visual_display %} visual-display-parent visual-display-parent--{{ filter.presentation }}{% endif %}{% if value.active %} active{% endif %}"
+                                class="facets__label facet-checkbox{% if is_disabled %} facet-checkbox--disabled disabled{% endif %}{% if has_visual_display %} visual-display-parent visual-display-parent--{{ filter.presentation }}{% endif %}{% if value.active %} active{% endif %} item-swatch"
                               >
                                 <input
                                   type="checkbox"
                                   name="{{ value.param_name }}"
                                   value="{{ value.value }}"
-                                  id="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}"
+                                  id="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}"                                  
                                   {% if value.active %}
                                     checked
                                   {% endif %}
@@ -220,6 +221,7 @@
                                     disabled
                                   {% endif %}
                                 >
+                                
 
                                 {% if has_visual_display %}
                                   <div class="facets__visual-display-wrapper">
@@ -231,16 +233,22 @@
                                   </div>
                                 {% else %}
                                   <svg
+                                    {% if colorName == "color" %}
+                                      style="display: none"
+                                    {% endif %}
                                     width="1.6rem"
                                     height="1.6rem"
                                     viewBox="0 0 16 16"
                                     aria-hidden="true"
-                                    focusable="false"
+                                    focusable="false" 
                                   >
                                     <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                   </svg>
 
                                   <svg
+                                  {% if colorName == "color" %}
+                                    style="display: none"
+                                  {% endif %}
                                     aria-hidden="true"
                                     class="icon icon-checkmark"
                                     width="1.1rem"
@@ -256,7 +264,7 @@
                                       stroke-linejoin="round" />
                                   </svg>
                                 {% endif %}
-
+                                <span class="color-element" style="background-color: {{ value.label | handleize }}; width: 20px; height: 20px; border-radius: 50%; padding: 10px; border: 1px solid {{ value.label | handleize }}" data-value={{ value.label | handleize }}></span>
                                 <span class="facet-checkbox__text" aria-hidden="true">
                                   {{- value.label | escape }} ({{ value.count }})</span
                                 >

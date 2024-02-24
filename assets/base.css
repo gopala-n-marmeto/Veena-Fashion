@@ -348,12 +348,12 @@ h4,
 }
 h5,
 .h5 {
-  font-size: calc(var(--font-heading-scale) * 1.2rem);
+  font-size: calc(var(--font-heading-scale) * 1.4rem);
 }
 @media only screen and (min-width: 768px) {
   h5,
   .h5 {
-    font-size: calc(var(--font-heading-scale) * 1.3rem);
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
   }
 }
 h6,

@@ -40,7 +40,7 @@
 }
 .splide {
   position: relative;
-  visibility: hidden;
+  visibility: visible;
 }
 .splide.is-initialized,
 .splide.is-rendered {

@@ -26,12 +26,16 @@
   }
 {%- endstyle -%}
 
+
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
-    {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
+    <div class="page-width">
+          {% render 'breadcrumbs' %}
+    </div>
+    {% comment %} Sort is the first tabbable element when filter type is vertical  {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
       <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
-        <form class="facets-vertical-form" id="FacetSortForm">
+        <form class="facets-vertical-form" style="{background-color: red}" id="FacetSortForm">
           <div class="facet-filters sorting caption">
             <div class="facet-filters__field">
               <h2 class="facet-filters__label caption-large text-body">
@@ -100,6 +104,41 @@
           id="main-collection-filters"
           data-id="{{ section.id }}"
         >
+          <div class="nav-menu">
+            {% for link in section.settings.menu.links %}
+              <details class="link-details">
+                <summary>{{ link.title |  link_to: link.url }}
+                  {% if link.links.size > 0 %}
+                    <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                    </svg>
+                  {% endif %}
+                </summary>
+                {% for sub_link in link.links %}
+                  <details>
+                    <summary class="sub-link-summary">{{ sub_link.title | link_to: sub_link.url}}
+                      {% if sub_link.links.size > 0 %}
+                        <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                        </svg>
+                      {% endif %}
+                    </summary>
+                    {% for sub_sub_link in sub_link.links %}
+                      <details>
+                        <summary class="sub-sub-link-summary">{{ sub_sub_link.title |  link_to: sub_sub_link.url }}
+                          {% if sub_sub_link.links.size > 0 %}
+                            <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                            </svg>
+                          {% endif %}
+                        </summary>
+                      </details>
+                    {% endfor %}
+                  </details>
+                {% endfor %}
+              </details>
+            {% endfor %}
+          </div>
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,
@@ -107,9 +146,9 @@
             filter_type: section.settings.filter_type,
             paginate: paginate
           %}
+          
         </aside>
       {%- endif -%}
-
       <div
         class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
         id="ProductGridContainer"
@@ -154,7 +193,9 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
+
+                {% render 'custom-product-card', product: product, section_id: section.id %}
+                  {% comment %} {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -164,7 +205,7 @@
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
-                  %}
+                  %} {% endcomment %}
                 </li>
               {%- endfor -%}
             </ul>
@@ -181,6 +222,44 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+
+{% comment %} <form>
+    <div class="page-width">
+        <div class="sorting-container">
+            <select name="sort_by" id="">
+                {% for sorting_option in collection.sort_options %}
+                    <option value={{ sorting_option.value }} 
+                    {% if sorting_option.value == 'sort_by' %}
+                        selected = "selected"
+                    {% endif %}
+                    >
+                    {{ sorting_option.name }}
+                    </option>
+                {% endfor %}
+            </select>
+            {{ collection.products_count }}
+        </div>
+        <div class="filters-container">
+            {% for filter in collection.filters %}
+                {% for filter_item in filter.values %}
+                    <label>
+                        <input type="checkbox" name={{ filter_item.param_name }} value={{ filter_item.value }}>
+                        {{ filter_item.label }}
+                    </label>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="grid grid--1-col grid--4-col-desktop">
+            {% for product in collection.products %}
+                <div class="grid__item">
+                {{forloop.index}}. {{product.title}}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <button type="submit">apply</button>
+</form> {% endcomment %}
+
 
 {% schema %}
 {
@@ -359,6 +438,11 @@
           "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
         }
       ]
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
     },
     {
       "type": "header",

@@ -1,0 +1,264 @@
+
+{{ 'section-custom-collection-slider.css' |  asset_url |  stylesheet_tag }}
+
+{%  style  %} 
+
+    .collection-title-{{ section.id }} a:hover {
+      color: {{ section.settings.button_hover_color }};
+    }
+
+    .padding-{{section.id}} {
+        padding-top: calc({{ section.settings.padding_top | divided_by: 2 }} );
+        padding-bottom: calc({{ section.settings.padding_bottom | divided_by: 2 }});
+    }
+
+    @media screen and (min-width: 750px) {
+        .padding-{{section.id}} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+{%- liquid
+    assign section_heading = section.settings.section_heading
+    assign view_all_button_label = section.settings.view_all_button_label
+    assign view_all__button_link = section.settings.view_all__button_link
+-%}
+
+{% capture  options %}
+    {
+        "autoplay": {{ section.settings.enable_autoplay }},
+        "pagination": {{ section.settings.enable_dots }},
+        "arrows": {{ section.settings.enable_arrows }},
+        "type": "{{ section.settings.slide_animation }}",
+        "rewind": {{ section.settings.rewind_slides }},
+        "perPage": 5,
+        "gap": 20,
+        "breakpoints": {
+          "750" : { "perPage": 2 }
+        }
+    }
+{% endcapture %}
+
+<div class="custom-collection-slider padding-{{ section.id }}">
+    <div class="page-width">
+        <div class="custom-collection-slider__wrapper">
+            <div class="custom-collection-slider__heading-button-wrapper">
+                {% if section_heading %}
+                  <h2 class="h1">{{section_heading}}</h2>
+                {% endif %}
+                {% if view_all_button_label %}
+                    {% if view_all__button_link %}
+                        <a class="custom-collection-slider__all-products-button-label button" href={{view_all__button_link}}><span>{{view_all_button_label}}</span></a>
+                    {% else %}
+                        <a class="custom-collection-slider__all-products-button-label button" role="link" aria-disabled="true">{{view_all_button_label}}</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="custom-collection-slider__slider-container">
+                <custom-splide-carousel data-options='{{ options }}'>
+                    <section class="splide" aria-label="collection list slideshow">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for block in section.blocks %}
+                                    <li class="splide__slide">
+                                        <div class="custom-collection-slider__collection-wrapper">
+                                            <div class="custom-collection-slider__image-container">
+                                              {% render 'responsive-picture', 
+                                                  desktopImage:block.settings.desktop_collection_image, 
+                                                  mobileImage:block.settings.mobile_collection_image
+                                              %}
+                                            </div>
+                                            <div class="custom-collection-slider__name-button-wrapper">
+                                                <h3 class="custom-collection-slider__collection-title collection-title-{{ section.id }}"><a href={{ block.settings.button_url }}>{{ block.settings.collection_name }}</a></h3>
+                                                {% render 'custom-color-hovering-button',
+                                                  class: "custom-collection-slider__shop-now-button"
+                                                  sectionId: {{section.id}},
+                                                  textColor: {{section.settings.button_color}},
+                                                  hoverTextColor: {{section.settings.button_hover_color}},
+                                                  backgroundColor: {{section.settings.button_background_color}}
+                                                  hoverColor: {{section.settings.button_hover_background_color}}, 
+                                                  buttonLink: {{block.settings.collection_button_link}},
+                                                  buttonText: {{block.settings.collection_button_label}}
+                                              %}
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </section>
+                </custom-splide-carousel>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Custom collection slider",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "<p>Section heading</p>"
+        },
+        {
+            "type": "text",
+            "id": "view_all_button_label",
+            "label": "Button label",
+            "default": "Button label text"
+        },
+        {
+            "type": "url",
+            "id": "view_all__button_link",
+            "label": "Button link"
+        },
+        {
+            "type": "collection_list",
+            "id": "collection_list",
+            "label": "Collection list"
+        },
+        {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "button_background_color",
+            "label": "Button background color"
+        },
+        {
+            "type": "color",
+            "id": "button_hover_color",
+            "label": "Button on hover color",
+            "default": "#ff0000"
+        },
+        {
+            "type": "color",
+            "id": "button_hover_background_color",
+            "label": "Button on hover background color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "header",
+            "content": "Slideshow options"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_autoplay",
+            "label": "Enable autoplay",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_dots",
+            "label": "Enable dots",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "rewind_slides",
+            "label": "Enable rewind",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_arrows",
+            "label": "Enable arrows",
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "slide_animation",
+            "label": "Slider animation",
+            "options": [
+                {
+                    "value": "fade",
+                    "label": "Fade"
+                },
+                {
+                    "value": "loop",
+                    "label": "Loop"
+                },
+                {
+                    "value": "slide",
+                    "label": "Slide"
+                }
+            ],
+            "default": "loop"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+    ],
+    "blocks": [
+        {
+            "name": "collection",
+            "type": "collection",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "desktop_collection_image",
+                    "label": "Collection image (Desktop)"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_collection_image",
+                    "label": "Collection image (Mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "collection_name",
+                    "label": "Collection name",
+                    "default": "Collection name"
+                },
+                {
+                    "type": "text",
+                    "id": "collection_button_label",
+                    "label": "Collection button label",
+                    "default": "Shop now"
+                },
+                {
+                    "type": "url",
+                    "id": "collection_button_link",
+                    "label": "Collection button link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom collection slider"
+        }
+    ]
+}
+{% endschema %}

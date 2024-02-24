@@ -1,4 +1,4 @@
-{{'section-custom-product-card.css' |  asset_url |  stylesheet_tag}}
+{{'snippet-custom-product-card.css' |  asset_url |  stylesheet_tag}}
 
 {% liquid
     assign current_variant = product.selected_or_first_available_variant
@@ -6,101 +6,130 @@
     assign secondary_image =  product.images[1] | default: product.featured_image
 %}
 
-<div class="custom-product-card">
-    <div class="custom-product-card__image-wrapper">
-        <a href="{{ product.url }}" class="product-card__link">
-            <div class="media media--portrait media--transparent media--hover-effect">
-                <img
-                    srcset="
-                    {%- if featured_image.width >= 165 -%}{{ featured_image | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if featured_image.width >= 360 -%}{{ featured_image | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if featured_image.width >= 533 -%}{{ featured_image | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if featured_image.width >= 720 -%}{{ featured_image | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if featured_image.width >= 940 -%}{{ featured_image | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if featured_image.width >= 1066 -%}{{ featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ featured_image | image_url }} {{ featured_image.width }}w
-                    "
-                    src="{{ featured_image | image_url: width: 533 }}"
-                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                    alt="{{ featured_image.alt | escape }}"
-                    class="motion-reduce"
-                    {% unless lazy_load == false %}
-                    loading="lazy"
-                    {% endunless %}
-                    width="{{ featured_image.width }}"
-                    height="{{ featured_image.height }}"
-                >     
-                <img
-                    srcset="
-                    {%- if secondary_image.width >= 165 -%}{{ secondary_image | image_url: width: 165 }} 165w,{%- endif -%}
-                    {%- if secondary_image.width >= 360 -%}{{ secondary_image | image_url: width: 360 }} 360w,{%- endif -%}
-                    {%- if secondary_image.width >= 533 -%}{{ secondary_image | image_url: width: 533 }} 533w,{%- endif -%}
-                    {%- if secondary_image.width >= 720 -%}{{ secondary_image | image_url: width: 720 }} 720w,{%- endif -%}
-                    {%- if secondary_image.width >= 940 -%}{{ secondary_image | image_url: width: 940 }} 940w,{%- endif -%}
-                    {%- if secondary_image.width >= 1066 -%}{{ secondary_image | image_url: width: 1066 }} 1066w,{%- endif -%}
-                    {{ secondary_image | image_url }} {{ secondary_image.width }}w
-                    "
-                    src="{{ secondary_image | image_url: width: 533 }}"
-                    sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                    alt=""
-                    class="motion-reduce"
-                    loading="lazy"
-                    width="{{ secondary_image.width }}"
-                    height="{{ secondary_image.height }}"
-                >
-            </div>
-        </a>
-        <div class="custom-product-card__badges-button-wrapper">
-            <div class="custom-product-card__badges">
-                {% for tag in product.tags %}
-                    {% if tag == "New" %}
-                        <button class="custom-product-card__badge-button">{{tag}}</button>
+
+<product-card
+    data-product-handle = {{ product.handle }}
+    data-section-id = {{ section.id }}
+>
+    <div class="custom-product-card">
+        <div class="custom-product-card__image-wrapper">
+            <a href="{{ product.url }}" class="product-card__link">
+                <div class="media media--portrait media--transparent media--hover-effect">
+                    <img
+                        srcset="
+                        {%- if featured_image.width >= 165 -%}{{ featured_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if featured_image.width >= 360 -%}{{ featured_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if featured_image.width >= 533 -%}{{ featured_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if featured_image.width >= 720 -%}{{ featured_image | image_url: width: 720 }} 720w,{%- endif -%}
+                        {%- if featured_image.width >= 940 -%}{{ featured_image | image_url: width: 940 }} 940w,{%- endif -%}
+                        {%- if featured_image.width >= 1066 -%}{{ featured_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                        {{ featured_image | image_url }} {{ featured_image.width }}w
+                        "
+                        src="{{ featured_image | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt="{{ featured_image.alt | escape }}"
+                        class="motion-reduce"
+                        {% unless lazy_load == false %}
+                        loading="lazy"
+                        {% endunless %}
+                        width="{{ featured_image.width }}"
+                        height="{{ featured_image.height }}"
+                    >     
+                    <img
+                        srcset="
+                        {%- if secondary_image.width >= 165 -%}{{ secondary_image | image_url: width: 165 }} 165w,{%- endif -%}
+                        {%- if secondary_image.width >= 360 -%}{{ secondary_image | image_url: width: 360 }} 360w,{%- endif -%}
+                        {%- if secondary_image.width >= 533 -%}{{ secondary_image | image_url: width: 533 }} 533w,{%- endif -%}
+                        {%- if secondary_image.width >= 720 -%}{{ secondary_image | image_url: width: 720 }} 720w,{%- endif -%}
+                        {%- if secondary_image.width >= 940 -%}{{ secondary_image | image_url: width: 940 }} 940w,{%- endif -%}
+                        {%- if secondary_image.width >= 1066 -%}{{ secondary_image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                        {{ secondary_image | image_url }} {{ secondary_image.width }}w
+                        "
+                        src="{{ secondary_image | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt=""
+                        class="motion-reduce"
+                        loading="lazy"
+                        width="{{ secondary_image.width }}"
+                        height="{{ secondary_image.height }}"
+                    >
+                </div>
+            </a>
+            <div class="custom-product-card__badges-button-wrapper">
+                <div class="custom-product-card__badges">
+                    {% for tag in product.tags %}
+                        {% assign tagName = tag |  handleize %}
+                        {% if tag == "new" %}
+                            <button class="custom-product-card__badge-button">{{tag}}</button>
+                        {% endif %}
+                    {% endfor %}
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                        <button class="custom-product-card__discout-button">{{current_variant.compare_at_price | minus: current_variant.price | times: 100 |  divided_by: current_variant.compare_at_price}}% off</button>
                     {% endif %}
-                {% endfor %}
-                {% if current_variant.compare_at_price > current_variant.price %}
-                    <button class="custom-product-card__discout-button">{{current_variant.compare_at_price | minus: current_variant.price | times: 100 |  divided_by: current_variant.compare_at_price}}% off</button>
-                {% endif %}
-            </div>
-            <div class="custom-product-card__quick-view-container">
-                <a class="custom-product-card__quick-view-mobile" href={{product.url}}>
-                    <svg viewBox="0 0 511.999 511.999"><path d="M508.745,246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818,239.784,3.249,246.035
-                        c-4.332,5.936-4.332,13.987,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206s248.174-146.95,252.748-153.201
-                        C513.083,260.028,513.083,251.971,508.745,246.041z M255.997,385.406c-102.529,0-191.33-97.533-217.617-129.418
-                        c26.253-31.913,114.868-129.395,217.617-129.395c102.524,0,191.319,97.516,217.617,129.418
-                        C447.361,287.923,358.746,385.406,255.997,385.406z"></path>
-                        <path d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275
-                        s101.275-45.433,101.275-101.275S311.839,154.725,255.997,154.725z M255.997,323.516c-37.23,0-67.516-30.287-67.516-67.516
-                        s30.287-67.516,67.516-67.516s67.516,30.287,67.516,67.516S293.227,323.516,255.997,323.516z"></path>
-                    </svg>
-                </a>
-                <a class="custom-product-card__quick-view-desktop button" href={{product.url}}>Quick View</a>
+                </div>
+                <div class="custom-product-card__quick-view-container">
+                    <a class="custom-product-card__quick-view-mobile" href={{product.url}}>
+                        <svg viewBox="0 0 511.999 511.999"><path d="M508.745,246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818,239.784,3.249,246.035
+                            c-4.332,5.936-4.332,13.987,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206s248.174-146.95,252.748-153.201
+                            C513.083,260.028,513.083,251.971,508.745,246.041z M255.997,385.406c-102.529,0-191.33-97.533-217.617-129.418
+                            c26.253-31.913,114.868-129.395,217.617-129.395c102.524,0,191.319,97.516,217.617,129.418
+                            C447.361,287.923,358.746,385.406,255.997,385.406z"></path>
+                            <path d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275
+                            s101.275-45.433,101.275-101.275S311.839,154.725,255.997,154.725z M255.997,323.516c-37.23,0-67.516-30.287-67.516-67.516
+                            s30.287-67.516,67.516-67.516s67.516,30.287,67.516,67.516S293.227,323.516,255.997,323.516z"></path>
+                        </svg>
+                    </a>
+                    <a class="custom-product-card__quick-view-desktop button" href={{product.url}}>Quick View</a>
+                </div>
             </div>
         </div>
-    </div>
-  
-
-  <div class="product-card__product-details">
-    <div class="product-card__variants">
-        {% unless product.has_only_default_variant %}
-            <div class="product-card__options">
-                {% for product_option in product.options_with_values %}
-                    <div class="product-card__option">
-                        <ul class="product-card__variant-color-list item-swatch">
-                            {% for value in product_option.values %}
-                                <li class="product-card__variant-color" data-value={{value}}>{{value}}</li>
+        <form 'product', product>
+            <div class="product-card__product-details">
+                <div class="product-card__variants">
+                    {% unless product.has_only_default_variant %}
+                        <div class="product-card__options">
+                            {% for product_option in product.options_with_values %}
+                                {% assign optionName = product_option.name |  handleize %}
+                                {% if optionName == "color" %}
+                                    <ul class="product-card__variant-color-list">
+                                        {% for value in product_option.values %}
+                                            <li class="product-card__variant-color item-swatch">
+                                                <label>
+                                                    <input
+                                                    hidden
+                                                        type="radio" 
+                                                        name='option-{{ product_option }}'  
+                                                        value = {{ value }}  data-value={{value}}
+                                                        {% if product_option.selected_value == value %}
+                                                            checked
+                                                        {% endif %}
+                                                    />
+                                                    <div class="product-card__color-variants {% if product_option.selected_value == value %}product-card__selected-variant{% endif %}" style="background-color: {{ value |  handleize }};" data-value={{ current_variant.id }}> </div>
+                                                </label>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
                             {% endfor %}
-                        </ul>
-                    </div>
-                {% endfor %}
+                        </div>
+                    {% endunless %}
+                </div>
+                <p class="product-card__vendor-name">{{product.vendor}}</p>
+                <h3 class="product-card__title h5">
+                    <a href={{product.url}} class="h3">{{product.title}}</a>
+                </h3>
+                <div class="product-card__prices-container">
+                    <span class="product-card__price">{{current_variant.price |  money_with_currency}}</span>
+                    <s class="product-card__compare-at-price">{{current_variant.compare_at_price | money_with_currency}}</s>
+                </div>
+                {% if current_variant.inventory_quantity <= 10 and current_variant.inventory_quantity != 0 %}
+                    <p class="product-card__inventory">Only {{current_variant.inventory_quantity}} left in stock</p>
+                {% endif %}
             </div>
-        {% endunless %}
+        </form>
     </div>
-    <p class="product-card__vendor-name">{{product.vendor}}</p>
-    <a href={{product.url}} class="h3">{{product.title}}</a>
-    <div class="product-card__prices-container">
-        <span class="product-card__price">{{current_variant.price |  money_with_currency}}</span>
-        <s class="product-card__compare-at-price">{{current_variant.compare_at_price | money_with_currency}}</s>
-    </div>
-    <p class="product-card__inventory">{{current_variant.inventory_quantity}} in stock</p>
-  </div>
-</div>
+
+    <script>
+        {{ product.variants | json }}
+    </script>
+</product-card>

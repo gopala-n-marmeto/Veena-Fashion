@@ -1,9 +1,9 @@
-.splide__image-container {
+.custom-hero-banner__image-container {
   position: relative;
   padding-bottom: 100%;
 }
 
-.splide__image-container img {
+.custom-hero-banner__image-container img {
   border-radius: 15px;
   position: absolute;
   top: 0;
@@ -11,7 +11,7 @@
   object-fit: cover;
 }
 
-.splide__content-container {
+.custom-hero-banner__content-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -21,11 +21,11 @@
   flex-direction: column;
 }
 
-.content-container__content {
+.custom-hero-banner__content {
   margin: 20px;
 }
 
-.content-container__list {
+.custom-hero-banner__list {
   color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 30px;
@@ -36,24 +36,24 @@
   backdrop-filter: blur(5px);
 }
 
-.content-container__list-item {
+.custom-hero-banner__list-item {
   font-size: 12px;
 }
 
-.content-container__title,
-.content-container__title a {
+.custom-hero-banner__title,
+.custom-hero-banner__title a {
   color: rgb(255, 255, 255);
 }
 
-.content-container__title a:not(:hover)::before {
+.custom-hero-banner__title a:not(:hover)::before {
   background-color: #ffffff;
 }
 
-.content-container__title p {
+.custom-hero-banner__title p {
   margin: 0 0 5px;
 }
 
-button.splide__arrow.splide__arrow--prev {
+.custom-hero-banner button.splide__arrow.splide__arrow--prev {
   top: unset;
   bottom: 1%;
   transform: unset;
@@ -62,14 +62,14 @@ button.splide__arrow.splide__arrow--prev {
   left: 30%;
 }
 
-button.splide__arrow.splide__arrow--prev svg {
+.custom-hero-banner button.splide__arrow.splide__arrow--prev svg {
   fill: #fff;
   height: 14px;
   width: 14px;
   margin-bottom: 20px;
 }
 
-button.splide__arrow.splide__arrow--next {
+.custom-hero-banner button.splide__arrow.splide__arrow--next {
   top: unset;
   bottom: 1%;
   transform: unset;
@@ -77,13 +77,13 @@ button.splide__arrow.splide__arrow--next {
   cursor: pointer;
   right: 30%;
 }
-button.splide__arrow.splide__arrow--next svg {
+.custom-hero-banner button.splide__arrow.splide__arrow--next svg {
   fill: #fff;
   height: 14px;
   width: 14px;
   margin-bottom: 20px;
 }
-button.splide__pagination__page {
+.custom-hero-banner button.splide__pagination__page {
   width: 8px;
   height: 8px;
   margin: 0px 8px;
@@ -93,45 +93,45 @@ button.splide__pagination__page {
   border: 1px solid white;
   margin-bottom: 15px;
 }
-button.splide__pagination__page.is-active {
+.custom-hero-banner button.splide__pagination__page.is-active {
   width: 20px;
   border-radius: 10px;
   background-color: #fff;
   margin-bottom: 15px;
 }
 
-.content-container__custom-button {
-  margin: 10px 0 40px 0;
+.custom-hero-banner__custom-button {
+  margin-top: 10px 0 40px 0;
 }
 
 @media screen and (min-width: 750px) {
-  .content-container__content {
+  .custom-hero-banner__content {
     padding: 20px 35px;
     min-width: 450px;
     max-width: 545px;
   }
 
-  .content-container__list-item {
+  .custom-hero-banner__list-item {
     font-size: 14px;
   }
 
-  button.splide__arrow.splide__arrow--prev {
-    left: 40%;
+  .custom-hero-banner button.splide__arrow.splide__arrow--prev {
+    left: 42%;
   }
 
-  button.splide__arrow.splide__arrow--next {
-    right: 40%;
+  .custom-hero-banner button.splide__arrow.splide__arrow--next {
+    right: 42%;
   }
 
-  button.splide__pagination__page {
+  .custom-hero-banner button.splide__pagination__page {
     margin: 15px;
   }
 
-  .splide__image-container {
+  .custom-hero-banner__image-container {
     padding-bottom: 50%;
   }
 
-  .content-container__custom-button {
-    margin: 30px 0 70px 0;
+  .custom-hero-banner__custom-button {
+    margin-top: 30px;
   }
 }

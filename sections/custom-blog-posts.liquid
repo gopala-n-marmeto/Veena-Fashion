@@ -1,0 +1,154 @@
+
+{{'section-custom-blog-posts.css' |  asset_url |  stylesheet_tag}}
+<script src={{'custom-splide-carousel.js' |  asset_url}} defer></script>
+
+{% capture options %}
+    {
+        "autoplay": {{ section.settings.enable_autoplay }},
+        "pagination": {{ section.settings.enable_dots }},
+        "arrows": {{ section.settings.enable_arrows }},
+        "perPage": {{ section.settings.articles_per_page }}
+    }
+{% endcapture %}
+
+
+<div class="custom-blog-posts">
+  <div class="page-width">
+    <div class="grid grid--1-col grid--1-col-tablet grid--2-col-desktop">
+        {% for article in section.settings.blog.articles %}
+            <div class="grid__item custom-blog-posts__article-wrapper">
+                <div class="custom-blog-posts__image-wrapper">
+                    <a href={{article.url}}>
+                        {% if article.image %}
+                            {% render 'responsive-picture',
+                                mobileImage: artice.image,
+                                desktopImage: article.image
+                            %}
+                        {% else %}
+                            {{'blog-apparel-1' |  placeholder_svg_tag}}
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="custom-blog-posts__contents-wrapper">
+                    <div>
+                        <div class="custom-blog-posts__article-tags">
+                            {% for tag in article.tags %}
+                                <span>{{tag}}</span>
+                            {% endfor %}
+                        </div>
+                        {% if article.title %}
+                            <h2 class="custom-blog-posts__article-title"><a href={{ article.url }}>{{ article.title }}</a></h2>
+                        {% endif %}
+                        {% if article.author %}
+                            <div class="custom-blog-posts__article-author"><span>Published by: {{ article.author }}</span></div>
+                        {% endif %}
+                        {% if article.excerpt %}
+                            <p class="custom-blog-posts__article-excerpt">{{ article.excerpt }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="custom-blog-posts__button-date-wrapper">
+                        {% if article.url %}
+                            <a class="custom-blog-posts__link-button" href={{ article.url }}>Read more</a>
+                        {% endif %}
+                        {% if article.published_at %}
+                            <p class="custom-blog-posts__published-date">{{ article.published_at | date: '%B %d, %Y'}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+    {
+      "name": "Custom Blogs",
+      "tag": "section",
+      "settings": [
+         {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blogs"
+        },
+        {
+          "type": "text",
+          "id": "section_heading",
+          "label": "Section heading",
+          "default": "Let You Know"
+        },
+        {
+          "type": "text",
+          "id": "section_button_text",
+          "label": "Section button text",
+          "default": "View All"
+        },
+        {
+          "type": "url",
+          "id": "section_button_link",
+          "label": "Section button link"
+        },
+        {
+          "type" : "header",
+          "content" : "Slider settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_autoplay",
+          "label": "Enable Slide autoplay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_dots",
+          "label": "Show slide dots",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_arrows",
+          "label": "Show slide arrows",
+          "default": true
+        },
+        {
+            "type": "range",
+            "id": "articles_per_page",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "label": "No of articles per page",
+            "default": 1
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+      ],
+      "presets": [
+         {
+           "name": "Custom Blogs"
+         }
+      ]
+    }
+  {% endschema %}

@@ -1,8 +1,6 @@
 
 {{ "section-custom-hero-banner.css" | asset_url | stylesheet_tag }}
 
-<script src="{{"custom-splide-carousel.js" | asset_url}}" defer></script>
-
 
 {% style %}
     .padding-{{section.id}} {
@@ -32,7 +30,7 @@
                             {% for block in section.blocks %}
                                 <li class="splide__slide">
                                     {% if block.settings.desktop_image != blank %}
-                                        <div class="splide__image-container">
+                                        <div class="custom-hero-banner__image-container">
                                             {%  render 'responsive-picture',
                                                 mobileImage: block.settings.mobile_image,
                                                 desktopImage: block.settings.desktop_image
@@ -43,13 +41,14 @@
                                             {{'hero-apparel-1' |  placeholder_svg_tag}}
                                         </div>
                                     {% endif %}
-                                    <div class="splide__content-container {{block.settings.content_alignment}}">
-                                        <div class="content-container__content {{block.settings.text_alignment}}">
-                                            <ul class="content-container__list">
-                                                <li class="content-container__list-item">{{block.settings.sub_text}}</li>
+                                    <div class="custom-hero-banner__content-container {{block.settings.content_alignment}}">
+                                        <div class="custom-hero-banner__content {{block.settings.text_alignment}}">
+                                            <ul class="custom-hero-banner__list">
+                                                <li class="custom-hero-banner__list-item">{{block.settings.sub_text}}</li>
                                             </ul>
-                                            <h2 class="content-container__title custom-hover-text h1">{{block.settings.title}}</h2>
+                                            <h2 class="custom-hero-banner__title custom-hover-text h1">{{block.settings.title}}</h2>
                                             {% render 'custom-color-hovering-button',
+                                                class: "custom-hero-banner__custom-button"
                                                 sectionId:{{section.id}},
                                                 textColor: "#000000",
                                                 hoverTextColor: "#d03c3f",
