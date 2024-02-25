@@ -1,4 +1,4 @@
-{{'snippet-custom-product-card.css' |  asset_url |  stylesheet_tag}}
+
 
 {% liquid
     assign current_variant = product.selected_or_first_available_variant
@@ -14,7 +14,7 @@
     <div class="custom-product-card">
         <div class="custom-product-card__image-wrapper">
             <a href="{{ product.url }}" class="product-card__link">
-                <div class="media media--portrait media--transparent media--hover-effect">
+                <div class="media media--portrait media--transparent media--hover-effect custom-product-card__hover-effect">
                     <img
                         srcset="
                         {%- if featured_image.width >= 165 -%}{{ featured_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -59,7 +59,7 @@
                 <div class="custom-product-card__badges">
                     {% for tag in product.tags %}
                         {% assign tagName = tag |  handleize %}
-                        {% if tag == "new" %}
+                        {% if tagName == "new" %}
                             <button class="custom-product-card__badge-button">{{tag}}</button>
                         {% endif %}
                     {% endfor %}
@@ -79,13 +79,14 @@
                             s30.287-67.516,67.516-67.516s67.516,30.287,67.516,67.516S293.227,323.516,255.997,323.516z"></path>
                         </svg>
                     </a>
-                    <a class="custom-product-card__quick-view-desktop button" href={{product.url}}>Quick View</a>
+                    <a class="custom-product-card__quick-view-desktop" href={{product.url}}>Quick View</a>
                 </div>
             </div>
         </div>
         <form 'product', product>
             <div class="product-card__product-details">
                 <div class="product-card__variants">
+                  <input type="hidden" name="id" value="{{ current_variant.id }}">
                     {% unless product.has_only_default_variant %}
                         <div class="product-card__options">
                             {% for product_option in product.options_with_values %}
@@ -95,16 +96,16 @@
                                         {% for value in product_option.values %}
                                             <li class="product-card__variant-color item-swatch">
                                                 <label>
-                                                    <input
-                                                    hidden
-                                                        type="radio" 
-                                                        name='option-{{ product_option }}'  
-                                                        value = {{ value }}  data-value={{value}}
-                                                        {% if product_option.selected_value == value %}
-                                                            checked
-                                                        {% endif %}
-                                                    />
-                                                    <div class="product-card__color-variants {% if product_option.selected_value == value %}product-card__selected-variant{% endif %}" style="background-color: {{ value |  handleize }};" data-value={{ current_variant.id }}> </div>
+                                                  <div class="product-card__color-variants {% if product_option.selected_value == value %}product-card__selected-variant{% endif %}" style="background-color: {{ value |  handleize }};"> </div>
+                                                  <input
+                                                      hidden
+                                                      type="radio" 
+                                                      name='option-{{ product_option }}'  
+                                                      value = {{ value }}
+                                                      {% if product_option.selected_value == value %}
+                                                          checked
+                                                      {% endif %}
+                                                  />
                                                 </label>
                                             </li>
                                         {% endfor %}

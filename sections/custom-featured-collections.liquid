@@ -32,7 +32,16 @@
             {% endif %}
             {% if all_products_button_label %}
                 {% if all_products_button_link %}
-                    <a class="featured-collections__all-products-button-label button" href={{all_products_button_link}}><span>{{all_products_button_label}}</span></a>
+                    {% render 'custom-color-hovering-button',
+                        class: "custom-collection-slider__shop-now-button"
+                        sectionId: {{section.id}},
+                        textColor: {{section.settings.section_button_color}},
+                        hoverTextColor: {{section.settings.section_button_hover_color}},
+                        backgroundColor: {{section.settings.section_button_background_color}}
+                        hoverColor: {{section.settings.section_button_hover_background_color}}, 
+                        buttonLink: {{all_products_button_link}},
+                        buttonText: {{all_products_button_label}}
+                    %}
                 {% else %}
                     <a class="featured-collections__all-products-button-label button" role="link" aria-disabled="true">{{all_products_button_label}}</a>
                 {% endif %}
@@ -78,6 +87,29 @@
             "type": "url",
             "id": "all_products_button_link",
             "label": "Button link"
+        },
+        {
+            "type": "color",
+            "id": "section_button_color",
+            "label": "Section button color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "section_button_background_color",
+            "label": "Section button background color"
+        },
+        {
+            "type": "color",
+            "id": "section_button_hover_color",
+            "label": "Section button on hover color",
+            "default": "#ff0000"
+        },
+        {
+            "type": "color",
+            "id": "section_button_hover_background_color",
+            "label": "Section button on hover background color",
+            "default": "#ffffff"
         },
 
         {

@@ -213,11 +213,11 @@
         "section_heading": "<p>captivating collection<\/p>",
         "section_button_label": "view all",
         "section_button_link": "shopify:\/\/collections",
-        "section_button_color": "#fff",
+        "section_button_color": "#ffffff",
         "section_button_background_color": "#d03c3f",
-        "section_button_hover_color": "#fff",
+        "section_button_hover_color": "#ffffff",
         "section_button_hover_background_color": "#000000",
-        "collection_button_color": "#fff",
+        "collection_button_color": "#ffffff",
         "collection_button_background_color": "rgba(0,0,0,0)",
         "collection_button_hover_color": "#d03c3f",
         "collection_button_hover_background_color": "#ffffff",
@@ -400,10 +400,10 @@
           "settings": {
             "mobile_image": "shopify:\/\/shop_images\/1_86583ec4-835c-45cd-999c-b7e8b1bdc86e.webp",
             "desktop_image": "shopify:\/\/shop_images\/1_86583ec4-835c-45cd-999c-b7e8b1bdc86e.webp",
-            "top_hotspot_product": "custom-hoodie",
+            "top_hotspot_product": "women-shirt-beige-dress",
             "top_hotspot_top_position": 26,
             "top_hotspot_left_position": 32,
-            "bottom_hotspot_product": "lean-dean-dry-gentle-worn",
+            "bottom_hotspot_product": "womens-casual-sweaters",
             "bottom_hotspot_top_position": 78,
             "bottom_hotspot_left_position": 36,
             "heading": "Women's Winter Clothes",
@@ -419,10 +419,10 @@
           "settings": {
             "mobile_image": "shopify:\/\/shop_images\/2_a11b3061-4da9-4c80-ad4a-2ed8e9b0280f.webp",
             "desktop_image": "shopify:\/\/shop_images\/2_a11b3061-4da9-4c80-ad4a-2ed8e9b0280f.webp",
-            "top_hotspot_product": "jude-navy-chevron-shirt",
+            "top_hotspot_product": "mens-winter-hooded-jacket",
             "top_hotspot_top_position": 24,
             "top_hotspot_left_position": 30,
-            "bottom_hotspot_product": "lean-dean-plain-stone",
+            "bottom_hotspot_product": "women-solid-casual-jacket",
             "bottom_hotspot_top_position": 62,
             "bottom_hotspot_left_position": 17,
             "heading": "Our Men's Winter Clothes",
@@ -438,10 +438,10 @@
           "settings": {
             "mobile_image": "shopify:\/\/shop_images\/3_e98fbf29-76ef-498a-837a-517c37dafb8d.webp",
             "desktop_image": "shopify:\/\/shop_images\/3_e98fbf29-76ef-498a-837a-517c37dafb8d.webp",
-            "top_hotspot_product": "highland-tee-worn-black",
+            "top_hotspot_product": "womens-casual-jacket",
             "top_hotspot_top_position": 13,
             "top_hotspot_left_position": 35,
-            "bottom_hotspot_product": "90s-fit-denim",
+            "bottom_hotspot_product": "womens-oversized-hoodie",
             "bottom_hotspot_top_position": 80,
             "bottom_hotspot_left_position": 40,
             "heading": "Women's Outdoor Clothes Collection",
@@ -526,6 +526,11 @@
         "featured_brands_hiHHNA"
       ],
       "settings": {
+        "enable_autoplay": true,
+        "enable_dots": false,
+        "rewind_slides": true,
+        "enable_arrows": false,
+        "slide_animation": "loop",
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -600,6 +605,23 @@
         "padding_top": 16,
         "padding_bottom": 16
       }
+    },
+    "custom_deals_timer_F89Edb": {
+      "type": "custom-deals-timer",
+      "settings": {
+        "heading": "Our Women's Clothing Collection.",
+        "description": "<p>where fashion meets flair, and every outfit becomes a statement.<\/p>",
+        "button_text": "View All",
+        "button_link": "shopify:\/\/collections",
+        "section_button_color": "#fff",
+        "section_button_background_color": "#121212",
+        "section_button_hover_color": "#fff",
+        "section_button_hover_background_color": "#d03c3f",
+        "text_alignment": "left",
+        "no_of_days": 20,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -614,6 +636,7 @@
     "custom_look_book_cfGUec",
     "custom_featured_brands_FwxyDV",
     "custom_image_with_text_QFd8bq",
-    "custom_faq_6ggARW"
+    "custom_faq_6ggARW",
+    "custom_deals_timer_F89Edb"
   ]
 }

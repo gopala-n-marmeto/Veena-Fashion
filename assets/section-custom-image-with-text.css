@@ -42,6 +42,11 @@
 .image-with-text__title p {
   color: rgb(255, 255, 255);
   margin: 0 0 5px;
+  font-weight: 700;
+}
+
+.image-with-text__description {
+  color: rgb(255, 255, 255, 0.8);
 }
 
 @media screen and (min-width: 750px) {
