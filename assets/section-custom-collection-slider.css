@@ -2,11 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.custom-collection-slider__section-heading p {
+  margin: 0;
+  text-transform: capitalize;
 }
 
 .custom-collection-slider__collection-wrapper {
   position: relative;
-  border: 1px solid green;
   height: 100%;
   border-radius: 13px;
   overflow: hidden;
@@ -29,13 +37,25 @@
   align-items: center;
 }
 
+.custom-collection-slider__all-products-button-label {
+  text-transform: capitalize;
+}
+
 .custom-collection-slider__collection-title a {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
   font-weight: 500;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
 }
 
 .custom-collection-slider__shop-now-button {
   border: 1px solid #ffffff;
+}
+
+@media screen and (min-width: 750px) {
+  .custom-collection-slider__collection-title a {
+    font-size: 20px;
+  }
 }

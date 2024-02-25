@@ -8,6 +8,11 @@
   padding-bottom: 60%;
 }
 
+.grid-item__square {
+  position: relative;
+  padding-bottom: 100%;
+}
+
 .grid-item__grid-image-container img {
   position: absolute;
   top: 0;
@@ -44,6 +49,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px 30px;
 }
 
 .grid-item__grid-pre-text-list {
@@ -67,9 +73,9 @@
 }
 
 .grid-item__grid-heading p {
-  font-size: 20px;
+  font-size: 18px;
   margin: 0 0 10px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .grid-item__button {
@@ -86,7 +92,7 @@
   }
 
   .grid-item__grid-heading p {
-    font-size: 32px;
+    font-size: 24px;
     margin: 0 0 20px;
   }
 }

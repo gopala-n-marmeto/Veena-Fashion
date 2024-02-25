@@ -4,7 +4,7 @@
 {%  style  %} 
 
     .collection-title-{{ section.id }} a:hover {
-      color: {{ section.settings.button_hover_color }};
+      color: {{ section.settings.collection_button_hover_color }};
     }
 
     .padding-{{section.id}} {
@@ -19,12 +19,6 @@
         }
     }
 {% endstyle %}
-
-{%- liquid
-    assign section_heading = section.settings.section_heading
-    assign view_all_button_label = section.settings.view_all_button_label
-    assign view_all__button_link = section.settings.view_all__button_link
--%}
 
 {% capture  options %}
     {
@@ -45,14 +39,23 @@
     <div class="page-width">
         <div class="custom-collection-slider__wrapper">
             <div class="custom-collection-slider__heading-button-wrapper">
-                {% if section_heading %}
-                  <h2 class="h1">{{section_heading}}</h2>
+                {% if section.settings.section_heading %}
+                  <h2 class="custom-collection-slider__section-heading h0">{{section.settings.section_heading}}</h2>
                 {% endif %}
-                {% if view_all_button_label %}
-                    {% if view_all__button_link %}
-                        <a class="custom-collection-slider__all-products-button-label button" href={{view_all__button_link}}><span>{{view_all_button_label}}</span></a>
+                {% if section.settings.section_button_label %}
+                    {% if section.settings.section_button_link %}
+                        {% render 'custom-color-hovering-button',
+                            class: "custom-collection-slider__shop-now-button"
+                            sectionId: {{section.id}},
+                            textColor: {{section.settings.section_button_color}},
+                            hoverTextColor: {{section.settings.section_button_hover_color}},
+                            backgroundColor: {{section.settings.section_button_background_color}}
+                            hoverColor: {{section.settings.section_button_hover_background_color}}, 
+                            buttonLink: {{section.settings.section_button_link}},
+                            buttonText: {{section.settings.section_button_label}}
+                        %}
                     {% else %}
-                        <a class="custom-collection-slider__all-products-button-label button" role="link" aria-disabled="true">{{view_all_button_label}}</a>
+                        <a class="custom-collection-slider__all-products-button-label button" role="link" aria-disabled="true">{{section_button_label}}</a>
                     {% endif %}
                 {% endif %}
             </div>
@@ -74,11 +77,11 @@
                                                 <h3 class="custom-collection-slider__collection-title collection-title-{{ section.id }}"><a href={{ block.settings.button_url }}>{{ block.settings.collection_name }}</a></h3>
                                                 {% render 'custom-color-hovering-button',
                                                   class: "custom-collection-slider__shop-now-button"
-                                                  sectionId: {{section.id}},
-                                                  textColor: {{section.settings.button_color}},
-                                                  hoverTextColor: {{section.settings.button_hover_color}},
-                                                  backgroundColor: {{section.settings.button_background_color}}
-                                                  hoverColor: {{section.settings.button_hover_background_color}}, 
+                                                  sectionId: {{block.id}},
+                                                  textColor: {{section.settings.collection_button_color}},
+                                                  hoverTextColor: {{section.settings.collection_button_hover_color}},
+                                                  backgroundColor: {{section.settings.collection_button_background_color}}
+                                                  hoverColor: {{section.settings.collection_button_hover_background_color}}, 
                                                   buttonLink: {{block.settings.collection_button_link}},
                                                   buttonText: {{block.settings.collection_button_label}}
                                               %}
@@ -109,42 +112,68 @@
             "default": "<p>Section heading</p>"
         },
         {
+            "type": "header",
+            "content": "Section button details"
+        },
+        {
             "type": "text",
-            "id": "view_all_button_label",
-            "label": "Button label",
+            "id": "section_button_label",
+            "label": "Section Button label",
             "default": "Button label text"
         },
         {
             "type": "url",
-            "id": "view_all__button_link",
-            "label": "Button link"
-        },
-        {
-            "type": "collection_list",
-            "id": "collection_list",
-            "label": "Collection list"
+            "id": "section_button_link",
+            "label": "Section button link"
         },
         {
             "type": "color",
-            "id": "button_color",
-            "label": "Button color",
+            "id": "section_button_color",
+            "label": "Section button color",
             "default": "#000000"
         },
         {
             "type": "color",
-            "id": "button_background_color",
-            "label": "Button background color"
+            "id": "section_button_background_color",
+            "label": "Section button background color"
         },
         {
             "type": "color",
-            "id": "button_hover_color",
-            "label": "Button on hover color",
+            "id": "section_button_hover_color",
+            "label": "Section button on hover color",
             "default": "#ff0000"
         },
         {
             "type": "color",
-            "id": "button_hover_background_color",
-            "label": "Button on hover background color",
+            "id": "section_button_hover_background_color",
+            "label": "Section button on hover background color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "header",
+            "content": "Collection button details"
+        },
+        {
+            "type": "color",
+            "id": "collection_button_color",
+            "label": "Collection button color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "collection_button_background_color",
+            "label": "Collection button background color"
+        },
+        {
+            "type": "color",
+            "id": "collection_button_hover_color",
+            "label": "Collection button on hover color",
+            "default": "#ff0000"
+        },
+        {
+            "type": "color",
+            "id": "collection_button_hover_background_color",
+            "label": "Collection button on hover background color",
             "default": "#ffffff"
         },
         {

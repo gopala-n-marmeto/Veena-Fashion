@@ -1,14 +1,28 @@
 
 {{'section-custom-grid-images.css' |  asset_url |  stylesheet_tag}}
 
+{% style %}
+    .padding-{{section.id}} {
+        padding-top: {{section.settings.padding_top | divided_by: 2}}px;
+        padding-bottom: {{section.settings.padding_bottom | divided_by: 2}}px;
+    }
 
-<div class="custom-grid-images">
+    @media screen and (min-width:750px){
+        .padding-{{section.id}} {
+            padding-top: {{section.settings.padding_top}}px;
+            padding-bottom: {{section.settings.padding_bottom}}px;
+        }
+    }
+{% endstyle %}
+
+
+<div class="custom-grid-images padding-{{ section.id }}">
     <div class="page-width">
         <div class="grid grid--1-col grid--2-col-desktop">
             {% for block in section.blocks %}
                 <div class="grid__item grid-item--container">
                     {% if block.settings.desktop_image != blank %}
-                        <div class="grid-item__grid-image-container">
+                    <div class="grid-item__grid-image-container {% if section.settings.grid_display == "square" %} grid-item__square {% endif %}">
                             {%  render 'responsive-picture',
                                 mobileImage: block.settings.mobile_image,
                                 desktopImage: block.settings.desktop_image
@@ -24,7 +38,7 @@
                             <ul class="grid-item__grid-pre-text-list">
                                 <li class="grid-item__grid-pre-text">{{block.settings.pre_text}}</li>
                             </ul>
-                            <h3 class="grid-item__grid-heading h1">{{block.settings.title}}</h3>
+                            <h3 class="grid-item__grid-heading h2">{{block.settings.title}}</h3>
                             {% render 'custom-color-hovering-button',
                                 sectionId:{{section.id}},
                                 textColor: "#000000",
@@ -51,6 +65,23 @@
     "tag": "section",
     "class": "section",
     "settings": [
+        {
+            "type": "select",
+            "id": "grid_display",
+            "label": "Display grid images as",
+            "info": "Applicable for large screens",
+            "default": "landscape",
+            "options": [
+                {
+                    "label": "Landscape",
+                    "value": "landscape"
+                },
+                {
+                    "label": "Square",
+                    "value": "square"
+                }
+            ]
+        },
         {
             "type": "header",
             "content": "Section padding details"
