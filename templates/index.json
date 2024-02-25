@@ -324,21 +324,44 @@
         "padding_bottom": 0
       }
     },
+    "custom_deals_timer_F89Edb": {
+      "type": "custom-deals-timer",
+      "settings": {
+        "heading": "Our Women's Clothing Collection.",
+        "description": "<p>where fashion meets flair, and every outfit becomes a statement.<\/p>",
+        "button_text": "View All",
+        "button_link": "shopify:\/\/collections",
+        "section_button_color": "#ffffff",
+        "section_button_background_color": "#121212",
+        "section_button_hover_color": "#ffffff",
+        "section_button_hover_background_color": "#d03c3f",
+        "text_alignment": "left",
+        "no_of_days": 20,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
     "custom_featured_collections_rn8cXx": {
       "type": "custom-featured-collections",
       "settings": {
-        "section_heading": "<p>Section heading<\/p>",
-        "all_products_button_label": "Button label text",
-        "all_products_button_link": "",
+        "section_heading": "<p>Featured Collection<\/p>",
+        "all_products_button_label": "See All Products",
+        "all_products_button_link": "shopify:\/\/collections",
+        "section_button_color": "#ffffff",
+        "section_button_background_color": "#d03c3f",
+        "section_button_hover_color": "#ffffff",
+        "section_button_hover_background_color": "#000000",
         "featured_products_list": [
-          "90s-fit-denim",
-          "august-rib-wool-oak",
-          "custom-hoodie",
           "full-sleeve-high-neck-t-shirt",
           "full-sleeve-high-neck-t-shirt-1",
           "mens-half-sleeve-t-shirt",
           "mens-winter-hooded-jacket",
-          "womens-casual-sweaters"
+          "womens-casual-sweaters",
+          "men-winter-jacket",
+          "women-shirt-beige-dress",
+          "women-solid-casual-jacket",
+          "womens-casual-jacket",
+          "womens-oversized-hoodie"
         ],
         "padding_top": 20,
         "padding_bottom": 20
@@ -538,18 +561,19 @@
     "custom_image_with_text_QFd8bq": {
       "type": "custom-image-with-text",
       "settings": {
-        "padding_top": 60,
-        "padding_bottom": 60,
         "mobile_image": "shopify:\/\/shop_images\/4_0d5cc573-820a-4e7b-8f22-af8438216522.jpg",
         "desktop_image": "shopify:\/\/shop_images\/4_0d5cc573-820a-4e7b-8f22-af8438216522.jpg",
         "sub_text": "introduce",
         "title": "<p>We Believe in the Power of Fashion<\/p>",
+        "description": "fashion emerges as the universal language that speaks volumes without words.",
         "content_alignment": "justify-center align-center",
         "text_alignment": "text-center",
         "button_text": "show more",
         "text_color": "#ffffff",
         "button_text_color": "rgba(0,0,0,0)",
-        "button_url": "shopify:\/\/collections"
+        "button_url": "shopify:\/\/collections",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "custom_faq_6ggARW": {
@@ -605,23 +629,6 @@
         "padding_top": 16,
         "padding_bottom": 16
       }
-    },
-    "custom_deals_timer_F89Edb": {
-      "type": "custom-deals-timer",
-      "settings": {
-        "heading": "Our Women's Clothing Collection.",
-        "description": "<p>where fashion meets flair, and every outfit becomes a statement.<\/p>",
-        "button_text": "View All",
-        "button_link": "shopify:\/\/collections",
-        "section_button_color": "#fff",
-        "section_button_background_color": "#121212",
-        "section_button_hover_color": "#fff",
-        "section_button_hover_background_color": "#d03c3f",
-        "text_alignment": "left",
-        "no_of_days": 20,
-        "padding_top": 60,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
@@ -631,12 +638,12 @@
     "custom_collection_slider_3TMHCD",
     "custom_scrolling_banner_nqFCTa",
     "custom_grid_images_7QeC8m",
+    "custom_deals_timer_F89Edb",
     "custom_featured_collections_rn8cXx",
     "custom_usp_8hxkWr",
     "custom_look_book_cfGUec",
     "custom_featured_brands_FwxyDV",
     "custom_image_with_text_QFd8bq",
-    "custom_faq_6ggARW",
-    "custom_deals_timer_F89Edb"
+    "custom_faq_6ggARW"
   ]
 }
