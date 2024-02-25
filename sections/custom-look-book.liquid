@@ -17,7 +17,7 @@
             opacity: 1;
             left: 40px;
             display: flex;
-            transition: all 1s ease
+            transition: all 0.5s ease;
         }
 
         .dot-2-{{ block.id }} {
@@ -29,7 +29,7 @@
             opacity: 1;
             left: 40px;
             display: flex;
-            transition: all 1s ease
+            transition: all 0.5s ease;
         }
     {% endfor %}
 
@@ -63,10 +63,10 @@
                                             <div class="look-book-product__title">{{block.settings.top_hotspot_product.title}}</div>
                                         {% endif %}
                                         {% if block.settings.top_hotspot_product.price %}
-                                            <div class="look-book-product_price">{{block.settings.top_hotspot_product.price |  money_with_currency}}</div>
+                                            <div class="look-book-product__price">{{block.settings.top_hotspot_product.price |  money_with_currency}}</div>
                                         {% endif %}
                                         {% if block.settings.top_hotspot_product.price %}
-                                            <s class="look-book-product_compare-at-price">{{block.settings.top_hotspot_product.compare_at_price |  money_with_currency}}</s>
+                                            <s class="look-book-product__compare-at-price">{{block.settings.top_hotspot_product.compare_at_price |  money_with_currency}}</s>
                                         {% endif %}
                                     </div>
                                 </div>
@@ -81,10 +81,10 @@
                                             <div class="look-book-product__title">{{block.settings.bottom_hotspot_product.title}}</div>
                                         {% endif %}
                                         {% if block.settings.bottom_hotspot_product.price %}
-                                            <div class="look-book-product_price">{{block.settings.bottom_hotspot_product.price |  money_with_currency}}</div>
+                                            <div class="look-book-product__price">{{block.settings.bottom_hotspot_product.price |  money_with_currency}}</div>
                                         {% endif %}
                                         {% if block.settings.bottom_hotspot_product.price %}
-                                            <s class="look-book-product_compare-at-price">{{block.settings.bottom_hotspot_product.compare_at_price |  money_with_currency}}</s>
+                                            <s class="look-book-product__compare-at-price">{{block.settings.bottom_hotspot_product.compare_at_price |  money_with_currency}}</s>
                                         {% endif %}
                                     </div>
                                 </div>

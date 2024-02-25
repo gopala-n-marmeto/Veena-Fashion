@@ -10,6 +10,7 @@ class CustomSplideCarousel extends HTMLElement {
 
   initializeSlider() {
     const options = JSON.parse(this.getAttribute("data-options"));
+    console.log(options);
 
     var splide = new Splide(this.element, options);
 

@@ -65,7 +65,7 @@
   margin: 0 0 5px;
 }
 
-.look-book-product_price {
+.look-book-product__price {
   color: #000000;
   font-size: 14px;
   line-height: normal;
@@ -121,7 +121,7 @@
     font-size: 14px;
   }
 
-  .look-book-product_price {
+  .look-book-product__price {
     font-size: 16px;
   }
 

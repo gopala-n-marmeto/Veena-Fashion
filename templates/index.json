@@ -132,7 +132,101 @@
         "image_grid_DLhJ7w"
       ],
       "settings": {
+        "grid_display": "landscape",
         "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_collection_slider_3TMHCD": {
+      "type": "custom-collection-slider",
+      "blocks": {
+        "collection_xyV3hY": {
+          "type": "collection",
+          "settings": {
+            "desktop_collection_image": "shopify:\/\/shop_images\/6.jpg",
+            "mobile_collection_image": "shopify:\/\/shop_images\/6.jpg",
+            "collection_name": "Accessories",
+            "collection_button_label": "Shop now",
+            "collection_button_link": "shopify:\/\/collections\/accessories"
+          }
+        },
+        "collection_CfTHFc": {
+          "type": "collection",
+          "settings": {
+            "desktop_collection_image": "shopify:\/\/shop_images\/4.jpg",
+            "mobile_collection_image": "shopify:\/\/shop_images\/4.jpg",
+            "collection_name": "Men's Jacket",
+            "collection_button_label": "Shop now",
+            "collection_button_link": "shopify:\/\/collections\/mens-jacket"
+          }
+        },
+        "collection_UqhgMi": {
+          "type": "collection",
+          "settings": {
+            "desktop_collection_image": "shopify:\/\/shop_images\/1.jpg",
+            "mobile_collection_image": "shopify:\/\/shop_images\/1.jpg",
+            "collection_name": "Shoes",
+            "collection_button_label": "Shop now",
+            "collection_button_link": "shopify:\/\/collections\/shoes"
+          }
+        },
+        "collection_KefTQH": {
+          "type": "collection",
+          "settings": {
+            "desktop_collection_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
+            "mobile_collection_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
+            "collection_name": "Handbags",
+            "collection_button_label": "Shop now",
+            "collection_button_link": "shopify:\/\/collections\/handbags"
+          }
+        },
+        "collection_GzQJFE": {
+          "type": "collection",
+          "settings": {
+            "desktop_collection_image": "shopify:\/\/shop_images\/3.jpg",
+            "mobile_collection_image": "shopify:\/\/shop_images\/3.jpg",
+            "collection_name": "Best selling",
+            "collection_button_label": "Shop now",
+            "collection_button_link": "shopify:\/\/collections\/best-selling"
+          }
+        },
+        "collection_dQhfYP": {
+          "type": "collection",
+          "settings": {
+            "desktop_collection_image": "shopify:\/\/shop_images\/8.jpg",
+            "mobile_collection_image": "shopify:\/\/shop_images\/8.jpg",
+            "collection_name": "T Shirts",
+            "collection_button_label": "Shop now",
+            "collection_button_link": "shopify:\/\/collections\/t-shirts"
+          }
+        }
+      },
+      "block_order": [
+        "collection_xyV3hY",
+        "collection_CfTHFc",
+        "collection_UqhgMi",
+        "collection_KefTQH",
+        "collection_GzQJFE",
+        "collection_dQhfYP"
+      ],
+      "settings": {
+        "section_heading": "<p>captivating collection<\/p>",
+        "section_button_label": "view all",
+        "section_button_link": "shopify:\/\/collections",
+        "section_button_color": "#fff",
+        "section_button_background_color": "#d03c3f",
+        "section_button_hover_color": "#fff",
+        "section_button_hover_background_color": "#000000",
+        "collection_button_color": "#fff",
+        "collection_button_background_color": "rgba(0,0,0,0)",
+        "collection_button_hover_color": "#d03c3f",
+        "collection_button_hover_background_color": "#ffffff",
+        "enable_autoplay": true,
+        "enable_dots": true,
+        "rewind_slides": true,
+        "enable_arrows": true,
+        "slide_animation": "loop",
+        "padding_top": 60,
         "padding_bottom": 0
       }
     },
@@ -225,6 +319,7 @@
         "image_grid_BzHGjH"
       ],
       "settings": {
+        "grid_display": "square",
         "padding_top": 60,
         "padding_bottom": 0
       }
@@ -505,109 +600,13 @@
         "padding_top": 16,
         "padding_bottom": 16
       }
-    },
-    "custom_collection_slider_3TMHCD": {
-      "type": "custom-collection-slider",
-      "blocks": {
-        "collection_xyV3hY": {
-          "type": "collection",
-          "settings": {
-            "desktop_collection_image": "shopify:\/\/shop_images\/6.jpg",
-            "mobile_collection_image": "shopify:\/\/shop_images\/6.jpg",
-            "collection_name": "Accessories",
-            "collection_button_label": "Shop now",
-            "collection_button_link": "shopify:\/\/collections\/accessories"
-          }
-        },
-        "collection_CfTHFc": {
-          "type": "collection",
-          "settings": {
-            "desktop_collection_image": "shopify:\/\/shop_images\/4.jpg",
-            "mobile_collection_image": "shopify:\/\/shop_images\/4.jpg",
-            "collection_name": "Men's Jacket",
-            "collection_button_label": "Shop now",
-            "collection_button_link": "shopify:\/\/collections\/mens-jacket"
-          }
-        },
-        "collection_UqhgMi": {
-          "type": "collection",
-          "settings": {
-            "desktop_collection_image": "shopify:\/\/shop_images\/1.jpg",
-            "mobile_collection_image": "shopify:\/\/shop_images\/1.jpg",
-            "collection_name": "Shoes",
-            "collection_button_label": "Shop now",
-            "collection_button_link": "shopify:\/\/collections\/shoes"
-          }
-        },
-        "collection_KefTQH": {
-          "type": "collection",
-          "settings": {
-            "desktop_collection_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
-            "mobile_collection_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
-            "collection_name": "Handbags",
-            "collection_button_label": "Shop now",
-            "collection_button_link": "shopify:\/\/collections\/handbags"
-          }
-        },
-        "collection_GzQJFE": {
-          "type": "collection",
-          "settings": {
-            "desktop_collection_image": "shopify:\/\/shop_images\/5.jpg",
-            "mobile_collection_image": "shopify:\/\/shop_images\/5.jpg",
-            "collection_name": "Best selling",
-            "collection_button_label": "Shop now",
-            "collection_button_link": "shopify:\/\/collections\/best-selling"
-          }
-        },
-        "collection_dQhfYP": {
-          "type": "collection",
-          "settings": {
-            "desktop_collection_image": "shopify:\/\/shop_images\/8.jpg",
-            "mobile_collection_image": "shopify:\/\/shop_images\/8.jpg",
-            "collection_name": "T Shirts",
-            "collection_button_label": "Shop now",
-            "collection_button_link": "shopify:\/\/collections\/t-shirts"
-          }
-        }
-      },
-      "block_order": [
-        "collection_xyV3hY",
-        "collection_CfTHFc",
-        "collection_UqhgMi",
-        "collection_KefTQH",
-        "collection_GzQJFE",
-        "collection_dQhfYP"
-      ],
-      "settings": {
-        "section_heading": "<p>Section heading<\/p>",
-        "view_all_button_label": "Button label text",
-        "view_all__button_link": "shopify:\/\/collections",
-        "collection_list": [
-          "accessories",
-          "best-selling",
-          "handbags",
-          "mens-jacket",
-          "shoes",
-          "t-shirts"
-        ],
-        "button_color": "#fff",
-        "button_background_color": "rgba(0,0,0,0)",
-        "button_hover_color": "#ff0000",
-        "button_hover_background_color": "#ffffff",
-        "enable_autoplay": true,
-        "enable_dots": true,
-        "rewind_slides": true,
-        "enable_arrows": true,
-        "slide_animation": "loop",
-        "padding_top": 60,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
     "custom_hero_banner_PYrY9r",
     "custom_rich_text_RytDGt",
     "custom_grid_images_eB6aJP",
+    "custom_collection_slider_3TMHCD",
     "custom_scrolling_banner_nqFCTa",
     "custom_grid_images_7QeC8m",
     "custom_featured_collections_rn8cXx",
@@ -615,7 +614,6 @@
     "custom_look_book_cfGUec",
     "custom_featured_brands_FwxyDV",
     "custom_image_with_text_QFd8bq",
-    "custom_faq_6ggARW",
-    "custom_collection_slider_3TMHCD"
+    "custom_faq_6ggARW"
   ]
 }

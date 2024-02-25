@@ -1,0 +1,182 @@
+{{ 'section-custom-deals-timer.css' |  asset_url |  stylesheet_tag }}
+
+<script src="{{ "section-custom-deals-timer.js" | asset_url }}" defer></script>
+
+{% style %}
+  .padding-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+  }
+  @media only screen and (min-width: 750px) {
+    .padding-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+   }
+  .coustom-deals-timer__button-{{ section.id }}{
+    color: {{ section.settings.button_color }};
+    background-color: {{ section.settings.button_background }};
+  }
+{% endstyle %}
+
+<div class="custom-deals-timer padding-{{ section.id }}">
+    <div class="page-width">
+        <div class="custom-deals-timer__grid">
+            <div class="custom-deals-timer__text-wrapper">
+                {% if section.settings.heading  %}
+                  <h2 class = "h0 custom-deals-timer__section-heading">{{ section.settings.heading }}</h2>
+                {% endif %}
+                {% if section.settings.description  %}
+                   <p class = "custom-deals-timer__description">{{ section.settings.description }}</p>
+                {% endif %}
+                {% if section.settings.button_text != blank %}
+                    {% if section.settings.button_link != blank %}
+                        {% render 'custom-color-hovering-button',
+                            sectionId: {{section.id}},
+                            textColor: {{section.settings.section_button_color}},
+                            hoverTextColor: {{section.settings.section_button_hover_color}},
+                            backgroundColor: {{section.settings.section_button_background_color}}
+                            hoverColor: {{section.settings.section_button_hover_background_color}}, 
+                            buttonLink: {{section.settings.button_link}},
+                            buttonText: {{section.settings.button_text}}
+                        %}
+                    {% else %}
+                        <a class="custom-collection-slider__all-products-button-label button" role="link" aria-disabled="true">{{button_text}}</a>
+                    {% endif %}
+                {%  endif %}
+            </div>   
+            <div class="custom-deals-timer__time-wrapper">
+                <div class = "custom-deals-timer__card custom-border-radius">
+                    <span class = "h1 custom-deals-timer__time" id="days" >{{ section.settings.no_of_days }}</span>
+                    <span class = "h5 custom-deals-timer__time-in-words">Days</span>
+                </div>
+                <span class = "h1 custom-timer__colon">:</span>
+                <div class = "custom-deals-timer__card custom-border-radius">
+                    <h2 class = "h1 custom-deals-timer__time" id="hours">00</h2>
+                    <span class = "h5 custom-deals-timer__time-in-words">Hours</span>
+                </div>
+                <span class = "h1 custom-deals-timer__colon">:</span>
+                <div class = "custom-deals-timer__card custom-border-radius">
+                    <span class = "h1 custom-deals-timer__time" id="minutes">00</span>
+                    <span class = "h5 custom-deals-timer__time-in-words">Mins</span>
+                </div>
+                <span class = "h1 custom-deals-timer__colon">:</span>
+                <div class = "custom-deals-timer__card custom-border-radius">
+                    <span class = "h1 custom-deals-timer__time" id="seconds">00</span>
+                    <span class = "h5 custom-deals-timer__time-in-words">Sec</span>
+                </div>
+            </div>     
+             
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+  "name": "Custom deals timer",
+  "tag" : "section",
+  "settings": [
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading",
+        "default" : "Timer heading"
+      },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "description",
+          "default": "<p>Timer description</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button label",
+          "default": "View All"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+            "type": "color",
+            "id": "section_button_color",
+            "label": "Section button color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "section_button_background_color",
+            "label": "Section button background color"
+        },
+        {
+            "type": "color",
+            "id": "section_button_hover_color",
+            "label": "Section button on hover color",
+            "default": "#ff0000"
+        },
+        {
+            "type": "color",
+            "id": "section_button_hover_background_color",
+            "label": "Section button on hover background color",
+            "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "Right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "number",
+          "id": "no_of_days",
+          "label": "No of days for countdown",
+          "default": 20
+        },
+        
+    {
+      "type": "header",
+      "content": "Adjust section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom deals timer"
+    }
+  ]
+}
+{% endschema %}
