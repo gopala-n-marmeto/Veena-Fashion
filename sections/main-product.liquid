@@ -419,11 +419,11 @@
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- unless shop.enabled_payment_types == empty -%}
-              <div  class="payment-options-container">
-                <span class="visuallyhidden">Supported payment methods</span>
+              <div class="payment-options-container">
+                <strong><span>Secure checkout with</span></strong>
                 <ul class="payment-options">
                   {%- for type in shop.enabled_payment_types -%}
-                    <li>
+                    <li class="payment-item">
                       {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                     </li>
                   {%- endfor -%}

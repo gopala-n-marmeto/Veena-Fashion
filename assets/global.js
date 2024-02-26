@@ -212,6 +212,17 @@ class QuantityInput extends HTMLElement {
 
   validateQtyRules() {
     const value = parseInt(this.input.value);
+    const addButtonText = document.querySelector('[name="add"] > span');
+    const price = document.getElementById(`price-${this.dataset.section}`);
+    // const qty = document.querySelector('[data-cart-quantity]').value;
+    // console.log(qty);
+    const currentPrice = price.querySelector(".price-item").textContent;
+    const finalPrice =
+      value *
+      parseInt(currentPrice.split("Rs. ")[1].split(".")[0].replace(/,/g, ""));
+    // console.log((parseInt(currentPrice.split("Rs. ")[1].split('.')[0].replace(/,/g, ''))));
+    addButtonText.textContent =
+      window.variantStrings.addToCart + " | Rs. " + finalPrice;
     if (this.input.min) {
       const min = parseInt(this.input.min);
       const buttonMinus = this.querySelector(".quantity__button[name='minus']");
