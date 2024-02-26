@@ -20,9 +20,9 @@
     <div class="page-width">
         <div class="grid grid--1-col grid--2-col-desktop">
             {% for block in section.blocks %}
-                <div class="grid__item grid-item--container">
+                <div class="grid__item custom-grid-images__grid-item-container">
                     {% if block.settings.desktop_image != blank %}
-                    <div class="grid-item__grid-image-container {% if section.settings.grid_display == "square" %} grid-item__square {% endif %}">
+                    <div class="custom-grid-images__grid-image-container {% if section.settings.grid_display == "square" %} custom-grid-images__grid-item-square {% endif %}">
                             {%  render 'responsive-picture',
                                 mobileImage: block.settings.mobile_image,
                                 desktopImage: block.settings.desktop_image
@@ -33,12 +33,12 @@
                             {{'hero-apparel-1' |  placeholder_svg_tag}}
                         </div>
                     {% endif %}
-                    <div class="grid-item__grid-content-container">
-                        <div class="grid-item__content-wraper {{block.settings.text_alignment}}">
-                            <ul class="grid-item__grid-pre-text-list">
-                                <li class="grid-item__grid-pre-text">{{block.settings.pre_text}}</li>
+                    <div class="custom-grid-images__grid-content-container">
+                        <div class="custom-grid-images__content-wraper {{block.settings.text_alignment}}">
+                            <ul class="custom-grid-images__grid-pre-text-list">
+                                <li class="custom-grid-images__grid-pre-text">{{block.settings.pre_text}}</li>
                             </ul>
-                            <h3 class="grid-item__grid-heading h2">{{block.settings.title}}</h3>
+                            <h3 class="custom-grid-images__grid-heading h2">{{block.settings.title}}</h3>
                             {% render 'custom-color-hovering-button',
                                 sectionId:{{section.id}},
                                 textColor: "#000000",

@@ -84,19 +84,19 @@
             </div>
         </div>
         <form 'product', product>
-            <div class="product-card__product-details">
-                <div class="product-card__variants">
+            <div class="custom-product-card__product-details">
+                <div class="custom-product-card__variants">
                   <input type="hidden" name="id" value="{{ current_variant.id }}">
                     {% unless product.has_only_default_variant %}
-                        <div class="product-card__options">
+                        <div class="custom-product-card__options">
                             {% for product_option in product.options_with_values %}
                                 {% assign optionName = product_option.name |  handleize %}
                                 {% if optionName == "color" %}
-                                    <ul class="product-card__variant-color-list">
+                                    <ul class="custom-product-card__variant-color-list">
                                         {% for value in product_option.values %}
-                                            <li class="product-card__variant-color item-swatch">
+                                            <li class="custom-product-card__variant-color item-swatch">
                                                 <label>
-                                                  <div class="product-card__color-variants {% if product_option.selected_value == value %}product-card__selected-variant{% endif %}" style="background-color: {{ value |  handleize }};"> </div>
+                                                  <div class="custom-product-card__color-variants {% if product_option.selected_value == value %}custom-product-card__selected-variant{% endif %}" style="background-color: {{ value |  handleize }};"> </div>
                                                   <input
                                                       hidden
                                                       type="radio" 
@@ -115,16 +115,16 @@
                         </div>
                     {% endunless %}
                 </div>
-                <p class="product-card__vendor-name">{{product.vendor}}</p>
-                <h3 class="product-card__title h5">
+                <p class="custom-product-card__vendor-name">{{product.vendor}}</p>
+                <h3 class="custom-product-card__title h5">
                     <a href={{product.url}} class="h3">{{product.title}}</a>
                 </h3>
-                <div class="product-card__prices-container">
-                    <span class="product-card__price">{{current_variant.price |  money_with_currency}}</span>
-                    <s class="product-card__compare-at-price">{{current_variant.compare_at_price | money_with_currency}}</s>
+                <div class="custom-product-card__prices-container">
+                    <span class="custom-product-card__price">{{current_variant.price |  money_with_currency}}</span>
+                    <s class="custom-product-card__compare-at-price">{{current_variant.compare_at_price | money_with_currency}}</s>
                 </div>
                 {% if current_variant.inventory_quantity <= 10 and current_variant.inventory_quantity != 0 %}
-                    <p class="product-card__inventory">Only {{current_variant.inventory_quantity}} left in stock</p>
+                    <p class="custom-product-card__inventory">Only {{current_variant.inventory_quantity}} left in stock</p>
                 {% endif %}
             </div>
         </form>

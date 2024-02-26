@@ -1,19 +1,19 @@
-.grid-item--container {
+.custom-grid-images__grid-item-container {
   border-radius: 16px;
   position: relative;
 }
 
-.grid-item__grid-image-container {
+.custom-grid-images__grid-image-container {
   position: relative;
   padding-bottom: 60%;
 }
 
-.grid-item__square {
+.custom-grid-images__grid-item-square {
   position: relative;
   padding-bottom: 100%;
 }
 
-.grid-item__grid-image-container img {
+.custom-grid-images__grid-image-container img {
   position: absolute;
   top: 0;
   width: 100%;
@@ -22,7 +22,7 @@
   border-radius: 16px;
 }
 
-.grid-item--container:hover {
+.custom-grid-images__grid-item-container:hover {
   overflow: hidden;
   .grid-item__grid-image-container img {
     transform: scale(1.03);
@@ -30,7 +30,7 @@
   }
 }
 
-.grid-item--container:not(hover) {
+.custom-grid-images__grid-item-container:not(hover) {
   overflow: hidden;
 
   .grid-item__grid-image-container img {
@@ -40,7 +40,7 @@
   }
 }
 
-.grid-item__grid-content-container {
+.custom-grid-images__grid-content-container {
   position: absolute;
   top: 0;
   width: 100%;
@@ -52,7 +52,7 @@
   padding: 20px 30px;
 }
 
-.grid-item__grid-pre-text-list {
+.custom-grid-images__grid-pre-text-list {
   color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 30px;
@@ -62,23 +62,23 @@
   margin: 0 0 5px;
 }
 
-.grid-item__grid-pre-text {
+.custom-grid-images__grid-pre-text {
   font-size: 12px;
   text-transform: capitalize;
 }
 
-.grid-item__grid-heading {
+.custom-grid-images__grid-heading {
   color: rgb(255, 255, 255);
   text-transform: capitalize;
 }
 
-.grid-item__grid-heading p {
+.custom-grid-images__grid-heading p {
   font-size: 18px;
   margin: 0 0 10px;
   font-weight: 600;
 }
 
-.grid-item__button {
+.custom-grid-images__button {
   color: #000000;
   background-color: rgb(255, 255, 255);
   border: none;
@@ -87,11 +87,11 @@
 }
 
 @media screen and (min-width: 750px) {
-  .grid-item__grid-pre-text {
+  .custom-grid-images__grid-pre-text {
     font-size: 14px;
   }
 
-  .grid-item__grid-heading p {
+  .custom-grid-images__grid-heading p {
     font-size: 24px;
     margin: 0 0 20px;
   }
