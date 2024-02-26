@@ -650,12 +650,16 @@
       "settings": {
         "blog": "let-you-know",
         "section_heading": "Let You Know",
-        "section_button_text": "View All",
+        "section_button_text": "Read All",
         "section_button_link": "shopify:\/\/blogs\/let-you-know",
+        "section_button_color": "#fff",
+        "section_button_background_color": "#000000",
+        "section_button_hover_color": "#fff",
+        "section_button_hover_background_color": "#d03c3f",
         "enable_autoplay": true,
         "enable_dots": true,
         "enable_arrows": true,
-        "articles_per_page": 1,
+        "articles_per_page": 2,
         "padding_top": 30,
         "padding_bottom": 30
       }
