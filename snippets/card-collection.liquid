@@ -49,7 +49,7 @@
     >
       {%- if card_collection.featured_image -%}
         <div class="card__media">
-          <div class="media media--transparent media--hover-effect">
+          <div class="media rounded-corners">
             <img
               srcset="
                 {%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -115,7 +115,7 @@
     {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
       <div class="card__content">
         <div class="card__information">
-          <h3 class="card__heading">
+          <h3 class="card__heading h5">
             <a
               {% if card_collection == blank %}
                 role="link" aria-disabled="true"
@@ -129,9 +129,9 @@
               {%- else -%}
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
-              {%- if card_collection.featured_image or card_collection.description == blank -%}
+              {% comment %} {%- if card_collection.featured_image or card_collection.description == blank -%}
                 <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-              {%- endif %}
+              {%- endif %} {% endcomment %}
             </a>
           </h3>
           {%- if card_collection.featured_image == null and card_collection.description != blank -%}
