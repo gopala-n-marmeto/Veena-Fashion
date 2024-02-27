@@ -126,3 +126,33 @@
 .sub-sub-link-summary {
   margin-left: 40px;
 }
+
+.grid-columns-and-filters {
+  width: 100%;
+}
+
+.grid-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: #f5f5f5;
+  border-radius: 13px;
+}
+
+.grid-icons-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.grid-sorting-options {
+  display: flex;
+  align-items: center;
+}
+
+.sorting-select {
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 10px 15px;
+}
