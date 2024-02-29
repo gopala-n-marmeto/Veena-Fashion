@@ -1582,3 +1582,60 @@ a.product__text {
     padding: 8px 20px;
   }
 }
+
+/* custom css */
+
+.coupon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  padding: 20px 0;
+}
+
+.coupon-banner-title {
+  color: #ffffff;
+  text-align: center;
+}
+
+.copy-text-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copy-text-button-wrapper input {
+  width: 35%;
+  padding: 10px;
+  margin: 0;
+  outline: none;
+  color: #ffffff;
+  border: 1px dashed #ffffff;
+  border-right: none;
+  background-color: transparent;
+}
+
+.copy-text-button-wrapper button {
+  width: 35%;
+  padding: 10px;
+  margin: 0;
+  outline: none;
+  border: 1px solid #ffffff;
+}
+
+.grove {
+  width: 20px;
+  height: 40px;
+  background-color: #ffffff;
+  border-bottom: 0;
+}
+
+.left-grove {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.right-grove {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}

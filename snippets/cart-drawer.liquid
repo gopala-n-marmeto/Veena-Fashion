@@ -38,6 +38,7 @@
                 onclick="this.closest('cart-drawer').close()"
                 aria-label="{{ 'accessibility.close' | t }}"
               >
+              
                 {% render 'icon-close' %}
               </button>
               <a href="{{ routes.all_products_collection_url }}" class="button">
@@ -59,6 +60,7 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+      {%  render 'free-shipping'  %}
       <div class="drawer__header">
         <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
         <button

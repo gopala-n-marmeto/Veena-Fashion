@@ -37,7 +37,7 @@
           <li class="grid__item">
             {% render 'custom-product-card',
               product: recommendation,
-              section_id: {{ section.id }}
+              section_id: {{ section.id }},
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
               show_secondary_image: section.settings.show_secondary_image,

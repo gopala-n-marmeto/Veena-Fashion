@@ -83,6 +83,12 @@
         "padding_bottom": 12
       }
     },
+    "recently-viewed-products": {
+      "type": "wizaah-recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed"
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -120,6 +126,7 @@
   },
   "order": [
     "main",
+    "recently-viewed-products",
     "related-products",
     "170892298522d3552e"
   ]

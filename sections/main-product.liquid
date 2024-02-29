@@ -1,3 +1,11 @@
+
+{% style %}
+  .coupon-wrapper {
+    background-image: {{ section.settings.coupon_code_banner_color }};
+  }
+
+{% endstyle %}
+
 <section
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -63,6 +71,7 @@
       media="print"
       onload="this.media='all'"
     >
+
   {%- endif -%}
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
@@ -416,7 +425,37 @@
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+            
+            
+            
+              <div id="couponWrapper">
+                {%  assign coupon_code = product.selected_or_first_available_variant.metafields.custom.coupon_code %}
+                {% if coupon_code != blank %}
+                  <div class="coupon-wrapper">
+                    <div class="grove left-grove"> </div>
+                    <div>
+                      <h2 class="coupon-banner-title">Variant specific discount</h2>
+                      <div class="copy-text-button-wrapper">
+                        <input id="couponCode" type="text" value={{ coupon_code }}>
+                        <button onclick="copyTextFunction()">Copy code</button>
+                      </div>
+                    </div>
+                    <div class="grove right-grove"> </div>
+                  </div>
+                {% endif %}
+              </div>
+            
+
             {%- when 'buy_buttons' -%}
+              <label>
+                Enter your name
+                <input type="text" placeholder="Enter your name">
+              </label>
+              <div id="custom-atc-wrapper">
+                <button type="submit" class="custom-add-to-cart-button button" data-variant-id={{ product.selected_or_first_available_variant.id }} data-quantity={{ cart_qty }}>
+                  custom add to cart
+                </button>
+              </div>              
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- unless shop.enabled_payment_types == empty -%}
               <div class="payment-options-container">
@@ -2040,6 +2079,12 @@
     }
   ],
   "settings": [
+    {
+      "type": "color_background",
+      "id": "coupon_code_banner_color",
+      "default": "linear-gradient(#ffffff, #000000)",
+      "label": "Coupon code banner color"
+    },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

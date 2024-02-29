@@ -212,6 +212,7 @@ class QuantityInput extends HTMLElement {
 
   validateQtyRules() {
     const value = parseInt(this.input.value);
+
     const addButtonText = document.querySelector('[name="add"] > span');
     const price = document.getElementById(`price-${this.dataset.section}`);
     // const qty = document.querySelector('[data-cart-quantity]').value;
@@ -232,6 +233,14 @@ class QuantityInput extends HTMLElement {
       const max = parseInt(this.input.max);
       const buttonPlus = this.querySelector(".quantity__button[name='plus']");
       buttonPlus.classList.toggle("disabled", value >= max);
+    }
+
+    // update custom add to cart quantity
+    if (document.querySelector(".custom-add-to-cart-button")) {
+      const customAddToCartButton = document.querySelector(
+        ".custom-add-to-cart-button"
+      );
+      customAddToCartButton.setAttribute("data-quantity", value);
     }
   }
 }
@@ -1336,6 +1345,12 @@ class VariantSelects extends HTMLElement {
         document.querySelector("#product__meta-data-description").innerHTML =
           html.querySelector("#product__meta-data-description").innerHTML;
 
+        document.querySelector(".custom-add-to-cart-button").dataset.variantId =
+          requestedVariantId;
+
+        document.querySelector("#couponWrapper").innerHTML =
+          html.querySelector("#couponWrapper").innerHTML;
+
         const skuSource = html.getElementById(
           `Sku-${
             this.dataset.originalSection
@@ -1554,3 +1569,55 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define("product-recommendations", ProductRecommendations);
+
+// custom javascript
+if (document.querySelector("#custom-atc-wrapper")) {
+  document
+    .querySelector("#custom-atc-wrapper")
+    .addEventListener("click", (event) => {
+      let customButton = event.target;
+      const variantId = customButton.dataset.variantId;
+      const quantity = customButton.dataset.quantity;
+      const cart =
+        document.querySelector("cart-drawer") ||
+        document.querySelector("cart-notification");
+
+      console.log(cart);
+
+      let formData = {
+        "items": [
+          {
+            "id": variantId,
+            "quantity": quantity,
+          },
+        ],
+        sections: cart.getSectionsToRender().map((section) => section.id)
+      };
+      fetch("/cart/add.js", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((jsonData) => {
+          cart.renderContents(jsonData);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    });
+}
+
+// copy text function
+
+function copyTextFunction() {
+  const copyText = document.getElementById("couponCode");
+
+  copyText.select();
+
+  navigator.clipboard.writeText(copyText.value);
+}

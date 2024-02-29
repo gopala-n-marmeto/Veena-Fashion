@@ -30,6 +30,8 @@ class ProductCard extends HTMLElement {
   getUpdatedCard() {
     const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
 
+    console.log(url);
+
     fetch(url)
       .then((response) => response.text())
       .then((responseText) => {
@@ -37,7 +39,12 @@ class ProductCard extends HTMLElement {
         this.innerHTML = html.querySelector(
           `[data-product-handle="${this.productHandle}"]`
         ).innerHTML;
-      });
+
+        console.log(
+          html.querySelector(`[data-product-handle="${this.productHandle}"]`)
+        );
+      })
+      .catch((err) => console.log(err));
   }
 }
 

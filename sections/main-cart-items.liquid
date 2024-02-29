@@ -27,6 +27,9 @@
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
+    <div>
+      {% render 'breadcrumbs' %}
+    </div>
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
@@ -34,7 +37,7 @@
       </a>
     </div>
 
-    <div class="cart__warnings">
+    <div class="cart__warnings cart__warning--wrapper">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="button">
         {{ 'general.continue_shopping' | t }}
@@ -460,6 +463,44 @@
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
     },
+    {
+            "type": "header",
+            "content": "Section button details"
+        },
+        {
+            "type": "text",
+            "id": "section_button_label",
+            "label": "Section Button label",
+            "default": "Button label text"
+        },
+        {
+            "type": "url",
+            "id": "section_button_link",
+            "label": "Section button link"
+        },
+        {
+            "type": "color",
+            "id": "section_button_color",
+            "label": "Section button color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "section_button_background_color",
+            "label": "Section button background color"
+        },
+        {
+            "type": "color",
+            "id": "section_button_hover_color",
+            "label": "Section button on hover color",
+            "default": "#ff0000"
+        },
+        {
+            "type": "color",
+            "id": "section_button_hover_background_color",
+            "label": "Section button on hover background color",
+            "default": "#ffffff"
+        },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

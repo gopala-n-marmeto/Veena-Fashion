@@ -224,3 +224,13 @@ cart-items {
     gap: 1rem;
   }
 }
+
+
+/* custom css */
+
+.cart__warning--wrapper {
+  background-color: #f5f5f5;
+  border-radius: 13px;
+  margin: 20px 0;
+  padding: 30px 0;
+}
