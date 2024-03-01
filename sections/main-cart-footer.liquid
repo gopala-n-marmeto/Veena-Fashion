@@ -74,7 +74,9 @@
                     {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
                   {%- endif -%}
                 </small>
+                {% render 'free-shipping' %}
               </div>
+              
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
@@ -102,12 +104,15 @@
                   {{ content_for_additional_checkout_buttons }}
                 </div>
               {%- endif -%}
+              
           {%- endcase -%}
         {% endfor %}
 
         <div id="cart-errors"></div>
+        
       </div>
     </div>
+    
   </div>
 </div>
 

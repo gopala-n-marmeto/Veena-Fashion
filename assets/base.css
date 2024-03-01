@@ -491,9 +491,9 @@ h6:empty {
 .customer a {
   cursor: pointer;
   display: inline-block;
-  border: none;
+  /* border: none; */
   box-shadow: none;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
@@ -617,7 +617,7 @@ details > * {
 .underlined-link:hover,
 .customer a:hover,
 .inline-richtext a:hover {
-  color: rgb(var(--color-link));
+  /* color: rgb(var(--color-link)); */
   text-decoration-thickness: 0.2rem;
 }
 
@@ -1701,7 +1701,7 @@ details[open] > .share-button__fallback {
 .localization-form__select:focus.localization-form__select:after {
   box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width))
     rgba(var(--color-foreground));
-  outline: 0;
+  outline: none;
   border-radius: var(--inputs-radius);
 }
 
@@ -3703,6 +3703,80 @@ details-disclosure > details {
 }
 
 .color-hovering-button:not(:hover)::before {
+  width: 0;
+  right: 0;
+}
+
+/* color black hovering button */
+
+.color-black-hovering-button {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.color-black-hovering-button span {
+  z-index: 2;
+  text-transform: capitalize;
+}
+
+.color-black-hovering-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+  z-index: 1;
+  background-color: #d03c3f;
+}
+
+.color-black-hovering-button:hover::before {
+  width: 100%;
+}
+
+.color-black-hovering-button:not(:hover)::before {
+  width: 0;
+  right: 0;
+}
+
+/* color transparent hovering color */
+
+.color-transparent-hovering-button {
+  position: relative;
+  overflow: hidden;
+  color: #000000;
+  background-color: transparent;
+}
+
+.color-transparent-hovering-button span {
+  z-index: 2;
+  text-transform: capitalize;
+}
+
+.color-transparent-hovering-button:hover span {
+  color: #ffffff;
+}
+
+.color-transparent-hovering-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+  z-index: 1;
+  background-color: #d03c3f;
+}
+
+.color-transparent-hovering-button:hover::before {
+  width: 100%;
+}
+
+.color-transparent-hovering-button:not(:hover)::before {
   width: 0;
   right: 0;
 }

@@ -1,13 +1,11 @@
 .shipping-bar {
     width: 100%;
     border-radius: 2rem;
-    background: #d03c3f;
     padding: 0 1.75rem 0.75rem 1.75rem ;
     margin: 0 0 0.5rem;
+    color: inherit;
 }
-.cart-drawer__white p {
-    color: #ffffff;
-}
+
 .shipping-bar .shipping-bar__container {
     height: 1rem;
     background: #fff;

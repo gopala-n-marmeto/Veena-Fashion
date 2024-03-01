@@ -9,6 +9,7 @@
   justify-content: flex-end;
   background-color: rgba(var(--color-foreground), 0.5);
   transition: visibility var(--duration-default) ease;
+
 }
 
 .drawer.active {
@@ -28,7 +29,7 @@
   transform: translateX(100%);
   transition: transform var(--duration-default) ease;
   border-top-left-radius: 16px;
-
+  
 }
 
 .drawer__inner-empty {
@@ -76,17 +77,14 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   display: flex;
   flex-direction: column;
   background-color: #d03c3f;
-  color: #ffffff;
 }
 
 .drawer__title-close-wrapper {
   padding: 0 1.5rem;
-  color: #ffffff;
 }
 
 .drawer__heading {
   margin: 0 0 1rem;
-  color: #ffffff;
 }
 
 .drawer__close {
