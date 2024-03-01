@@ -431,7 +431,7 @@
             
             
             
-              <div id="couponWrapper">
+              {% comment %} <div id="couponWrapper">
                 {%  assign coupon_code = product.selected_or_first_available_variant.metafields.custom.coupon_code %}
                 {% if coupon_code != blank %}
                   <div class="coupon-wrapper">
@@ -446,10 +446,10 @@
                     <div class="grove right-grove"> </div>
                   </div>
                 {% endif %}
-              </div>
+              </div> {% endcomment %}
             
             {%- when 'buy_buttons' -%}
-              <label>
+              {% comment %} <label>
                 Enter your name
                 <input type="text" placeholder="Enter your name">
               </label>
@@ -457,7 +457,8 @@
                 <button type="submit" class="custom-add-to-cart-button button" data-variant-id={{ product.selected_or_first_available_variant.id }} data-quantity={{ cart_qty }}>
                   custom add to cart
                 </button>
-              </div>              
+              </div>
+              {% endcomment %}            
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- unless shop.enabled_payment_types == empty -%}
               <div class="payment-options-container">

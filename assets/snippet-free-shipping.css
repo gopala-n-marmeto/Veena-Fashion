@@ -1,12 +1,12 @@
 .shipping-bar {
     width: 100%;
     border-radius: 2rem;
-    background: #F2F0FF;
-    padding: 0.75rem 2rem;
-    margin: 1.5rem 0 0.5rem;
+    background: #d03c3f;
+    padding: 0 1.75rem 0.75rem 1.75rem ;
+    margin: 0 0 0.5rem;
 }
-.cart-drawer__black {
-    color: #111314;
+.cart-drawer__white p {
+    color: #ffffff;
 }
 .shipping-bar .shipping-bar__container {
     height: 1rem;
@@ -19,7 +19,7 @@
     height: 100%;
     border-radius: 1rem;
     transition: all .75s ease-in-out;
-    background-color: #AFAFED;
+    background-color: #00d964;
 }
 .shipping-bar .shipping__icon {
     position: absolute;

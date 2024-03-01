@@ -27,7 +27,7 @@
 
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
-    <div>
+    <div class="cart-items__breadcrumbs-wrapper">
       {% render 'breadcrumbs' %}
     </div>
     <div class="title-wrapper-with-link">
@@ -39,8 +39,8 @@
 
     <div class="cart__warnings cart__warning--wrapper">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="{{ routes.all_products_collection_url }}" class="button">
-        {{ 'general.continue_shopping' | t }}
+      <a href="{{ routes.all_products_collection_url }}" class="button color-hovering-button">
+        <span>{{ 'general.continue_shopping' | t }}</span>
       </a>
 
       {%- if shop.customer_accounts_enabled and customer == null -%}

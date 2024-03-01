@@ -3672,3 +3672,37 @@ details-disclosure > details {
   left: auto;
 }
 
+/* custom color hovering button */
+
+.color-hovering-button {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #d03c3f;
+}
+
+.color-hovering-button span {
+  z-index: 2;
+  text-transform: capitalize;
+}
+
+.color-hovering-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+  z-index: 1;
+  background-color: #000000;
+}
+
+.color-hovering-button:hover::before {
+  width: 100%;
+}
+
+.color-hovering-button:not(:hover)::before {
+  width: 0;
+  right: 0;
+}
