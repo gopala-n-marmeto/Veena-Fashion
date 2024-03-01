@@ -61,7 +61,7 @@
     "blog_card_color_scheme": "scheme-2",
     "blog_card_border_thickness": 0,
     "blog_card_border_opacity": 10,
-    "blog_card_corner_radius": 0,
+    "blog_card_corner_radius": 14,
     "blog_card_shadow_opacity": 0,
     "blog_card_shadow_horizontal_offset": 0,
     "blog_card_shadow_vertical_offset": 4,
@@ -113,11 +113,12 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "cart_type": "notification",
+    "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": false,
-    "cart_drawer_collection": "",
+    "cart_drawer_collection": "best-selling",
     "cart_color_scheme": "scheme-1",
+    "free_shipping": "5000",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
