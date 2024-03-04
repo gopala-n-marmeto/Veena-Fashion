@@ -14,7 +14,37 @@
   }
 {%- endstyle -%}
 
-<div class="customer account section-{{ section.id }}-padding">
+
+<div class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="menu-account-details-container">
+      {%  render 'account-menu' %}
+      <div class="customer-details-container">
+        <div class="account-svg-title-container">
+          <span>
+            {% render 'account-icons', icon_type:"account_fill_icon" %}
+          </span>
+          <h1>My Account</h1>
+        </div>
+        <h2>{{ customer.name }}</h2>
+        <div class="customer-email-phone-wrapper">
+          <span>{{ customer.email }}</span>
+          <span>{{ customer.phone}}</span>
+        </div>
+        <div class="customer-email-country-wrapper">
+          <span>{{ customer.email }}</span>
+          <span>{{ customer.default_address.address1}}</span>
+          <span>{{ customer.default_address.city}}</span>
+          <span>{{ customer.default_address.state}}</span>
+          <span>{{ customer.default_address.country}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} 
+<div class="customer account account-details section-{{ section.id }}-padding"> 
   <div>
     <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
     <a href="{{ routes.account_logout_url }}">
@@ -25,7 +55,7 @@
     </a>
   </div>
 
-  <div>
+<div>
     <div>
       <h2>{{ 'customer.orders.title' | t }}</h2>
 
@@ -149,6 +179,7 @@
     </div>
   </div>
 </div>
+{% endcomment %}
 
 {% schema %}
 {

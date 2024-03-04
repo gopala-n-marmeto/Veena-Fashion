@@ -1,0 +1,101 @@
+
+{%  style  %} 
+
+    .account-menu .account-menu__list {
+        list-style-type: none;
+        margin:0;
+        padding: 0;
+    }
+
+    .account-menu__list .account-menu__item {
+        margin-bottom: 10px;
+
+    }
+
+    .account-menu__item .account-menu__item-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        border-radius: 4px;
+        
+    }
+
+    .active-menu {
+        border-left: 8px solid #BC9891;
+        background-color: #895E59;
+        padding: 10px 30px 10px 22px;
+        color: #ffffff;
+    }
+
+
+    .no-active-menu {
+        background-color: #e3dbd3;
+        padding: 10px 30px;
+        color: #000000;
+    }
+
+    @media screen and (min-width: 750px){
+        .account-menu {
+            width: 25%;
+        }
+    }
+
+{% endstyle %}
+
+{%  assign urlHandle = canonical_url |  split: "/" | last %}
+
+
+
+<div class="account-menu">
+<ul class="account-menu__list">
+        <li class="account-menu__item">
+            <a class="account-menu__item-link {% if urlHandle == "account" %}active-menu{% else %}no-active-menu{% endif %}" href="/account">
+                <span class="account-btn-logo"> 
+                    {% render 'account-icons', icon_type:"account_icon" %}
+                </span>
+                <span>Account Details</span>
+            </a>
+        </li>
+        <li class="account-menu__item">
+            <a class="account-menu__item-link  {% if urlHandle == "orders" %}active-menu{% else %}no-active-menu{% endif %}" href="/pages/orders">
+                <span class="account-btn-logo"> 
+                    {% render 'account-icons', icon_type:"orders_icon" %}
+                </span>
+                <span>My Orders</span>
+            </a>
+        </li>
+        <li class="account-menu__item">
+            <a class="account-menu__item-link {% if urlHandle == "addresses" %}active-menu{% else %}no-active-menu{% endif %}" href="/account/addresses">
+                <span class="account-btn-logo"> 
+                    {% render 'account-icons', icon_type:"address_icon" %}
+                </span>
+                <span>View Address</span>
+            </a>
+        </li>
+        <li class="account-menu__item">
+            <a class="account-menu__item-link {% if urlHandle == "whishlist" %}active-menu{% else %}no-active-menu{% endif %}" href="/pages/whishlist">
+                <span class="account-btn-logo"> 
+                    {% render 'account-icons', icon_type:"wishlist_icon" %}
+                </span>
+                <span>Wishlist</span>
+            </a>
+        </li>
+        <li class="account-menu__item">
+            <a class="account-menu__item-link {% if urlHandle == "help" %}active-menu{% else %}no-active-menu{% endif %}" href="/pages/help">
+                <span class="account-btn-logo"> 
+                    {% render 'account-icons', icon_type:"help_icon" %}
+                </span>
+                <span>Need Help?</span>
+            </a>
+        </li>
+        <li class="account-menu__item">
+            <a class="account-menu__item-link {% if urlHandle == "logout" %}active-menu{% else %}no-active-menu{% endif %}" href="/account/logout">
+                <span class="account-btn-logo"> 
+                    {% render 'account-icons', icon_type:"signout_icon" %}
+                </span>
+                <span>Sign Out</span>
+            </a>
+        </li>
+    </ul>
+</div>

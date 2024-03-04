@@ -3,10 +3,6 @@
   background-color: #f5f5f5;
 }
 
-.password-recovery {
-  border: 1px solid red;
-}
-
 .customer:not(.account):not(.order) {
   margin: 0 auto;
   padding: 30px 10%;
@@ -787,4 +783,100 @@ li[data-address] > h2 {
 
 .create-account-link:hover {
   color: #ffffff;
+}
+
+/* custom css */
+
+.account-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email_title:before {
+  content: "";
+  height: 1px;
+  width: 45%;
+  background: #00000033;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+}
+
+.email_title:after {
+  content: "";
+  height: 1px;
+  width: 45%;
+  background: #00000033;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+}
+
+.email_title {
+  position: relative;
+}
+
+.pwd_or_email-wrapper {
+  width: 100%;
+}
+
+.registration-form-input-wrapper {
+  border: 1px solid green;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.register-form-label {
+  font-weight: 600;
+}
+
+.customer-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-svg-title-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-email-phone-wrapper,
+.customer-email-country-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d0bbba;
+  border-radius: 13px;
+  padding: 10px 20px;
+}
+
+.menu-account-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.customer-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fcfcfc;
+  padding: 20px;
+}
+
+@media screen and (min-width: 750px) {
+  .menu-account-details-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .customer-details-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
