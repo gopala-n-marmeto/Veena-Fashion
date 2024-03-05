@@ -85,3 +85,10 @@
 .mega-menu__list--condensed .mega-menu__link {
   font-weight: normal;
 }
+
+/* custom css */
+
+.mega-menu-image {
+  height: 200px;
+  width: 200px;
+}
