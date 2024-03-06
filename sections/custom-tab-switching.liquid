@@ -1,16 +1,88 @@
 
+{%  style  %} 
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+    }
+
+    .custom-tab-switching {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .custom-tab-switching__tabs {
+        display: flex;
+        gap: 40px;
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+        background-color: #f5f8fa;
+        padding: 10px 30px;
+        border-radius: 25px;
+    }
+
+    .custom-tab-switching__tab-item {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .custom-tab-swithching__products {
+        display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+
+
 <div class="section-{{ section.id }}-padding">
     <div class="page-width">
         <div class="custom-tab-switching">
             {% if section.settings.section_title %}
                 <h2 class="custom-tab-switching__section-title">{{ section.settings.section_title }}</h2>
             {% endif %}
-            {% if section.blocks.size == 0 %}
-                {{ "this is gopal" }}
+            {% if section.blocks.size != 0 %}
+                <ul class="custom-tab-switching__tabs">
+                    {% for block in section.blocks %}
+                        {% if block.settings.tab_items.products.size != 0 %}
+                            <li class="custom-tab-switching__tab-item">{{ block.settings.collection_title }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <div class="custom-tab-switching__collection grid grid--1-col grid--3-col-tablet grid--4-col-desktop">
+                    {% for block in section.blocks %}
+                        {% if block.settings.tab_items.products.size != 0 %}
+                            {% for product in block.settings.tab_items.products %}
+                                <div class="grid__item">
+                                    {% render 'custom-product-card', product: product, section_id: section.id %}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             {% endif %}
         </div>
     </div>
 </div>
+
+
+<script>
+    const tabsList = document.querySelector(".custom-tab-switching__tabs")
+
+    tabsList.addEventListener('click', (event) => {
+        const activeTab = event.target.textContent
+        
+    })
+</script>
 
 
 
@@ -57,15 +129,15 @@
       "name": "Tab item",
       "settings": [
         {
+          "type": "text",
+          "label": "Collection title",
+          "id": "collection_title"
+        },
+        {
           "type": "collection",
           "label": "Collection",
           "id": "tab_items",
           "info": "The products in this collection displays"
-        },
-        {
-          "type": "text",
-          "label": "Collection title",
-          "id": "collection_title"
         }
       ]
     }

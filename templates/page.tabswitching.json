@@ -2,13 +2,75 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "custom_tab_switching_aeEUpx": {
+      "type": "custom-tab-switching",
+      "blocks": {
+        "tab_item_JYNYrU": {
+          "type": "tab_item",
+          "settings": {
+            "collection_title": "Accessories",
+            "tab_items": "accessories"
+          }
+        },
+        "tab_item_3TLYd3": {
+          "type": "tab_item",
+          "settings": {
+            "collection_title": "Best Selling",
+            "tab_items": "best-selling"
+          }
+        },
+        "tab_item_xeJp6f": {
+          "type": "tab_item",
+          "settings": {
+            "collection_title": "Handbags",
+            "tab_items": "handbags"
+          }
+        },
+        "tab_item_L9r3Ek": {
+          "type": "tab_item",
+          "settings": {
+            "collection_title": "Men's Jacket",
+            "tab_items": "mens-jacket"
+          }
+        },
+        "tab_item_yKg3Hb": {
+          "type": "tab_item",
+          "settings": {
+            "collection_title": "Shoes",
+            "tab_items": "shoes"
+          }
+        },
+        "tab_item_NEhLVf": {
+          "type": "tab_item",
+          "settings": {
+            "collection_title": "T Shirts",
+            "tab_items": "t-shirts"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_JYNYrU",
+        "tab_item_3TLYd3",
+        "tab_item_xeJp6f",
+        "tab_item_L9r3Ek",
+        "tab_item_yKg3Hb",
+        "tab_item_NEhLVf"
+      ],
+      "settings": {
+        "section_title": "<p>All collections<\/p>",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_tab_switching_aeEUpx"
   ]
 }
