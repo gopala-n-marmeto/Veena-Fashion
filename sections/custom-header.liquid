@@ -1,0 +1,137 @@
+{% style %}
+    .custom-header__navigation {
+        width: 33.33%;
+    }
+
+    .custom-header__logo-container {
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        width: 33.33%;
+    }
+
+    .custom-header__logo-container img {
+        width:20%
+    }
+
+    .custom-header__header-wrapper {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .custom-header__nav-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    .custom-header__nav-item a {
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: #000000;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .custom-header__icons {
+        width: 33.33%;
+        display: flex;
+        justify-content: flex-end;
+    }
+{% endstyle %}
+
+
+<header class="custom-header">
+    <div class="custom-header__header-wrapper page-width">
+        <nav class="custom-header__navigation">
+            <ul class="custom-header__nav-list">
+                {% for link in section.settings.navlist.links %}
+                    <details>
+                        <summary>
+                            <li class="custom-header__nav-item">
+                                <a href="{{ link.url }}">
+                                    {{ link.title }}
+                                </a>
+                            </li>
+                        </summary>
+                        {% for child_link in link.links %}
+                            {{ child_link.title }}
+                        {% endfor %}
+                    </details>
+                    {% comment %} <li class="custom-header__nav-item">
+                        <a href="{{ link.url }}">
+                            {{ link.title }}
+                        </a>
+                    </li> {% endcomment %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% comment %} Logo {% endcomment %}
+        <div class="custom-header__logo-container">
+            {% if section.settings.logo != blank %}
+                <img src="{{ section.settings.logo |  image_url  }}" alt="navigation-logo">
+            {% else %}
+                <h2>{{ shop.name }}</h2>
+            {% endif %}
+        </div>
+        <div class="custom-header__icons">
+            nav icons
+        </div>
+    </div>
+</header>
+
+
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Logo",
+      "id": "logo"
+    },
+    {
+      "type": "link_list",
+      "label": "Navlist",
+      "id": "navlist"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show icons",
+      "id": "show_icons"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "megamenu",
+      "name": "Megamenu",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Desktop image",
+          "id": "desktop_image"
+        },
+        {
+          "type": "text",
+          "label": "Mega menu title",
+          "id": "mega_menu_title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "My New Section"
+    }
+  ]
+}
+{% endschema %}

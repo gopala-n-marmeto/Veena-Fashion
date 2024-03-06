@@ -17,6 +17,7 @@
                 class="header__menu-item list-menu__item link focus-inset"
               >
                 <span
+                  class="menu-title"
                   {%- if link.child_active %}
                     class="header__active-menu-item"
                   {% endif %}
@@ -67,7 +68,9 @@
                     </li>
                   {%- endfor -%}
                 </ul>
-                <img class="mega-menu-image" src="https://cdn.shopify.com/s/files/1/0567/0859/5778/files/nav--{{ link.title |  handleize }}.jpg" alt="{{ link.title |  handleize }}">
+                {% if "https://cdn.shopify.com/s/files/1/0567/0859/5778/files/nav--{{ link.title |  handleize }}.jpg" != blank %}
+                  <img class="mega-menu-image" src="https://cdn.shopify.com/s/files/1/0567/0859/5778/files/nav--{{ link.title |  handleize }}.jpg" alt="{{ link.title |  handleize }}">
+                {% endif %}
               </div>
             </details>
           </header-menu>
@@ -93,3 +96,5 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+

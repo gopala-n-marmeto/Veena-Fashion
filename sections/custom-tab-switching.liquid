@@ -1,0 +1,79 @@
+
+<div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class="custom-tab-switching">
+            {% if section.settings.section_title %}
+                <h2 class="custom-tab-switching__section-title">{{ section.settings.section_title }}</h2>
+            {% endif %}
+            {% if section.blocks.size == 0 %}
+                {{ "this is gopal" }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Custom tab switching",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "label": "Section title",
+      "id": "section_title",
+      "default": "<p>Section title</p>",
+      "info": "This is section title"
+    },
+    {
+      "type": "header",
+      "content": "Padding details"
+    },
+    {
+      "type": "range",
+      "label": "Padding top",
+      "id": "padding_top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "label": "Padding bottom",
+      "id": "padding_bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab_item",
+      "name": "Tab item",
+      "settings": [
+        {
+          "type": "collection",
+          "label": "Collection",
+          "id": "tab_items",
+          "info": "The products in this collection displays"
+        },
+        {
+          "type": "text",
+          "label": "Collection title",
+          "id": "collection_title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom tab switching"
+    }
+  ]
+}
+{% endschema %}
