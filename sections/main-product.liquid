@@ -401,9 +401,12 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
-            <div class="pincode-checker-wraper">
-              <label>Check</label>
-            </div>
+            {% comment %} <div class="pincode-checker-wraper">
+              <input type="text">
+              <label>
+                <button>Check</button>
+              </label>
+            </div> {% endcomment %}
             {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"

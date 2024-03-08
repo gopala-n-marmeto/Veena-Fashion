@@ -1,4 +1,4 @@
-{% style %}
+{% comment %} {% style %}
     .custom-header__navigation {
         width: 33.33%;
     }
@@ -65,15 +65,13 @@
                             {{ child_link.title }}
                         {% endfor %}
                     </details>
-                    {% comment %} <li class="custom-header__nav-item">
                         <a href="{{ link.url }}">
                             {{ link.title }}
                         </a>
-                    </li> {% endcomment %}
+                    </li>
                 {% endfor %}
             </ul>
         </nav>
-        {% comment %} Logo {% endcomment %}
         <div class="custom-header__logo-container">
             {% if section.settings.logo != blank %}
                 <img src="{{ section.settings.logo |  image_url  }}" alt="navigation-logo">
@@ -134,4 +132,4 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %} {% endcomment %}

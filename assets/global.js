@@ -1342,14 +1342,21 @@ class VariantSelects extends HTMLElement {
           }`
         );
 
-        document.querySelector("#product__meta-data-description").innerHTML =
-          html.querySelector("#product__meta-data-description").innerHTML;
+        if (document.querySelector("#product__meta-data-description")) {
+          document.querySelector("#product__meta-data-description").innerHTML =
+            html.querySelector("#product__meta-data-description").innerHTML;
+        }
 
-        document.querySelector(".custom-add-to-cart-button").dataset.variantId =
-          requestedVariantId;
+        if (document.querySelector(".custom-add-to-cart-button")) {
+          document.querySelector(
+            ".custom-add-to-cart-button"
+          ).dataset.variantId = requestedVariantId;
+        }
 
-        document.querySelector("#couponWrapper").innerHTML =
-          html.querySelector("#couponWrapper").innerHTML;
+        if (document.querySelector("#couponWrapper")) {
+          document.querySelector("#couponWrapper").innerHTML =
+            html.querySelector("#couponWrapper").innerHTML;
+        }
 
         const skuSource = html.getElementById(
           `Sku-${
@@ -1585,13 +1592,13 @@ if (document.querySelector("#custom-atc-wrapper")) {
       console.log(cart);
 
       let formData = {
-        "items": [
+        items: [
           {
-            "id": variantId,
-            "quantity": quantity,
+            id: variantId,
+            quantity: quantity,
           },
         ],
-        sections: cart.getSectionsToRender().map((section) => section.id)
+        sections: cart.getSectionsToRender().map((section) => section.id),
       };
       fetch("/cart/add.js", {
         method: "POST",

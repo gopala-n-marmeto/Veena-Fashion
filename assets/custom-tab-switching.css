@@ -1,0 +1,48 @@
+.custom-tab-switching {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: outfit;
+}
+
+.custom-tab-switching__category-title {
+  font-family: inherit;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.custom-tab-switching__section-title {
+  font-family: inherit;
+  color: #323232;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.custom-tab-switching__tabs {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
+  border-radius: 25px;
+}
+
+.custom-tab-switching__tab-item {
+  font-family: inherit;
+  cursor: pointer;
+  padding: 5px;
+  color: #323232b2;
+}
+
+.product-container {
+  display: none;
+}
+
+.active-collection {
+  display: block;
+}

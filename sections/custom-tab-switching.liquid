@@ -1,37 +1,14 @@
 
+{% comment %} importing asset files {% endcomment %}
+{{ 'custom-tab-switching.css' | asset_url |  stylesheet_tag }}
+<script src="{{ 'custom-tab-switching.js' |  asset_url }}" defer></script>
+
+
+{% comment %} css styling for section padding {% endcomment %}
 {%  style  %} 
     .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
         padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
-    }
-
-    .custom-tab-switching {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .custom-tab-switching__tabs {
-        display: flex;
-        gap: 40px;
-        list-style-type: none;
-        padding: 0;
-        margin-top: 0;
-        margin-bottom: 30px;
-        background-color: #f5f8fa;
-        padding: 10px 30px;
-        border-radius: 25px;
-    }
-
-    .custom-tab-switching__tab-item {
-        font-size: 16px;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    .custom-tab-swithching__products {
-        display: none;
     }
 
     @media screen and (min-width: 750px) {
@@ -42,28 +19,51 @@
     }
 {% endstyle %}
 
+{% comment %} Capturing the splide options for slideshow {% endcomment %}
+{% capture options %}
+    {
+        "autoplay": {{ section.settings.enable_autoplay }},
+        "pagination": {{ section.settings.enable_dots }},
+        "arrows": {{ section.settings.enable_arrows }},
+        "perPage": {{ section.settings.articles_per_page }},
+        "gap": 20,
+        "breakpoints": {
+          "749" : { "destroy": true }
+        }
+    }
+{% endcapture %}
 
 
+{% comment %} Section user interface starts here {% endcomment %}
 <div class="section-{{ section.id }}-padding">
     <div class="page-width">
         <div class="custom-tab-switching">
-            {% if section.settings.section_title %}
-                <h2 class="custom-tab-switching__section-title">{{ section.settings.section_title }}</h2>
+            {% comment %} Verifying whether category title available {% endcomment %}
+            {% if section.settings.category_title %}
+              <h3 class="custom-tab-switching__category-title">{{ section.settings.category_title }}</h3>
             {% endif %}
+            {% comment %} Verifying whether section title available {% endcomment %}
+            {% if section.settings.section_title %}
+              <h2 class="custom-tab-switching__section-title">{{ section.settings.section_title }}</h2>
+            {% endif %}
+            {% comment %} Verifying whether section has atleast one block {% endcomment %}
             {% if section.blocks.size != 0 %}
                 <ul class="custom-tab-switching__tabs">
+                    {% comment %} Looping through all the blocks of the section for tab headings {% endcomment %}
                     {% for block in section.blocks %}
                         {% if block.settings.tab_items.products.size != 0 %}
-                            <li class="custom-tab-switching__tab-item">{{ block.settings.collection_title }}</li>
+                            <li class="custom-tab-switching__tab-item" data-tab-id="{{ block.id }}">{{ block.settings.collection_title }}</li>
                         {% endif %}
                     {% endfor %}
                 </ul>
-                <div class="custom-tab-switching__collection grid grid--1-col grid--3-col-tablet grid--4-col-desktop">
+                <div class="custom-tab-switching__collection grid grid--2-col grid--3-col-tablet grid--4-col-desktop">
+                    {% comment %} Looping through all the blocks of the section for products falls under a tab {% endcomment %}
                     {% for block in section.blocks %}
+                      {% comment %}checking for rendering of products only if collection has atleast one product {% endcomment %}
                         {% if block.settings.tab_items.products.size != 0 %}
                             {% for product in block.settings.tab_items.products %}
-                                <div class="grid__item">
-                                    {% render 'custom-product-card', product: product, section_id: section.id %}
+                                <div class="grid__item product-container" data-collection-id="{{ block.id }}">
+                                    {% render 'custom-tab-switching-product', product: product, section_id: section.id %}
                                 </div>
                             {% endfor %}
                         {% endif %}
@@ -73,31 +73,58 @@
         </div>
     </div>
 </div>
+{% comment %} Section user interface ends here {% endcomment %}
 
 
-<script>
-    const tabsList = document.querySelector(".custom-tab-switching__tabs")
-
-    tabsList.addEventListener('click', (event) => {
-        const activeTab = event.target.textContent
-        
-    })
-</script>
-
-
-
+{% comment %} Schema for theme settings starts here {% endcomment %}
 {% schema %}
 {
   "name": "Custom tab switching",
   "tag": "section",
   "settings": [
     {
+      "type": "text",
+      "id": "category_title",
+      "label": "Category name",
+      "default": "Category name"
+    },
+    {
       "type": "richtext",
       "label": "Section title",
       "id": "section_title",
-      "default": "<p>Section title</p>",
-      "info": "This is section title"
+      "default": "<p>Section title</p>"
     },
+    {
+          "type" : "header",
+          "content" : "Slider settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_autoplay",
+          "label": "Enable Slide autoplay",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_dots",
+          "label": "Show slide dots",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_arrows",
+          "label": "Show slide arrows",
+          "default": true
+        },
+        {
+            "type": "range",
+            "id": "articles_per_page",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "label": "No of articles per page",
+            "default": 1
+        },
     {
       "type": "header",
       "content": "Padding details"
@@ -137,7 +164,7 @@
           "type": "collection",
           "label": "Collection",
           "id": "tab_items",
-          "info": "The products in this collection displays"
+          "info": "Products in this collection displays under the tab"
         }
       ]
     }
@@ -149,3 +176,4 @@
   ]
 }
 {% endschema %}
+{% comment %} Schema for theme settings ends here {% endcomment %}

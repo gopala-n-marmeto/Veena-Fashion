@@ -1,0 +1,138 @@
+.tab-switching-product__product-details {
+  text-align: left;
+}
+
+.tab-switching-product__variant-color-list {
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+}
+
+.tab-switching-product__variant-color-list input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  background-color: #d03c3f;
+}
+
+.tab-switching-product__image-wrapper {
+  position: relative;
+}
+
+.tab-switching-product__badges-button-wrapper {
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+}
+
+.tab-switching-product__badges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-switching-product__wishlist-icon-container {
+  position: absolute;
+  bottom: -23px;
+  left: 45%;
+}
+
+.tab-switching-product__wishlist-icon-container svg {
+  height: 30px;
+  width: 30px;
+}
+
+.tab-switching-product__badge-button,
+.tab-switching-product__discout-button {
+  font-family: outfit;
+  font-size: 11px;
+  padding: 4px 8px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: #d03c3f;
+}
+
+.tab-switching-product__quick-view-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.tab-switching-product__vendor-name {
+  font-family: outfit;
+  margin-bottom: 10px;
+  padding: 5px;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  border: 1px solid #858585;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.tab-switching-product__title a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: outfit;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.tab-switching-product__title a:hover {
+  color: #d03c3f;
+}
+
+.tab-switching-product__price {
+  font-family: outfit;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.tab-switching-product__compare-at-price {
+  font-family: outfit;
+  font-size: 12px;
+  font-weight: 300;
+  color: #858585;
+}
+
+.tab-switching-product__inventory {
+  color: #d03c3f;
+  margin: 6px;
+}
+
+.tab-switching-product__quick-view-mobile svg {
+  width: 40px;
+  height: 40px;
+}
+
+.tab-switching-product__color-variants {
+  width: 24px;
+  height: 24px;
+}
+
+.tab-switching-product__selected-variant {
+  box-shadow: 0 0 0 3px white inset;
+  border: 1px solid #d03c3f;
+}
+
+/* media queries starts here */
+
+@media screen and (min-width: 750px) {
+  .tab-switching-product__title a {
+    font-size: 18px;
+  }
+}

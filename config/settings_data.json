@@ -136,6 +136,11 @@
         "type": "color-swatch",
         "settings": {
         }
+      },
+      "custom-header": {
+        "type": "custom-header",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
