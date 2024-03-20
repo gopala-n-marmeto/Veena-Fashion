@@ -1589,17 +1589,38 @@ if (document.querySelector("#custom-atc-wrapper")) {
         document.querySelector("cart-drawer") ||
         document.querySelector("cart-notification");
 
-      console.log(cart);
+      const selectedBundleProducts = document.querySelectorAll(
+        ".bundle-input:checked"
+      );
 
-      let formData = {
-        items: [
-          {
-            id: variantId,
-            quantity: quantity,
-          },
-        ],
+      const bundleProducts = [];
+
+      selectedBundleProducts.forEach((product) => {
+        bundleProducts.push({
+          id: product.dataset.bundleProductId,
+          quantity: 1,
+        });
+      });
+
+      bundleProducts.push({
+        id: variantId,
+        quantity: quantity,
+      });
+
+      const formData = {
+        items: bundleProducts,
         sections: cart.getSectionsToRender().map((section) => section.id),
       };
+
+      // let formData = {
+      //   items: [
+      //     {
+      //       id: variantId,
+      //       quantity: quantity,
+      //     },
+      //   ],
+      //   sections: cart.getSectionsToRender().map((section) => section.id),
+      // };
       fetch("/cart/add.js", {
         method: "POST",
         headers: {

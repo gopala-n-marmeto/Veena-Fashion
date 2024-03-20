@@ -425,6 +425,27 @@
               <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
                 {{- block.settings.text -}}
               </a>
+            {%- when 'bundler'-%}
+              <div class="bundle-products__container">
+                <h2 class="h5">Frequently brought together</h2>
+                <div class="bundle-products__bundles-wrapper grid grid--1-col grid--3-col-tablet grid--4-col-desktop">
+                    {% for product in product.metafields.custom.product_bundle.value %}
+                      <div class="grid__item">
+                          <div class="bundle-products__product-input-wrapper">
+                            {% render 'custom-product-card', product: product %}
+                          </div>
+                          {% comment %} {% unless forloop.last %}
+                            <span class="plus-symbol">+</span>
+                          {% endunless %} {% endcomment %}
+                      </div>
+                    {% endfor %}
+                    <div id="custom-atc-wrapper">
+                      <button type="submit" class="custom-add-to-cart-button button" data-variant-id={{ product.selected_or_first_available_variant.id }} data-quantity=1>
+                        Add bundle
+                      </button>
+                    </div>
+                </div>
+              </div>
             {%- when 'share' -%}
               {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
               {% render 'share-button',
@@ -459,12 +480,8 @@
                 Enter your name
                 <input type="text" placeholder="Enter your name">
               </label>
-              <div id="custom-atc-wrapper">
-                <button type="submit" class="custom-add-to-cart-button button" data-variant-id={{ product.selected_or_first_available_variant.id }} data-quantity={{ cart_qty }}>
-                  custom add to cart
-                </button>
-              </div>
-              {% endcomment %}            
+              {% endcomment %}
+                         
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- unless shop.enabled_payment_types == empty -%}
               <div class="payment-options-container">
@@ -812,6 +829,11 @@
           "label": "t:sections.main-product.blocks.sku.settings.text_style.label"
         }
       ]
+    },
+    {
+      "type": "bundler",
+      "name": "Bundler",
+      "limit": 1
     },
     {
       "type": "inventory",
