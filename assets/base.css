@@ -3780,3 +3780,13 @@ details-disclosure > details {
   width: 0;
   right: 0;
 }
+
+/* bundle input */
+
+.bundle-input[type="checkbox"] {
+  display: none;
+}
+
+.bundle-products__product-input-wrapper .bundle-input[type="checkbox"] {
+  display: block;
+}

@@ -1640,9 +1640,36 @@ a.product__text {
   border-bottom-left-radius: 100px;
 }
 
-
-/* custom css */
+/* custom css for breadcrumbs */
 
 .product__bradcrumbs-wrapper {
   margin: 15px 0;
+}
+
+/* custom css for bundle products */
+.bundle-products__container {
+  border: 1px solid #f0efef;
+  padding: 10px;
+  border-radius: 13px;
+}
+
+.bundle-products__product-input-wrapper {
+  position: relative;
+  display: flex;
+}
+
+.bundle-proudcts__add-to-cart {
+  align-self: center;
+}
+
+.bundle-input {
+  position: absolute;
+  top: 130px;
+  right: 10px;
+}
+
+.plus-symbol {
+  top: 150px;
+  font-size: 24px;
+  position: relative;
 }
