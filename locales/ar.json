@@ -520,7 +520,36 @@
         },
         "maximum_discount_code_limit_reached": "لقد وصلت إلى الحد الأقصى لعدد رموز الخصم. قم بإزالة رمز موجود لاستخدام <strong style=\"text-transform:uppercase\">%{code}<\/strong> .",
         "discount_code_application_failed": "<strong style=\"text-transform:uppercase\">%{code}<\/strong> لا يعمل الآن. اتصل بنا للحصول على المساعدة.",
-        "due_on_fulfillment": "مستحق عند الوفاء"
+        "due_on_fulfillment": "مستحق عند الوفاء",
+        "subscriptions": "الاشتراكات",
+        "duties_label": "الواجبات",
+        "duties_and_taxes_label": "الرسوم والضرائب",
+        "error_duties_tooltip": "يتم شحن هذا الطلب من دولة أخرى، لذا قد يتم فرض رسوم وضرائب عند التسليم.",
+        "may_be_charged_on_delivery": "قد يتم تحصيلها عند التسليم",
+        "total_updated_label_with_price": "السعر الإجمالي المحدث: %{totalPrice}",
+        "updated_shipping_method": "طريقة الشحن المحدثة: %{shipping_method}",
+        "recurring_payments": "دفعات متكررة",
+        "recurring_total_multiple_label": "يحتوي هذا الطلب على رسوم متكررة لعناصر متعددة.",
+        "deferred_total_due_date_label": "إجمالي المستحق {{date}}",
+        "full_price": "السعر الكامل: %{price}",
+        "custom_discount": "خصم مخصص",
+        "expand_component_information": {
+          "one": "عرض %{count} عنصر",
+          "other": "عرض %{count} من العناصر"
+        },
+        "collapse_component_information": {
+          "one": "إخفاء %{count} عنصر",
+          "other": "إخفاء %{count} من العناصر"
+        },
+        "component_quantity_title": "%{الكمية} × %{product_title}",
+        "discount_discovery": {
+          "add_code": "إضافة خصم",
+          "merchandise_quantity_label": {
+            "one": "%{count} عنصر",
+            "other": "%{count} من العناصر"
+          }
+        },
+        "alternative_payment_currency_total": "تم تحصيلها كـ %{amount_due}"
       },
       "thank_you": {
         "login_not_customer_html": "ليس %{name}؟ يمكنك %{link}",
@@ -654,7 +683,37 @@
           "free_for_first_n_order": {
             "one": "للطلب الأول",
             "other": "لأول %{count} من الطلبات"
-          }
+          },
+          "prepaid_delivery_frequency": {
+            "one": "لتسليم %{count}.",
+            "other": "بالنسبة لـ %{count} من عمليات التسليم"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "one": "كل يوم",
+              "other": "كل %{count} يوم"
+            },
+            "week": {
+              "one": "كل اسبوع",
+              "other": "كل %{count} أسابيع"
+            },
+            "month": {
+              "one": "كل شهر",
+              "other": "كل %{count} شهر"
+            },
+            "year": {
+              "one": "كل عام",
+              "other": "كل %{count} سنة"
+            }
+          },
+          "multiple_subscriptions_shipping_price_label": "%{shipping_price} لكل عملية تسليم",
+          "prepaid_shipping_price_label": "%{shipping_price} لكل توصيل × %{delivery_interval_count}",
+          "initial_order_discounted": "تكلفة الشحن الأولى %{discounted_shipping_cost}، ثم %{frequency_description}",
+          "prepaid_initial_order_discounted": "تكلفة الشحن الأولى %{discounted_shipping_price} %{prepay_delivery_frequency}",
+          "prepaid_initial_order_discounted_with_per_delivery_price": "تكلفة الشحن الأولى %{discounted_shipping_price} %{prepay_delivery_frequency} (%{discounted_cost_per_delivery})",
+          "prepaid_initial_order_discounted_with_renewal": "تكلفة الشحن الأولى %{discounted_shipping_price} %{prepay_delivery_frequency}، ثم %{shipping_price} %{billing_cycle}",
+          "prepaid_initial_order_discounted_with_per_delivery_price_and_renewal": "تكلفة الشحن الأولى %{discounted_shipping_price} %{prepay_delivery_frequency} (%{discounted_cost_per_delivery})، ثم %{shipping_price} %{billing_cycle}",
+          "shipping_price_included": "متضمنة"
         },
         "one_time_purchase_shipping": "الشحن لمرة واحدة",
         "address2_add_label": "إضافة شقة، جناح، الخ.",
@@ -703,7 +762,73 @@
           "search_address": "البحث عن العنوان",
           "rollup_title": "اختر موقعا"
         },
-        "missing_shipping_address": "عنوان الشحن مفقود"
+        "missing_shipping_address": "عنوان الشحن مفقود",
+        "title": "توصيل",
+        "delivery_title": "توصيل",
+        "shipping_method_title": "طريقة الشحن",
+        "shipping_method_one_time_purchase_group_title": "شراء لمرة واحدة",
+        "shipping_method_first_shipment_group_title": {
+          "one": "أول شحنة",
+          "other": "الشحنات الأولى"
+        },
+        "shipping_method_subscription_group_title": "الاشتراك",
+        "shipping_method_recurring_shipments_group_title": {
+          "one": "شحنة متكررة",
+          "other": "الشحنات المتكررة"
+        },
+        "subscription_shipping": "شحن الإشتراك",
+        "subscription_local_delivery": "الاشتراك التسليم المحلي",
+        "subscription_pickup": "تحصيل الاشتراك",
+        "waiting_on_rate_notice": "جارٍ الحصول على أسعار الشحن المتوفرة…",
+        "waiting_on_pickup_location_notice": "جارٍ الحصول على مواقع الالتقاط المتاحة...",
+        "no_rates_for_cart_or_destination_notice": "لا توجد طرق شحن متاحة لسلة التسوق الخاصة بك أو عنوانك",
+        "no_pickup_location_notice": "واحد على الأقل من منتجاتك غير متاح للاستلام",
+        "no_rates_for_country_notice": "لم يتم العثور على أسعار الشحن لهذا العنوان.",
+        "no_rates_contact_notice": "اتصل بنا للحصول على مزيد من المعلومات",
+        "free_rate_label": "حر",
+        "cheapest_rate_label": "أرخص",
+        "please_enter_your_shipping_information_notice": "الرجاء إدخال معلومات الشحن الخاصة بك.",
+        "estimated_delivery_date": {
+          "one": "%{count} يوم عمل",
+          "other": "%{count} يوم عمل"
+        },
+        "estimated_delivery_date_range": "%{minimum} إلى %{maximum} يوم عمل",
+        "estimated_delivery_time": "يقدر وقت التسليم}",
+        "estimated_delivery_time_range": "التسليم المقدر %{min_time}–%{max_time}",
+        "delivery_today": "التسليم في نفس اليوم %{time}",
+        "delivery_tomorrow": "التسليم في اليوم التالي %{time}",
+        "two_day_delivery": "التسليم خلال يومين %{time}",
+        "delivery": "موعد التسليم}",
+        "arrives_time": "يصل %{time}",
+        "arrives_time_range": "الوصول %{min_time}–%{max_time}",
+        "estimated_time": "يقدر %{الوقت}",
+        "estimated_time_range": "يقدر %{min_time}–%{max_time}",
+        "shipping_line_phone_label": "رقم الهاتف المحمول (مطلوب)",
+        "shipping_line_phone": "قد يستخدم ساعي البريد الخاص بك هذا الرقم للاتصال بك.",
+        "shipping_line_delivery_phone_label": "رقم الهاتف الجوال",
+        "shipping_line_delivery_phone": "قد يتم الاتصال بك للحصول على تحديثات بشأن التسليم الخاص بك.",
+        "split_cart_merchandise_quantity_label_standard": "%{quantity} من العناصر",
+        "split_cart_merchandise_quantity_label_additional": "+%{quantity} أكثر",
+        "split_cart_merchandise_shipment_number": "الشحنة %{number} من %{total}",
+        "split_cart_ships_now": "السفن الآن",
+        "split_cart_ships_later": "السفن في وقت لاحق",
+        "split_cart_ships_date": "يتم الشحن %{date}",
+        "split_cart_shipped_by_amazon_prime": "يتم الشحن عن طريق أمازون برايم",
+        "split_cart_shipped_by_shop": "تم الشحن بواسطة %{shop_name}",
+        "split_cart_multiple_shipment_label": "شحنات متعددة",
+        "split_cart_shipping_label": "طريقة",
+        "split_cart_multiple_shipment_quantity_label": "%{quantity} شحنات",
+        "split_cart_multiple_shipment_notice": "سوف يصل طلبك في شحنات متعددة",
+        "merchandise_quantity_label_inline_primary": "الكمية: %{quantity}",
+        "optional_shipping_line_delivery_instructions_label": "تعليمات التسليم (اختياري)",
+        "shipping_line_delivery_instructions": "أدخل المعلومات الضرورية مثل رموز الباب أو تعليمات التسليم.",
+        "other_method": {
+          "zero": "لا توجد طرق أخرى متاحة",
+          "one": "%{count} طريقة أخرى متاحة على",
+          "other": "%{count} طرق أخرى متاحة بدءًا من"
+        },
+        "shipping_rate_discounted_amount": "كان: %{original_amount}. الآن: %{المبلغ}",
+        "local_delivery": "توصيل محلي"
       },
       "localized_fields": {
         "additional_information": {
