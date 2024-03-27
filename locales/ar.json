@@ -841,7 +841,125 @@
         "payment_method_selector_no_alternative_payment": "لا توجد طريقة بديلة",
         "replace_method_with_new_method_description": "سيتم حذف {{currentPaymentMethodName}} واستبداله بـ {{newPaymentMethodName}} .",
         "error_when_deleting": "نعتذر ولكن حدث خطأ ما ولم نتمكن من حذف طريقة الدفع هذه. رجاءا أعد المحاولة لاحقا أو قم بإعادة تحميل الصفحة.",
-        "delete_and_replace_button": "حذف واستبدال"
+        "delete_and_replace_button": "حذف واستبدال",
+        "delete_and_replace_button_accessibility_label": "احذف {{currentPaymentMethodName}} واستبدله بـ {{newPaymentMethodName}} .",
+        "deleted_successfully": "تم حذف طريقة الدفع بنجاح.",
+        "loading_available_payment_methods_accessibility_label": "جارٍ تحميل طرق الدفع المتاحة"
+      },
+      "add_payment_method": {
+        "title": "إضافة طريقة دفع",
+        "payment_method_added_confirmation": "تمت إضافة طريقة الدفع",
+        "billing_address": {
+          "title": "عنوان وصول الفواتير",
+          "add_billing_address_button": "اضف جديد",
+          "add_billing_address_button_accessibility_label": "أضف عنوان إرسال الفواتير الجديد",
+          "choose_billing_address_from_list_button": "اختر من القائمة",
+          "choose_billing_address_from_list_button_accessibility_label": "اختر عنوان إرسال الفواتير من القائمة",
+          "missing_billing_address_error_message": "يرجى تحديد عنوان إرسال الفواتير",
+          "default_checkbox": "تعيين كطريقة الدفع الافتراضية"
+        }
+      }
+    },
+    "payment_method_brands": {
+      "visa": "تأشيرة",
+      "mastercard": "بطاقة ماستر بطاقة ائتمان",
+      "americanexpress": "أمريكان اكسبريس",
+      "discover": "يكتشف",
+      "dinersclub": "نادي داينرز",
+      "jcb": "جي سي بي",
+      "elo": "إيلو",
+      "visaelectron": "فيزا إلكترون",
+      "maestro": "فنان قائد فرقة موسيقية",
+      "forbrugsforeningen": "فوربروجسفورينينجن",
+      "dankort": "دانكورت",
+      "hipercard": "هيبركارد",
+      "unionpay": "يونيون باي",
+      "laser": "الليزر",
+      "shoppay": "متجر الدفع",
+      "applepay": "أبل الدفع",
+      "googlepay": "جوجل الدفع",
+      "paypal": "باي بال"
+    },
+    "shop_policies": {
+      "legal_notice": "إشعار قانوني",
+      "privacy_policy": "سياسة الخصوصية",
+      "refund_policy": "سياسة الاسترجاع",
+      "shipping_policy": "سياسة الشحن",
+      "subscription_policy": "سياسة الاشتراك",
+      "terms_of_sale": "شروط البيع",
+      "terms_of_service": "شروط الخدمة"
+    },
+    "ui_components": {
+      "closeNotification": "يغلق",
+      "expandNotification": "عرض المزيد",
+      "closeModal": "يغلق",
+      "submit": "يُقدِّم",
+      "processing": "يعالج…",
+      "increase": "زيادة {{type}}",
+      "decrease": "تقليل {{type}}",
+      "minimumReached": "تم الوصول إلى الحد الأدنى من {{value}}",
+      "maximumReached": "تم الوصول إلى الحد الأقصى لـ {{value}}",
+      "january": "يناير",
+      "february": "شهر فبراير",
+      "march": "يمشي",
+      "april": "أبريل",
+      "may": "يمكن",
+      "june": "يونيو",
+      "july": "يوليو",
+      "august": "أغسطس",
+      "september": "سبتمبر",
+      "october": "اكتوبر",
+      "november": "شهر نوفمبر",
+      "december": "ديسمبر",
+      "monday": "الاثنين",
+      "tuesday": "يوم الثلاثاء",
+      "wednesday": "الأربعاء",
+      "thursday": "يوم الخميس",
+      "friday": "جمعة",
+      "saturday": "السبت",
+      "sunday": "الأحد",
+      "mondayAbbreviation": "شهر",
+      "tuesdayAbbreviation": "تو",
+      "wednesdayAbbreviation": "نحن",
+      "thursdayAbbreviation": "ذ",
+      "fridayAbbreviation": "الأب",
+      "saturdayAbbreviation": "سا",
+      "sundayAbbreviation": "سو",
+      "showNextMonth": "عرض الشهر القادم، {{month}} {{year}}",
+      "showPreviousMonth": "عرض الشهر السابق، {{month}} {{year}}",
+      "rangeStart": "بداية النطاق",
+      "inRange": "في النطاق",
+      "rangeEnd": "نهاية المدى",
+      "autocompleteOptionsAvailable": {
+        "one": "{{count}} عنصر متاح",
+        "other": "{{count}} العناصر المتاحة"
+      },
+      "removeItem": "إزالة {{label}}",
+      "removeTag": "إزالة العلامة",
+      "month": {
+        "one": "شهر",
+        "other": "شهور"
+      }
+    },
+    "profile_preview_bar": {
+      "customize_button": "يعدل أو يكيف",
+      "hide_bar": "إخفاء شريط",
+      "navigate_to_admin": "انتقل إلى المشرف",
+      "close_preview": "إغلاق المعاينة",
+      "previewing": "أنت تقوم بالمعاينة:",
+      "saved_at": "تم الحفظ في {{date}} في {{time}}",
+      "viewing": "أنت تشاهد:",
+      "not_available": "بيانات الملف الشخصي غير متوفرة",
+      "actions_button": "أجراءات"
+    },
+    "settings": {
+      "title": "إعدادات",
+      "loading_accessibility_message": "جارٍ تحميل صفحة الإعدادات",
+      "log_out_everywhere": {
+        "title": "تسجيل الخروج في كل مكان",
+        "description": "إذا فقدت جهازًا أو كانت لديك مخاوف أمنية، فقم بتسجيل الخروج من كل مكان لضمان أمان حسابك.",
+        "button": "تسجيل الخروج في كل مكان",
+        "warning_message": "سيتم تسجيل خروجك على هذا الجهاز أيضًا."
       }
     }
   },
@@ -927,6 +1045,12 @@
       "max_characters": "{{ max_chars }} حرفًا كحد أقصى",
       "send_on": "السنة-الشهر-اليوم",
       "send_on_label": "أرسل (اختياري)"
+    }
+  },
+  "sections": {
+    "announcements": {
+      "previous_announcement": "الإعلان السابق",
+      "next_announcement": "الإعلان القادم"
     }
   }
 }
