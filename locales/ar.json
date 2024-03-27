@@ -1645,8 +1645,35 @@
             "first_name_too_long": "الاسم الأول يحتوي على عدد كبير جدًا من الأحرف",
             "last_name_too_long": "يحتوي الاسم الأخير على عدد كبير جدًا من الأحرف"
           },
-          "select_different_shipping_address_to_resolve_errors": "عنوان الشحن الخاص بك غير صالح. حدد عنوانًا مختلفًا أو استخدم عنوانًا جديدًا."
-        }
+          "select_different_shipping_address_to_resolve_errors": "عنوان الشحن الخاص بك غير صالح. حدد عنوانًا مختلفًا أو استخدم عنوانًا جديدًا.",
+          "unavailable": {
+            "title": "{{walletName}} غير متوفر",
+            "description": "{{walletName}} لم يكن متاحًا. استخدم طريقة دفع مختلفة أو حاول مرة أخرى لاحقًا.",
+            "instructions": "حدثت مشكلة في {{walletName}} . ارجع إلى المتجر للمحاولة مرة أخرى أو التحقق بطريقة مختلفة."
+          },
+          "generic": "حدثت مشكلة في {{walletName}} . حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+          "terminal": "حدثت مشكلة في {{walletName}} . الرجاء استخدام طريقة دفع مختلفة.",
+          "detour": {
+            "stock_problems": "بعض العناصر لم تعد متوفرة. أغلق {{walletName}} وحاول مرة أخرى.",
+            "price_change": "لقد تغيرت أسعار بعض العناصر. أغلق {{walletName}} لمراجعة طلبك والمحاولة مرة أخرى.",
+            "queue": "لقد تم وضعك في قائمة الانتظار للخروج. أغلق {{walletName}} للمتابعة."
+          },
+          "unsupported": {
+            "address": "لا يستطيع التاجر التوصيل إلى هذا العنوان",
+            "postal_code": "هذا الموقع غير مدعوم"
+          },
+          "outdated": {
+            "shipping_method": "لقد تغيرت خيارات الشحن لطلبك. قم بمراجعة اختيارك."
+          }
+        },
+        "return_to_store": "العودة إلى المتجر",
+        "redirect_hint": "سيُطلب منك تسجيل الدخول باستخدام {{walletName}} .",
+        "logged_in": "متصل بـ {{email}}",
+        "shipping_line_label": "شحن",
+        "payment_in_progress_title": "الدفع قيد التقدم",
+        "payment_in_progress_body": "تتم معالجة دفعتك. سيتم الانتهاء من طلبك قريبا.",
+        "call_to_action": "الدفع باستخدام {{walletName}}",
+        "redirection_notice": "بعد النقر على \" {{buttonLabel}} \"، ستتم إعادة توجيهك إلى {{walletName}} لإكمال عملية الشراء بشكل آمن."
       },
       "note": {
         "length_exceeds_maximum": "تقليل حجم الملاحظة إلى 5000 حرف أو أقل."
@@ -1658,6 +1685,143 @@
             "subtotal_limit_reached": "تم الوصول إلى الحد الأقصى لقيمة البنود."
           }
         }
+      },
+      "order_errors": {
+        "creation_failure": "حدثت مشكلة أثناء إنشاء طلبك. حاول مرة أخرى، أو اتصل بنا لمزيد من التفاصيل.",
+        "network_failure": "لا يمكن إرسال طلبك بسبب خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى.",
+        "inventory_reservation_failure": "بعض العناصر لم تعد متوفرة."
+      },
+      "session_errors": {
+        "session_not_unique": "حدثت مشكلة أثناء معالجة طلبك. قم بتحديث هذه الصفحة للعودة إلى المتجر.",
+        "session_already_finished": "لقد تم تقديم هذا الطلب بالفعل. يمكنك العودة إلى المتجر لبدء طلب جديد."
+      },
+      "pickup_point": {
+        "location_is_currently_closed": "مغلق",
+        "business_hours": "ساعات العمل",
+        "title": "نقطة الالتقاء",
+        "or": "أو",
+        "search_button": "يبحث",
+        "selector_tabs": "محدد نقطة الالتقاط",
+        "selector_tab_map": "خريطة",
+        "selector_tab_list": "قائمة",
+        "could_not_resolve_address": "لا يمكن تحديد موقع عنوانك. حاول مرة أخرى أو استخدم عنوانًا مختلفًا",
+        "no_pickup_points_near_you": "لم يتم العثور على نقاط الالتقاط بالقرب من العنوان المحدد",
+        "no_pickup_points_near_location": "لم يتم العثور على نقاط الالتقاط بالقرب من موقعك",
+        "no_pickup_points_found": "لم يتم العثور على نقاط الالتقاط",
+        "paginator": {
+          "next_accessibility_label": "الصفحة التالية",
+          "previous_accessibility_label": "الصفحة السابقة",
+          "header": {
+            "one": "يتم عرض %{first} - %{last} من %{count} نقطة",
+            "other": "يتم عرض %{first} - %{last} من %{count} نقطة"
+          },
+          "selected_pickup_point_label": {
+            "one": "%{pickup_point_index} من %{count} نقطة",
+            "other": "%{pickup_point_index} من %{count} نقطة"
+          },
+          "selected_page": {
+            "one": "%{first} - %{last} من %{count} نقطة",
+            "other": "%{first} - %{last} من %{count} نقطة"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "one": "%{count} نقطة الالتقاء بالقرب من موقعك",
+          "other": "%{count} نقطة الالتقاط بالقرب من موقعك"
+        },
+        "change": "يتغير",
+        "waiting_on_pickup_point_location_notice": "جاري البحث عن نقاط التجمع...",
+        "geolocation": {
+          "shared_location_button": "استخدم موقعي",
+          "errors": {
+            "unsuported_by_browser": "الحصول على الموقع الجغرافي غير مدعوم من قبل متصفحك. حاول مرة أخرى أو استخدم متصفحًا مختلفًا.",
+            "permission_not_allowed": "السماح بمشاركة موقعك.",
+            "permission_denied": "تعذر الحصول على موقعك. حاول ثانية."
+          }
+        }
+      },
+      "error_page": {
+        "terminal": {
+          "title": "كانت هناك مشكلة في الخروج لدينا",
+          "message": "قم بتحديث هذه الصفحة أو حاول مرة أخرى خلال بضع دقائق",
+          "action": {
+            "cta": "إعادة تحميل الصفحة"
+          },
+          "request_id": "معرف الطلب: {{requestId}}"
+        }
+      },
+      "notice_banner": {
+        "return_to_cart_link_text": "العودة إلى السلة",
+        "return_to_cart_to_update_quantities": "%{return_to_cart_link_text} لتحديث الكميات",
+        "subscription_changed": "لقد تغير أحد اشتراكاتك.",
+        "company_location_changed": "تم تحديث عربة التسوق. قم بمراجعة طلبك قبل تقديمه.",
+        "company_location_changed_product_removed": "تم تحديث سلة التسوق الخاصة بك لأن بعض المنتجات غير متوفرة في هذا الموقع. قم بمراجعة طلبك قبل تقديمه.",
+        "violations_title": "{{violation}} مفقود أو غير صالح",
+        "individual_violations_title": {
+          "DeliveryViolations": "عنوان الشحن",
+          "PaymentViolations": "عنوان وصول الفواتير",
+          "OtherViolations": "معلومات الطلب",
+          "UnhandledViolations": "معلومات الطلب"
+        },
+        "all_violations_content": "اتصل بنا أو اتصل بنا على {{emailLink}} لتحديث هذه المعلومات وإكمال طلبك:",
+        "all_violations_email_link": "بريد إلكتروني",
+        "editable_shipping_address_violations_message_title": "أضف هذه المعلومات لإكمال طلبك:",
+        "editable_shipping_address_violations_message_footer": "لتحديث عنوان هذا الموقع بشكل دائم، {{emailLink}} .",
+        "editable_shipping_address_violations_email_link": "اتصل بنا",
+        "shipping_address_incomplete_title": "عنوان الشحن غير مكتمل",
+        "calculating_shipping": "لا يزال يتم حساب الشحن. حاول مرة أخرى خلال بضع ثوان. لم يتم تحصيل أي رسوم منك.",
+        "calculating_taxes": "ولا تزال الضرائب قيد الاحتساب. حاول مرة أخرى خلال بضع ثوان. لم يتم تحصيل أي رسوم منك."
+      },
+      "marketplaces": {
+        "legal_notice": {
+          "legal_text": "مراجعة",
+          "link_label": "الشروط والأحكام {{partnerDisplayName}}"
+        }
+      },
+      "online_store_chat": {
+        "title": "أسئلة؟ دردش معنا"
+      },
+      "local_pickup": {
+        "location_information": {
+          "one": "يوجد متجر %{count} ومخزون قريب من %{address}",
+          "other": "يوجد %{count} متجر بمخزون قريب من %{address}"
+        },
+        "toggle_location": "تغيير موقعي",
+        "or": "أو",
+        "cancel": "يلغي",
+        "your_location": "موقعك",
+        "search_button": "البحث عن المتاجر",
+        "no_stores_found": "لم يتم العثور على متاجر",
+        "could_not_resolve_address": "لا يمكن تحديد موقع عنوانك. حاول مرة أخرى أو استخدم عنوانًا مختلفًا",
+        "paginator": {
+          "accessibility_label": "صفحة الالتقاط المحلية",
+          "previous": "الصفحة السابقة",
+          "next": "الصفحة التالية",
+          "label": {
+            "one": "%{first} - %{last} من %{count} متجر",
+            "other": "%{first} - %{last} من %{count} متجر"
+          }
+        },
+        "reveal_more_label": {
+          "one": "عرض %{count} موقع آخر",
+          "other": "عرض %{count} من المواقع الإضافية"
+        }
+      },
+      "captcha": {
+        "title": "أكمل اختبار CAPTCHA للمتابعة",
+        "errors": {
+          "not_solved": "أكمل اختبار CAPTCHA للمتابعة"
+        }
+      },
+      "discount_errors": {
+        "generic_error": "تعذرت معالجة طلبك لأن رمز الخصم الخاص بك لم يعد متاحًا. قم بمراجعة إجمالي طلبك وحاول مرة أخرى."
+      },
+      "shop_pay_external": {
+        "errors": {
+          "problem_loading": "هناك مشكلة في تحميل Shop Pay",
+          "try_again_later": "تحقق من اتصالك أو أغلق هذه النافذة وحاول مرة أخرى خلال لحظات قليلة.",
+          "checkout_has_expired": "لقد انتهت صلاحية الخروج الخاص بك. أغلق هذه النافذة وحاول الدفع مرة أخرى من {{shopName}} ."
+        },
+        "return_to_store": "العودة إلى {{shopName}}"
       }
     },
     "collections": {
