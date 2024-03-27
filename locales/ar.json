@@ -1,0 +1,29 @@
+{
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "contact_method_title": "اتصال"
+      },
+      "review": {
+        "blocks": {
+          "contact_method_title": "اتصال"
+        }
+      }
+    },
+    "collections": {
+      "sorting": {
+        "best_selling": "أفضل مبيعات"
+      }
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "contact": "اتصال"
+    },
+    "B2B": {
+      "orders": {
+        "order_list_column_headers_contact": "اتصال"
+      }
+    }
+  }
+}
