@@ -533,6 +533,130 @@
             "description_html": "من خلال التسجيل عبر الرسائل النصية، فإنك توافق على تلقي رسائل تسويقية آلية متكررة، بما في ذلك تذكيرات سلة التسوق، على رقم الهاتف المقدم. الموافقة ليست شرطا للشراء. قم بالرد بـ STOP لإلغاء الاشتراك. الرد على مساعدة للحصول على المساعدة. يختلف تردد الرسالة. قد يتم تطبيق أسعار الرسائل والبيانات. اطلع على %{privacy_policy_link} و%{terms_of_service_link}."
           }
         }
+      },
+      "shipping": {
+        "subscription_delivery_description": {
+          "recurring_order_shipping_price": "متبوعًا بـ %{recurring_order_shipping_price}",
+          "first_order_shipping_price_included": "تم تضمين الطلب الأول، متبوعًا بـ %{recurring_order_shipping_price}",
+          "first_order_different_shipping_price": "%{first_order_shipping_price} (%{per_delivery_price} لكل توصيل)، متبوعًا بـ %{recurring_order_shipping_price}",
+          "first_n_order_free": {
+            "one": "الطلب الأول مجاني",
+            "other": "أول %{count} طلب مجاني"
+          },
+          "free_for_first_n_order": {
+            "one": "للطلب الأول",
+            "other": "لأول %{count} من الطلبات"
+          }
+        },
+        "one_time_purchase_shipping": "الشحن لمرة واحدة",
+        "address2_add_label": "إضافة شقة، جناح، الخ.",
+        "duties_and_taxes_title": "الرسوم والضرائب",
+        "shipping_information_required_notice": "معلومات الشحن مطلوبة. {{link}} .",
+        "shipping_information_redirect_link": "أدخل المعلومات الخاصة بك هنا",
+        "loading_progressive_rates": "جارٍ البحث عن المزيد من الأسعار...",
+        "no_other_methods_available": "لا توجد طرق أخرى متاحة",
+        "duties_and_taxes_options": {
+          "ddu_title": "الدفع عند الاستلام",
+          "ddu_caption": "قد يتم تطبيق رسوم إضافية",
+          "ddp_title": "ادفع الآن",
+          "ddp_caption": "لا توجد رسوم إضافية عند التسليم"
+        },
+        "shipping_method_combinations": {
+          "without_separator": "%{الطريقة الأولى}، %{الطريقة الثانية}",
+          "with_separator": "%{الراحة}، %{الحالي}،",
+          "combination": "%{الراحة} و%{الحالي}"
+        },
+        "shipping_used_as_billing_notice": "سيتم استخدام هذا أيضًا كعنوان إرسال الفواتير لهذا الطلب.",
+        "address_update": "تحديث العنوان",
+        "enter_address_manually_label": "أدخل العنوان يدويا",
+        "shipping_address_title": "سافر على متن سفينة لِـ",
+        "add_address": "استخدم عنوانًا مختلفًا",
+        "add_delivery_instructions": "إضافة تعليمات التسليم",
+        "edit": "يحرر",
+        "delete": "يمسح",
+        "address_more": "المزيد من الإجراءات لهذا العنوان",
+        "address_edit": "تعديل العنوان",
+        "address_delete": "حذف العنوان",
+        "address_confirm": "هل أنت متأكد أنك تريد حذف هذا العنوان من حسابك؟",
+        "address_form": {
+          "add_address": "اضف عنوان",
+          "save": "يحفظ",
+          "cancel": "يلغي",
+          "generic_error": "كان هناك مشكلة في حفظ عنوانك. حاول مرة اخرى.",
+          "one_time_address_subtitle": "استخدم عنوانًا لمرة واحدة لهذا الطلب"
+        },
+        "different_shipping_method_summary": "أدخل عنوان شحن مختلفًا لعرض طرق الشحن المتاحة",
+        "invalid_shipping_method_summary": "أدخل عنوان شحن صالحًا لعرض طرق الشحن المتاحة",
+        "method_summary": {
+          "incomplete_address_entered": "أدخل عنوان الشحن كاملاً لعرض طرق الشحن المتاحة",
+          "incomplete_address_selected": "حدد عنوان الشحن الكامل لعرض طرق الشحن المتاحة"
+        },
+        "local_pickup": {
+          "search_address": "البحث عن العنوان",
+          "rollup_title": "اختر موقعا"
+        },
+        "missing_shipping_address": "عنوان الشحن مفقود"
+      },
+      "localized_fields": {
+        "additional_information": {
+          "title": "معلومات إضافية"
+        }
+      },
+      "payment": {
+        "amazon_payments_label": "أمازون الدفع",
+        "amazon_payments_login_hint": "سيُطلب منك تسجيل الدخول باستخدام أمازون.",
+        "amazon_payments_logout": "تسجيل الخروج من أمازون باي",
+        "amazon_payments_failed_mfa_challenge": "لا يمكن استخدام طريقة الدفع المحددة. حدد طريقة مختلفة أو اتصل بالبنك أو جهة إصدار البطاقة.",
+        "amazon_payments_abandoned_mfa_challenge": "لا يمكن إكمال دفعتك. جرّب طريقة دفع مختلفة أو اتصل بالبنك أو جهة إصدار البطاقة.",
+        "amazon_payments_could_not_enqueue_authorize": "حدثت مشكلة أثناء معالجة دفعتك. حاول مرة أخرى أو استخدم طريقة دفع مختلفة.",
+        "title": "قسط",
+        "amount_left_to_pay_label": "استحقاق الدفع:",
+        "discount_button_action_label": "تطبيق رمز الخصم",
+        "gift_card_code_label": "رمز بطاقة الهدايا",
+        "apply_gift_card_button_label": "يتقدم",
+        "gift_card_balance_label": "توازن:",
+        "supported_card_brands_more_label": "و اكثر…",
+        "detected_card_brand": "العلامة التجارية للبطاقة التي تم اكتشافها: {brand}",
+        "credit_card_vaulting_sign_in_banner_title": "احفظ بطاقتك الائتمانية",
+        "credit_card_vaulting_sign_in_banner_info": "قم بتسجيل الدخول أو إنشاء حساب لحفظ بطاقتك الائتمانية لعمليات الشراء المستقبلية.",
+        "credit_card_vaulting_sign_in_banner_button_label": "تسجيل الدخول",
+        "ftd_vault_credit_card_label": "احفظ بطاقة الائتمان هذه في حسابي لإجراء عملية دفع أسرع",
+        "card_number_label": "رقم البطاقة",
+        "card_number_placeholder": "رقم البطاقة",
+        "card_pay_with": "ادفع عن طريق:",
+        "card_security_notice": "جميع المعاملات آمنة ومشفرة.",
+        "card_security_vault_notice": "نحن بحاجة إلى التفاصيل الخاصة بك للمدفوعات المستقبلية. جميع المعاملات آمنة ومشفرة.",
+        "card_information_notice": "جميع المعاملات آمنة ومشفرة. لا يتم تخزين معلومات بطاقة الائتمان أبدًا.",
+        "name_on_card_label": "الاسم على البطاقة",
+        "name_on_card_placeholder": "الاسم على البطاقة",
+        "card_nickname_label": "لقب (اختياري)",
+        "card_expired": "منتهي الصلاحية",
+        "card_expiry_label": "تاريخ انتهاء الصلاحية (شهر \/ سنة)",
+        "card_expiry_placeholder": "تاريخ انتهاء الصلاحية (شهر \/ سنة)",
+        "credit_card_start_month": "بداية الشهر",
+        "credit_card_start_year": "سنة البدء",
+        "delete_customer_mandate_modal_title": "هل تريد إزالة بطاقة الدفع هذه؟",
+        "delete_customer_mandate_modal_body": "إذا قمت بإزالة هذه البطاقة، فسوف تحتاج إلى إضافتها مرة أخرى قبل استخدامها لإجراء الدفعات.",
+        "delete_customer_mandate_modal_confirm": "قم بإزالة البطاقة",
+        "delete_customer_mandate_modal_cancel": "يلغي",
+        "card_verification_value_label": "رمز الحماية",
+        "card_verification_value_placeholder": "رمز الحماية",
+        "card_verification_confirm": "لأغراض التحقق، أدخل رمز الأمان الخاص ببطاقتك.",
+        "card_expiry_date_explanation": "تاريخ انتهاء البطاقة بالتنسيق: شهر، شهر، سنة، سنة",
+        "card_expiration_month_label": "انتهاء شهر",
+        "card_expiration_year_label": "سنة انتهاء الصلاحية",
+        "card_verification_value_explanation": "عادةً ما يوجد رمز الأمان المكون من 3 أرقام على ظهر بطاقتك. تحتوي بطاقات أمريكان إكسبريس على رمز مكون من 4 أرقام موجود في الجهة الأمامية.",
+        "card_verification_value_explanation_amex": "رمز الحماية المكون من 4 أرقام الموجود على مقدمة بطاقتك",
+        "card_verification_value_explanation_other": "رمز الحماية المكون من 3 أرقام الموجود على ظهر بطاقتك",
+        "card_start_label": "تاريخ الإصدار (شهر \/ سنة)",
+        "card_start_placeholder": "تاريخ الإصدار (شهر \/ سنة)",
+        "card_issue_number_label": "رقم الإصدار",
+        "card_issue_number_placeholder": "رقم الإصدار",
+        "card_change_label": "يتغير",
+        "card_update_label": "تحديث البطاقه",
+        "ends_with_label": "تنتهي بـ %{last_digits}",
+        "masked_digits_label": "•••• ٪{الأرقام الأخيرة}",
+        "payment_method_saved": "تم حفظ طريقة الدفع"
       }
     },
     "collections": {
