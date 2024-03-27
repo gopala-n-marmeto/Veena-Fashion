@@ -1189,7 +1189,12 @@
         "billing_address_invalid_phone_no_card": "قم بتحديث رقم الهاتف في عنوان إرسال الفواتير الخاص بك للمتابعة.",
         "preview_not_available": {
           "title": "المعاينة غير متوفرة"
-        }
+        },
+        "business_customer_vaulting_payment_label": "احفظ هذه البطاقة عند الدفع وأذن لـ %{company} بتحصيل رسوم هذه البطاقة مقابل عمليات الشراء المستقبلية لهذا الموقع. سيتم السماح لأي عميل مخصص لهذا الموقع باستخدام هذه البطاقة.",
+        "purchase_options_and_vaulting_agreement_label": "هناك عنصر واحد أو أكثر في سلة التسوق الخاصة بك عبارة عن عملية شراء مؤجلة أو شراء اشتراك. من خلال الاستمرار في الدفع، فإنك توافق على أنه سيتم تحصيل الرسوم من طريقة الدفع الخاصة بك تلقائيًا بالسعر والتكرار المذكورين في هذه الصفحة حتى تنتهي أو تقوم بالإلغاء. تخضع جميع عمليات الإلغاء إلى %{cancellation_policy_label}.",
+        "local_payment_method_receiver_notice": "بعد تقديم طلبك، سوف تتلقى تفاصيل الدفع. قم بالدفع من خلال ماكينة الصراف الآلي أو عبر الإنترنت خلال {{dueDays}} من الأيام.",
+        "order_edit_banner_subtitle": "تم تحديث طلبك {{order_number}} . راجع هذه التغييرات، ثم ادفع لتأكيد طلبك.",
+        "markets_pro_disclaimer_label": "بالنقر أدناه وإكمال طلبك، فإنك توافق على شراء العناصر الخاصة بك من Global-e كتاجر مسجل لهذه المعاملة، على %{markets_pro_terms} و%{privacy_policy من Global-e. Global-e هي شركة دولية تقدم خدمات تلبية الطلبات لـ %{shop_name}"
       },
       "processing": {
         "wait": {
@@ -3037,7 +3042,9 @@
         "show_order_actions_accessibility_label": "إظهار إجراءات الطلب للطلب {{name}}"
       },
       "order_status": {
-        "attempted_delivery_label": "حاول التوصيل"
+        "attempted_delivery_label": "حاول التوصيل",
+        "ready_for_pickup_description": "هذه العناصر جاهزة للاستلام. يرجى إحضار تأكيد طلبك عند استلام طلبك.",
+        "in_review_description": "سنخبرك إذا كنا بحاجة إلى مزيد من المعلومات أو عندما يتم تأكيد طلبك."
       }
     }
   },
