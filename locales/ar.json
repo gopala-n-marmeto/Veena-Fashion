@@ -775,7 +775,134 @@
   },
   "customer_accounts": {
     "order_details": {
-      "contact": "اتصال"
+      "contact": "اتصال",
+      "image_gallery": {
+        "next": "إظهار العناصر التالية",
+        "previous": "إظهار العناصر السابقة"
+      },
+      "mobile_summary_toggle_button": {
+        "open": "عرض ملخص الطلب",
+        "closed": "إخفاء ملخص الطلب"
+      },
+      "no_data": "لا أحد",
+      "no_data_provided_accessibility_label": "{{fieldName}} فارغ",
+      "not_applicable": "لا يوجد",
+      "paid_amount": "مدفوع",
+      "partially_refunded_label": "المردودة جزئيا",
+      "payment": {
+        "status_in_review": "الدفع مستحق بعد المراجعة",
+        "status_unpaid": "الدفع مستحق في {{date}}",
+        "title": "قسط",
+        "card_payment_details": "تنتهي بـ {{lastDigits}} - {{formattedTransactionAmount}}",
+        "gift_card_payment_details": "تنتهي بـ {{lastDigits}} - {{formattedTransactionAmount}}",
+        "store_credit_payment_details": "رصيد المتجر - {{formattedTransactionAmount}}",
+        "shop_pay_installments": {
+          "paid_in_installments": "يتم الدفع عن طريق أقساط Shop Pay",
+          "view_schedule": "عرض الجدول الزمني"
+        },
+        "manual_payment_methods": {
+          "money_order": "حوالة بريدية - {{formattedTransactionAmount}}",
+          "cash_on_delivery": "الدفع عند التسليم (COD) - {{formattedTransactionAmount}}",
+          "bank_deposit": "الإيداع البنكي - {{formattedTransactionAmount}}",
+          "manual": "دليل - {{formattedTransactionAmount}}"
+        },
+        "transactions": {
+          "show_all": "عرض الكل",
+          "show_less": "عرض أقل"
+        }
+      },
+      "paid_with_shop_pay_installments_card": {
+        "paid_with_shop_pay_installments": "تدفع مع أقساط الدفع متجر",
+        "description": "ابق على اطلاع بجدول الدفع الخاص بك من خلال التذكيرات في تطبيق المتجر.",
+        "payment_reminders_button": "احصل على تذكيرات بالدفع",
+        "desktop_qr_code_content": {
+          "title": "البحث عن التذكيرات",
+          "description": "احصل على تذكيرات بأقساطك مع Shop."
+        }
+      },
+      "refunded_amount": "ردها",
+      "request_return_failed": "كان هناك مشكلة في معالجة طلبك. حاول مرة اخرى.",
+      "remaining_amount": "متبقي",
+      "marketing_section_title": "الأخبار والعروض",
+      "marketing_description": "ستتلقى رسائل بريد إلكتروني تسويقية. يمكنك إلغاء الاشتراك في أي وقت.",
+      "marketing_checkbox_label": "أرسل لي الأخبار والعروض",
+      "marketing_checkmark_label": "أنت مشترك لتلقي الأخبار والعروض عبر البريد الإلكتروني",
+      "returns": {
+        "expand_events_label": "اظهر التفاصيل",
+        "hide_events_label": "أخف التفاصيل",
+        "ineligible_return_message": "لا توجد عناصر في هذا الطلب مؤهلة للإرجاع.",
+        "ineligible_return_message_when_returned": "لا توجد عناصر إضافية في هذا الطلب مؤهلة للإرجاع.",
+        "print_shipping_label": "إطبع ملصق الشحن",
+        "return_and_refund_modal_header": "سياسة الاسترجاع",
+        "tracking_number": "عدد تتبع:"
+      },
+      "shipping": {
+        "address": "عنوان الشحن",
+        "address_map_marker": "عنوان الشحن",
+        "method": "طريقة الشحن",
+        "summary": "شحن",
+        "free": "حر",
+        "free_shipping_discount": "ًالشحن مجانا",
+        "one_time": "الشحن لمرة واحدة",
+        "subscription": "شحن الإشتراك"
+      },
+      "pickup": {
+        "pickup": "يلتقط",
+        "pickup_location": "اختر موقعا",
+        "pickup_point": "نقطة الالتقاء"
+      },
+      "show_items": "عرض العناصر",
+      "show_order_summary": "عرض ملخص الطلب",
+      "hide_order_summary": "إخفاء ملخص الطلب",
+      "subtitle": "تم التأكيد {{date}}",
+      "subtotal": "المجموع الفرعي",
+      "summary_list_title_accessibility_label": "طلب بضاعة",
+      "summary_title": "ملخص الطلب",
+      "summary_totals_title_accessibility_label": "إجمالي الطلب",
+      "shop_order_tracking": {
+        "download_shop_to_track": "تنزيل متجر لتتبع الحزمة",
+        "track_order_with_shop": "تتبع الطلب مع المتجر",
+        "title_header": "مسح مع هاتفك",
+        "real_time_delivery_updates": "سيرسل لك المتجر تحديثات التسليم في الوقت الفعلي بمجرد شحن طلبك."
+      },
+      "edit_summary": {
+        "added": "تمت الإضافة",
+        "added_with_quantity": "تمت إضافة {{quantity}}",
+        "removed": "إزالة",
+        "removed_with_quantity": "تمت إزالة {{quantity}}",
+        "updated_at": "تم تحديث طلبك بتاريخ {{date}}",
+        "returned": "عاد",
+        "returned_with_quantities": "تم إرجاع {{delta}} من {{total}}",
+        "removed_with_quantities": "تمت إزالة {{delta}} من {{total}}",
+        "return_line_item_removed": "تمت إزالته من العودة",
+        "return_line_item_removed_with_quantities": "تمت إزالة {{delta}} من العودة"
+      },
+      "shop_pay": {
+        "order_completed_with": "اكتمل الطلب مع",
+        "learn_more": "يتعلم أكثر"
+      },
+      "taxes": "الضرائب",
+      "duties": "الواجبات",
+      "ok_duties_tooltip": "يتم شحن هذا الطلب من دولة أخرى، لذا تمت إضافة الرسوم الجمركية إلى إجمالي طلبك.",
+      "error_duties_tooltip": "يتم شحن هذا الطلب من دولة أخرى، لذا قد يتم فرض رسوم وضرائب عند التسليم.",
+      "zero_duties_tooltip": "يتم شحن هذا الطلب من بلد آخر. لا يتم فرض رسوم على أوامر بهذه القيمة.",
+      "tip": "نصيحة",
+      "title": "طلب {{name}}",
+      "total": "المجموع",
+      "unit_price": "{{price}} \/ea",
+      "pagination": {
+        "load_more": "تحميل المزيد",
+        "load_more_accessibility_label": "تحميل المزيد من العناصر",
+        "loading_accessibility_label": "جارٍ تحميل العناصر"
+      },
+      "login_to_view_all_order_details": "قم بتسجيل الدخول لعرض كافة تفاصيل الطلب.",
+      "log_in": "تسجيل الدخول",
+      "logged_in_account_no_permission_to_order": "لقد قمت بتسجيل الدخول باسم {{email}} . هذا الحساب ليس لديه إذن لإدارة هذا الطلب.",
+      "log_in_to_a_different_account": "تسجيل الدخول إلى حساب مختلف",
+      "fees": {
+        "restocking_fee": "رسوم إعادة تخزين",
+        "return_shipping_fee": "عودة الشحن"
+      }
     },
     "B2B": {
       "orders": {
@@ -1342,7 +1469,12 @@
       },
       "save_new_address_accessibility_label": "حفظ العنوان",
       "title": "عناوين",
-      "billing_address_dropdown_placeholder": "عنوان وصول الفواتير"
+      "billing_address_dropdown_placeholder": "عنوان وصول الفواتير",
+      "add_button": "اضف عنوان",
+      "add_button_text": "يضيف",
+      "add_button_accessibility_label": "اضف عنوان",
+      "back_button": "خلف",
+      "back_button_accessibility_label": "العودة إلى تعديل العنوان {{address}}"
     },
     "address_form": {
       "attention": "انتباه",
