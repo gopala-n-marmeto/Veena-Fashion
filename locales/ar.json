@@ -7,7 +7,30 @@
         "different_shipping_address_text": "استخدم عنوانًا لمرة واحدة لهذا الطلب",
         "change_company_location_link_label": "تغيير موقع الشركة",
         "change_location_link_label": "تغيير الموقع",
-        "ship_to_company": "الشحن إلى {{companyName}}"
+        "ship_to_company": "الشحن إلى {{companyName}}",
+        "title": "معلومة",
+        "delivery_option_title": "طريقة التوصيل",
+        "stored_addresses_label": "العناوين المحفوظة",
+        "new_address_label": "استخدم عنوانًا جديدًا",
+        "first_name_label": "الاسم الأول",
+        "optional_first_name_label": "الإسم الأول (إختياري)",
+        "company_attention_label": "الشركة\/انتباه",
+        "optional_company_label": "الشركة (اختياري)",
+        "address2_label": "شقة، جناح، الخ.",
+        "country_label": "البلد\/المنطقة",
+        "country_code": "رمز البلد\/المنطقة",
+        "region_none": "لم يتم تحديد أي شيء",
+        "prefecture_label": "المحافظة",
+        "prefecture_placeholder": "المحافظة",
+        "governorate_label": "محافظة",
+        "governorate_placeholder": "محافظة",
+        "state_and_territory_label": "الولاية\/الإقليم",
+        "state_and_territory_placeholder": "الولاية\/الإقليم",
+        "optional_phone_label": "الهاتف اختياري)",
+        "postal_code_label": "رمز بريدي",
+        "postal_code_placeholder": "رمز بريدي",
+        "optional_last_name_label": "الاسم الأخير (اختياري)",
+        "optional_recipient_label": "تنبيه (اختياري)"
       },
       "review": {
         "blocks": {
@@ -271,7 +294,18 @@
         "submit_order_button_label": "أكد الطلب",
         "submit_for_review_button_label": "تقديم للمراجعة",
         "submit_for_review_notice_label": "لن يكون الدفع مستحقًا حتى تتم مراجعة طلبك",
-        "continue_to_payment_plans_button_label": "الاستمرار في خطط الدفع"
+        "continue_to_payment_plans_button_label": "الاستمرار في خطط الدفع",
+        "autocomplete_zero_item": "لا توجد عناصر متاحة",
+        "processing": "يعالج…",
+        "stepper": {
+          "increase": "زيادة {{type}}",
+          "decrease": "تقليل {{type}}"
+        },
+        "remove_item": "إزالة %{label}",
+        "remove_tag": "إزالة العلامة",
+        "datepicker": {
+          "range_start": "بداية النطاق"
+        }
       },
       "delivery_options": {
         "free_total_label": "حر",
@@ -1194,7 +1228,52 @@
         "purchase_options_and_vaulting_agreement_label": "هناك عنصر واحد أو أكثر في سلة التسوق الخاصة بك عبارة عن عملية شراء مؤجلة أو شراء اشتراك. من خلال الاستمرار في الدفع، فإنك توافق على أنه سيتم تحصيل الرسوم من طريقة الدفع الخاصة بك تلقائيًا بالسعر والتكرار المذكورين في هذه الصفحة حتى تنتهي أو تقوم بالإلغاء. تخضع جميع عمليات الإلغاء إلى %{cancellation_policy_label}.",
         "local_payment_method_receiver_notice": "بعد تقديم طلبك، سوف تتلقى تفاصيل الدفع. قم بالدفع من خلال ماكينة الصراف الآلي أو عبر الإنترنت خلال {{dueDays}} من الأيام.",
         "order_edit_banner_subtitle": "تم تحديث طلبك {{order_number}} . راجع هذه التغييرات، ثم ادفع لتأكيد طلبك.",
-        "markets_pro_disclaimer_label": "بالنقر أدناه وإكمال طلبك، فإنك توافق على شراء العناصر الخاصة بك من Global-e كتاجر مسجل لهذه المعاملة، على %{markets_pro_terms} و%{privacy_policy من Global-e. Global-e هي شركة دولية تقدم خدمات تلبية الطلبات لـ %{shop_name}"
+        "markets_pro_disclaimer_label": "بالنقر أدناه وإكمال طلبك، فإنك توافق على شراء العناصر الخاصة بك من Global-e كتاجر مسجل لهذه المعاملة، على %{markets_pro_terms} و%{privacy_policy من Global-e. Global-e هي شركة دولية تقدم خدمات تلبية الطلبات لـ %{shop_name}",
+        "simulated_checkout": "المعاينة قريبا",
+        "purchase_options_cancellation_policy_label": "سياسة الإلغاء",
+        "use_different_credit_card_label": "استخدم بطاقة مختلفة",
+        "saved_credit_card": "بطاقتك الائتمانية المحفوظة",
+        "saved_credit_card_info": "آخر أربعة أرقام",
+        "saved_credit_cards_modal": {
+          "view_all_label": "عرض جميع البطاقات المحفوظة"
+        },
+        "delete_credit_card_modal": {
+          "title": "حذف البطاقة"
+        },
+        "edit_credit_card_modal": {
+          "fields": {
+            "default": "تعيين كافتراضي",
+            "card_number": "رقم البطاقة",
+            "expiry": "تاريخ انتهاء الصلاحية",
+            "security_code": "رمز الحماية",
+            "name": "الاسم على البطاقة"
+          }
+        },
+        "order_edit_banner_items_added": {
+          "other": "تمت إضافة %{count}."
+        },
+        "order_edit_banner_items_return_line_item_removed": {
+          "in_full": "تمت إزالته من العودة"
+        },
+        "order_edit_banner_multiple_items_added": "تمت إضافة {{amount}}",
+        "order_edit_banner_multiple_items_removed": "تمت إزالة {{amount}}",
+        "order_edit_banner_multiple_items_returned": "تم إرجاع {{amount}}",
+        "order_edit_banner_single_item_return_line_item_removed": "تمت إزالته من العودة",
+        "order_edit_banner_updated_order_label": "طلب محدث",
+        "gift_card_wrapper": {
+          "apply_gift_card_label": "تطبيق بطاقة هدية",
+          "apply_another_gift_card_label": "تطبيق بطاقة هدية أخرى",
+          "gift_card_label": "بطاقة الهدايا %{identifier}",
+          "add_label": "أضف بطاقة هدية",
+          "manage_label": "إدارة بطاقات الهدايا"
+        },
+        "markets_pro_disclaimer_terms_and_conditions": "الأحكام والشروط",
+        "markets_pro_disclaimer_privacy_policy": "سياسة الخصوصية",
+        "purchase_order_number": {
+          "label": "رقم أمر الشراء (اختياري)"
+        },
+        "waiting_on_taxes_notice": "حساب الضرائب",
+        "payment_method": "طريقة الدفع او السداد"
       },
       "processing": {
         "wait": {
@@ -1619,7 +1698,8 @@
         "email_us_button_label": "مراسلتنا على البريد الاليكتروني"
       },
       "payment_summary": {
-        "free_label": "حر"
+        "free_label": "حر",
+        "billing_address_title": "عنوان وصول الفواتير"
       },
       "wallets": {
         "errors": {
@@ -1827,6 +1907,13 @@
           "checkout_has_expired": "لقد انتهت صلاحية الخروج الخاص بك. أغلق هذه النافذة وحاول الدفع مرة أخرى من {{shopName}} ."
         },
         "return_to_store": "العودة إلى {{shopName}}"
+      },
+      "billing": {
+        "address_edit": "تعديل العنوان",
+        "address_delete": "حذف العنوان",
+        "address_form": {
+          "add_address": "اضف عنوان"
+        }
       }
     },
     "collections": {
@@ -2305,7 +2392,17 @@
       "fees": {
         "restocking_fee": "رسوم إعادة تخزين",
         "return_shipping_fee": "عودة الشحن"
-      }
+      },
+      "shipment_timeline": {
+        "expand_events_label": "اظهر التفاصيل",
+        "hide_events_label": "أخف التفاصيل"
+      },
+      "addresses_section_title": "الفواتير والشحن",
+      "order_details": "تفاصيل الطلب",
+      "billing_address": "عنوان وصول الفواتير",
+      "contact_information": "معلومات الاتصال",
+      "hide_items": "إخفاء العناصر",
+      "loading": "جارٍ تحميل تفاصيل الطلب"
     },
     "B2B": {
       "orders": {
@@ -3044,8 +3141,47 @@
       "order_status": {
         "attempted_delivery_label": "حاول التوصيل",
         "ready_for_pickup_description": "هذه العناصر جاهزة للاستلام. يرجى إحضار تأكيد طلبك عند استلام طلبك.",
-        "in_review_description": "سنخبرك إذا كنا بحاجة إلى مزيد من المعلومات أو عندما يتم تأكيد طلبك."
-      }
+        "in_review_description": "سنخبرك إذا كنا بحاجة إلى مزيد من المعلومات أو عندما يتم تأكيد طلبك.",
+        "attempted_to_deliver_label": "محاولة التوصيل",
+        "preparing_for_shipping_label": "التحضير للشحن",
+        "ready_for_pickup_label": "جاهز للإستلام",
+        "gift_card_label": {
+          "other": "بطاقات الهدايا"
+        },
+        "gift_card_resend": {
+          "one": "إعادة إرسال البريد الإلكتروني",
+          "other": "إعادة إرسال رسائل البريد الإلكتروني"
+        },
+        "gift_card_resend_text": {
+          "one": "إعادة إرسال النص",
+          "other": "إعادة إرسال النصوص"
+        },
+        "gift_resend_success": {
+          "one": "تمت إعادة إرسال بطاقة الهدايا",
+          "other": "بطاقات الهدايا مستاءة"
+        },
+        "last_updated": "آخر تحديث {{date}}",
+        "multiple_shipments_label": "شحنات متعددة",
+        "on_its_way_label": "في طريقه",
+        "out_for_delivery_label": "خارج للتوصيل",
+        "resume_tracking": "استئناف التتبع",
+        "there_was_a_problem_label": "كان هناك مشكلة",
+        "track_shipment": "شحنة المسار",
+        "request_return": "طلب العودة",
+        "view_order_for_details": "عرض الطلب للحصول على التفاصيل",
+        "amazon_buy_with_prime": {
+          "order_tracking_link": {
+            "new_window_disclaimer": "(يفتح نافذة جديدة)"
+          }
+        }
+      },
+      "status_mark_as_delivered": "وضع علامة على أنه تم التسليم",
+      "status_title": "حالة الطلب",
+      "if_not_received": {
+        "one": "إذا لم يتم استلامها،"
+      },
+      "let_us_know": "دعنا نعرف",
+      "contact_us": "اتصل بنا."
     }
   },
   "customer": {
