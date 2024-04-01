@@ -28,12 +28,19 @@ class ProductCard extends HTMLElement {
       }
     });
 
+    if (this.querySelector(".bundle-input")) {
+      this.querySelector(".bundle-input").setAttribute(
+        "data-bundle-product-id",
+        `${this.currentVariant.id}`
+      );
+    }
+
     this.getUpdatedCard();
   }
 
   getUpdatedCard() {
     // variant url
-    const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=custom-section-rendering  `;
+    const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=custom-section-rendering`;
 
     // fetching selected varinat details
     fetch(url)
