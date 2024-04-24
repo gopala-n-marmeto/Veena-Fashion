@@ -42,6 +42,8 @@
     {% section 'color-swatch' %}
     {{'snippet-custom-product-card.css' |  asset_url |  stylesheet_tag}}
     {{'snippet-free-shipping.css' | asset_url | stylesheet_tag}}
+    <script src="{{"marmeto-filter.js" | asset_url }}" defer></script>
+    {{ 'marmeto-filter.css' | asset_url | stylesheet_tag }}
     
     {{ content_for_header }}
 
