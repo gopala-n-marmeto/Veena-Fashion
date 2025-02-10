@@ -31,7 +31,15 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
-        console.log(formData)
+
+        let formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
+      
+        console.log("FormData as Object:", formObject);
+        
+        
         if (this.cart) {
           formData.append(
             'sections',
