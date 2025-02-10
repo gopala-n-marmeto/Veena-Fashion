@@ -31,7 +31,7 @@ if (!customElements.get('product-form')) {
         delete config.headers['Content-Type'];
 
         const formData = new FormData(this.form);
-        formData.append('properties', {'category': 'Gopal category'});
+        formData.append('properties[category]', 'gopal category';
 
         let formObject = {};
         formData.forEach((value, key) => {
