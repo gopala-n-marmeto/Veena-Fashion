@@ -35,6 +35,7 @@ if (!customElements.get('product-form')) {
 
         let formObject = {};
         formData.forEach((value, key) => {
+          console.log(value, key)
           formObject[key] = value;
         });
       
