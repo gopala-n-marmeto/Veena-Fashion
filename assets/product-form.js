@@ -30,17 +30,7 @@ if (!customElements.get('product-form')) {
         config.headers['X-Requested-With'] = 'XMLHttpRequest';
         delete config.headers['Content-Type'];
 
-        const formData = new FormData(this.form);
-        formData.append('properties[category]', 'gopal category';
-
-        let formObject = {};
-        formData.forEach((value, key) => {
-          console.log(value, key)
-          formObject[key] = value;
-        });
-      
-        console.log("FormData as Object:", formObject);
-        
+        const formData = new FormData(this.form);       
         
         if (this.cart) {
           formData.append(
