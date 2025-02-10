@@ -37,6 +37,7 @@ if (!customElements.get('product-form')) {
             this.cart.getSectionsToRender().map((section) => section.id)
           );
           formData.append('sections_url', window.location.pathname);
+          formData.append('category', "gopal category");
           this.cart.setActiveElement(document.activeElement);
         }
         config.body = formData;
