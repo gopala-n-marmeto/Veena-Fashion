@@ -275,7 +275,7 @@
       </div>
     </div>
   {%- endif -%}
-  {% for products in article.metafields.custom.products_list_details.value %}
+  {% for blog_products in article.metafields.custom.products_list_details.value %}
     {% for product in blog_products.products_list %}
       {{ product | json }}
     {% endfor %}
