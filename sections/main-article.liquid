@@ -276,10 +276,10 @@
     </div>
   {%- endif -%}
   {% for products in article.metafields.custom.products_list_details.value %}
-    {{ "krishna" }}
-    {% for product in products.products_list %}
+    <!-- {% for product in products.products_list %}
       {{ product | json }}
-    {% endfor %}
+    {% endfor %} -->
+    {{ products | json }}
   {% endfor %}
 </article>
 
