@@ -44,16 +44,7 @@
                 {% endif %}
                 {% if section.settings.section_button_label %}
                     {% if section.settings.section_button_link %}
-                        {% render 'custom-color-hovering-button',
-                            class: "custom-collection-slider__shop-now-button"
-                            sectionId: {{section.id}},
-                            textColor: {{section.settings.section_button_color}},
-                            hoverTextColor: {{section.settings.section_button_hover_color}},
-                            backgroundColor: {{section.settings.section_button_background_color}}
-                            hoverColor: {{section.settings.section_button_hover_background_color}}, 
-                            buttonLink: {{section.settings.section_button_link}},
-                            buttonText: {{section.settings.section_button_label}}
-                        %}
+                        {% render 'custom-color-hovering-button', class: "custom-collection-slider__shop-now-button", sectionId: section.id, textColor: section.settings.section_button_color, hoverTextColor: section.settings.section_button_hover_color, backgroundColor: section.settings.section_button_background_color, hoverColor: section.settings.section_button_hover_background_color, buttonLink: section.settings.section_button_link, buttonText: section.settings.section_button_label %}
                     {% else %}
                         <a class="custom-collection-slider__all-products-button-label button" role="link" aria-disabled="true">{{section_button_label}}</a>
                     {% endif %}
@@ -75,16 +66,7 @@
                                             </div>
                                             <div class="custom-collection-slider__name-button-wrapper">
                                                 <h3 class="custom-collection-slider__collection-title collection-title-{{ section.id }}"><a href={{ block.settings.button_url }}>{{ block.settings.collection_name }}</a></h3>
-                                                {% render 'custom-color-hovering-button',
-                                                  class: "custom-collection-slider__shop-now-button"
-                                                  sectionId: {{block.id}},
-                                                  textColor: {{section.settings.collection_button_color}},
-                                                  hoverTextColor: {{section.settings.collection_button_hover_color}},
-                                                  backgroundColor: {{section.settings.collection_button_background_color}}
-                                                  hoverColor: {{section.settings.collection_button_hover_background_color}}, 
-                                                  buttonLink: {{block.settings.collection_button_link}},
-                                                  buttonText: {{block.settings.collection_button_label}}
-                                              %}
+                                                {% render 'custom-color-hovering-button', class: "custom-collection-slider__shop-now-button", sectionId: block.id, textColor: section.settings.collection_button_color, hoverTextColor: section.settings.collection_button_hover_color, backgroundColor: section.settings.collection_button_background_color, hoverColor: section.settings.collection_button_hover_background_color, buttonLink: block.settings.collection_button_link, buttonText: block.settings.collection_button_label %}
                                             </div>
                                         </div>
                                     </li>
@@ -290,4 +272,42 @@
         }
     ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'custom-color-hovering-button',\n                            class:
+    \"custom-collection-slider__shop-now-button\"\n                            sectionId:
+    {{section.id}},\n                            textColor: {{section.settings.section_button_color}},\n
+    \                           hoverTextColor: {{section.settings.section_button_hover_color}},\n
+    \                           backgroundColor: {{section.settings.section_button_background_color}}\n
+    \                           hoverColor: {{section.settings.section_button_hover_background_color}},
+    \n                            buttonLink: {{section.settings.section_button_link}},\n
+    \                           buttonText: {{section.settings.section_button_label}}\n
+    \                       %}"
+  to: '{% render ''custom-color-hovering-button'', class: "custom-collection-slider__shop-now-button",
+    sectionId: section.id, textColor: section.settings.section_button_color, hoverTextColor:
+    section.settings.section_button_hover_color, backgroundColor: section.settings.section_button_background_color,
+    hoverColor: section.settings.section_button_hover_background_color, buttonLink:
+    section.settings.section_button_link, buttonText: section.settings.section_button_label
+    %}'
+  position: 1696..2161
+- from: "{% render 'custom-color-hovering-button',\n                                                  class:
+    \"custom-collection-slider__shop-now-button\"\n                                                  sectionId:
+    {{block.id}},\n                                                  textColor: {{section.settings.collection_button_color}},\n
+    \                                                 hoverTextColor: {{section.settings.collection_button_hover_color}},\n
+    \                                                 backgroundColor: {{section.settings.collection_button_background_color}}\n
+    \                                                 hoverColor: {{section.settings.collection_button_hover_background_color}},
+    \n                                                  buttonLink: {{block.settings.collection_button_link}},\n
+    \                                                 buttonText: {{block.settings.collection_button_label}}\n
+    \                                             %}"
+  to: '{% render ''custom-color-hovering-button'', class: "custom-collection-slider__shop-now-button",
+    sectionId: block.id, textColor: section.settings.collection_button_color, hoverTextColor:
+    section.settings.collection_button_hover_color, backgroundColor: section.settings.collection_button_background_color,
+    hoverColor: section.settings.collection_button_hover_background_color, buttonLink:
+    block.settings.collection_button_link, buttonText: block.settings.collection_button_label
+    %}'
+  position: 3845..4322
+{%- endcomment -%}

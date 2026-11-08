@@ -47,16 +47,7 @@
                                                 <li class="custom-hero-banner__list-item">{{block.settings.sub_text}}</li>
                                             </ul>
                                             <h2 class="custom-hero-banner__title custom-hover-text h1">{{block.settings.title}}</h2>
-                                            {% render 'custom-color-hovering-button',
-                                                class: "custom-hero-banner__custom-button"
-                                                sectionId:{{section.id}},
-                                                textColor: "#000000",
-                                                hoverTextColor: "#d03c3f",
-                                                backgroundColor: "#ffffff",
-                                                hoverColor: "#f5f5f5", 
-                                                buttonLink: {{block.settings.button_url}},
-                                                buttonText: {{block.settings.button_text}}
-                                            %}
+                                            {% render 'custom-color-hovering-button', class: "custom-hero-banner__custom-button", sectionId: section.id, textColor: "#000000", hoverTextColor: "#d03c3f", backgroundColor: "#ffffff", hoverColor: "#f5f5f5", buttonLink: block.settings.button_url, buttonText: block.settings.button_text %}
                                         </div>
                                     </div>
                                 </li>
@@ -285,4 +276,23 @@
         }
     ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'custom-color-hovering-button',\n                                                class:
+    \"custom-hero-banner__custom-button\"\n                                                sectionId:{{section.id}},\n
+    \                                               textColor: \"#000000\",\n                                                hoverTextColor:
+    \"#d03c3f\",\n                                                backgroundColor:
+    \"#ffffff\",\n                                                hoverColor: \"#f5f5f5\",
+    \n                                                buttonLink: {{block.settings.button_url}},\n
+    \                                               buttonText: {{block.settings.button_text}}\n
+    \                                           %}"
+  to: '{% render ''custom-color-hovering-button'', class: "custom-hero-banner__custom-button",
+    sectionId: section.id, textColor: "#000000", hoverTextColor: "#d03c3f", backgroundColor:
+    "#ffffff", hoverColor: "#f5f5f5", buttonLink: block.settings.button_url, buttonText:
+    block.settings.button_text %}'
+  position: 2547..2836
+{%- endcomment -%}

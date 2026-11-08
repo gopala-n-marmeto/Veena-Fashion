@@ -102,15 +102,7 @@
                         {% endif %}
                         {% if block.settings.button_text %}
                             {% if block.settings.button_link %}
-                                {% render 'custom-color-hovering-button',
-                                sectionId:{{section.id}},
-                                textColor: "#ffffff",
-                                hoverTextColor: "#ffffff",
-                                backgroundColor: "#000000",
-                                hoverColor: "#d03c3f", 
-                                buttonLink: {{block.settings.button_url}},
-                                buttonText: {{block.settings.button_text}}
-                            %}
+                                {% render 'custom-color-hovering-button', sectionId: section.id, textColor: "#ffffff", hoverTextColor: "#ffffff", backgroundColor: "#000000", hoverColor: "#d03c3f", buttonLink: block.settings.button_url, buttonText: block.settings.button_text %}
                             {% else %}
                                 <a class="grid__look-item-button button" role="link" aria-disabled="true">{{block.settings.button_text}}</a>
                             {% endif %}
@@ -279,4 +271,21 @@
         }
     ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'custom-color-hovering-button',\n                                sectionId:{{section.id}},\n
+    \                               textColor: \"#ffffff\",\n                                hoverTextColor:
+    \"#ffffff\",\n                                backgroundColor: \"#000000\",\n
+    \                               hoverColor: \"#d03c3f\", \n                                buttonLink:
+    {{block.settings.button_url}},\n                                buttonText: {{block.settings.button_text}}\n
+    \                           %}"
+  to: '{% render ''custom-color-hovering-button'', sectionId: section.id, textColor:
+    "#ffffff", hoverTextColor: "#ffffff", backgroundColor: "#000000", hoverColor:
+    "#d03c3f", buttonLink: block.settings.button_url, buttonText: block.settings.button_text
+    %}'
+  position: 5877..6122
+{%- endcomment -%}
